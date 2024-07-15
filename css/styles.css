@@ -72,7 +72,8 @@ font-weight: 500;
 line-height: 30px; 
 text-transform: capitalize;
 text-align: justify;
-width: 100%;
+
+
 
 
   }
@@ -775,8 +776,9 @@ text-transform: capitalize;
 }
 
 .partner-box {
-  width: 10%;
-  height: 80px; 
+ 
+  width: 50%;
+  height: 160px; 
   margin: 10px;
   border: 2px solid #9F9E9E;
   display: flex;
@@ -784,17 +786,22 @@ text-transform: capitalize;
   align-items: center;
 }
 
-.partner-box img {
-  width: 100%;
-  height: auto; 
-  max-width: 100px; 
+
+
+.partner-image img {
+  
+  position: relative;
+  bottom: 140px;
+  right: 40px;
+  
 }
 
 .partner-detail {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap; 
   margin-top: 60px;
+  margin-left: 80px;
 }
 
 @media (max-width: 1200px) {
