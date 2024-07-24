@@ -1,0 +1,36 @@
+.animate {
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation from left to right */
+.left-to-right {
+    transform: translateX(-100%); /* Start off-screen */
+}
+
+.left-to-right.animate-visible {
+    transform: translateX(0); /* End at normal position */
+    opacity: 1; /* Make visible */
+}
+
+
+/* Animation from right to left */
+.right-to-left {
+    transform: translateX(100%); /* Start off-screen */
+}
+
+.right-to-left.animate-visible {
+    transform: translateX(0); /* End at normal position */
+    opacity: 1; /* Make visible */
+}
+
+/* Animation from top to bottom */
+.top-to-bottom {
+    transform: translateY(-100%); /* Start off-screen */
+}
+
+.top-to-bottom.animate-visible {
+    transform: translateY(0); /* End at normal position */
+    opacity: 1; /* Make visible */
+}
+

@@ -1,0 +1,31 @@
+.contact-left-image{
+    position: relative;
+}
+
+.contact-left-image img{
+    width: 100%;
+}
+
+.contact-box{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    width: 80%;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.50);
+}
+
+.contact-box h1{
+    color: #FFF;
+text-align: center;
+font-family: Montserrat;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 60vh;
+font-weight: 600;
+
+letter-spacing: 0.96px;
+text-transform: capitalize;
+}
