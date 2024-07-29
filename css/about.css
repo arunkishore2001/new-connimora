@@ -4,6 +4,7 @@
     width: 100%;
     height: auto; 
 }
+
 .left-landing-image {
     position: relative;
 }
@@ -18,9 +19,11 @@
     height: auto; 
     object-fit: cover;
 }
+
 .left-landing-image img {
     height: 600px;
 } 
+
 .right-landing-image img {
     height: 600px;
     max-height: 650px;
@@ -59,7 +62,6 @@
     text-align: center; 
 }
 
-
 @media (max-width: 767px) {
     .row {
         display: flex;
@@ -78,8 +80,6 @@
         height: 100%; 
         object-fit: cover; 
     }
-
-  
 }
 
 @media (max-width: 480px) {
@@ -92,12 +92,14 @@
     }
 
     .right-landing-image img {
-        height: 100%; 
+        width: 100%;
+       min-width: 392px;
         object-fit: cover;
+       
+       
     }
-
-   
 }
+
 
 .about-line {
     width: 10%;
@@ -222,24 +224,32 @@
     }
 }
 .about-pic {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+        
 }
 
 .about-pic-image {
     position: relative;
     width: 100%;
-    max-width: 300px; 
-    margin: 10px; 
+  
+}
+
+.main-about-pic{
+    width: 100%;
+}
+
+.main-about-pic img{
+    width: 100%;
+    object-fit: cover;
 }
 
 .about-pic-image img {
     width: 100%;
     height: auto; 
     display: block; 
+    object-fit: cover;
 }
 
 .about-pic-detail {
@@ -269,8 +279,9 @@
 
 
 @media (max-width: 768px) {
-    .about-pic-image {
-        max-width: 200px; 
+    .about-pic-image img {
+      
+        max-width: 700px; 
     }
 
     .about-pic-detail p {
@@ -281,7 +292,8 @@
 
 @media (max-width: 480px) {
     .about-pic-image {
-        max-width: 150px; 
+      
+       
     }
 
     .about-pic-detail p {
@@ -305,22 +317,27 @@
 .about-best-heading p {
     max-width: 600px;
     margin: 0 auto;
-    font-size: 4px;
+    
     line-height: 1.5;
     color: #38393C;
     text-align: justify;
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 24px;
     letter-spacing: 0.36px;
     text-transform: capitalize;
 }
 .about-image{
     margin-top: 40px;
+    width: 100%;
+        
 }
-
+.about-image img{
+   width: 100%;
+    object-fit: cover;
+}
 @media (max-width: 768px) {
     .about-best {
         height: auto;

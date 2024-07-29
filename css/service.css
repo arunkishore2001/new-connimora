@@ -1,7 +1,9 @@
 .service-page-img {
     width: 100%;
     position: relative;
-    margin-top: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
 }
 
 .service-page-img img {
@@ -92,4 +94,11 @@
     }
 
    
+}
+
+@media (max-width: 480px){
+    .service-page-img {
+        min-width: 350px;
+        
+    }
 }
