@@ -2,22 +2,24 @@
     width: 100%;
     padding: 0;
     margin: 0;
+    display: flex;
+  justify-content: center;
 }
 
 .project-page {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
-    gap: 16px; 
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of flex items */
+    justify-content: center;
+    gap: 20px;
     width: 100%;
-    max-width: 1400px;
-    margin: auto;
     margin-top: 40px;
     margin-bottom: 40px;
-}
+  }
+
 
 .project-item {
     position: relative;
-    width: 100%;
+    width: 40%;
 }
 
 .project-item img {
@@ -28,12 +30,14 @@
 
 .project-item-detail {
     position: absolute;
-    top: 10px; 
-    left: 10px; 
+    top: 8%; 
+    left: 4%; 
     color: black;
     border-radius: 10px;
     background: linear-gradient(90deg, #C1D9E8 0%, #E7F6FF 100%);
     padding: 8px; 
+    width: 30%;
+    text-align: center;
 }
 
 .project-item-detail p {
@@ -43,7 +47,7 @@
 .project-item-detail-heading {
     position: absolute;
     bottom: 10%;
-    left: 25%;
+    left: 29%;
     min-width: 200px;
     padding: 12px;
     background: rgba(0, 0, 0, 0.70);
@@ -52,42 +56,41 @@
 .project-item-detail-heading h6 {
     text-align: center;
     color: white;
+    margin-bottom: 0px;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
+@media (min-width: 768px) { /* You can adjust the breakpoint as needed */
+    .image-item {
+      width: calc(50% - 16px); /* Two images per row, with a margin */
+      margin: 8px;
+    }
+  }
+  
+  /* Media query for small screens */
+  @media (max-width: 480px) {
     .project-page {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      width: 100%;
+      padding: 0 16px; /* Optional: Add padding for spacing */
+    }
+    .project-item {
+        position: relative;
+        width: 100%;
     }
 
-    .project-item-detail {
-        top: 5px; 
-        left: 5px;
-        padding: 6px; 
+    .project-item-detail{
+        width: 29%;
+        height: 27px;
     }
+    .project-item-detail p{
+        font-size: 12px;
+        margin-top: -9px;
+    } 
 
-    .project-item-detail-heading {
-        bottom: 5%; 
-        left: 10%; 
-        min-width: 150px; 
-        padding: 8px; 
+    .project-item-detail-heading{
+        height: 40px;
+      transform: translate(-16%,-10%);
     }
-}
-
-@media (max-width: 480px) {
-    .project-page {
-        grid-template-columns: 1fr; 
-       }
-
-    .project-item-detail {
-        top: 2px; 
-        left: 2px; 
-        padding: 4px;    }
-
-    .project-item-detail-heading {
-        bottom: 2%;
-        left: 5%; 
-        min-width: 120px;
-        padding: 6px; 
+    .project-item-detail-heading{
+        font-size: 12px;
     }
-}
+  }
