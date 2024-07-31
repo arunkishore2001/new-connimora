@@ -105,7 +105,7 @@
       </div>
 
 
-      <div class="container">
+      <div class="container-fluid-max">
         <div class="row">
             <div class="col-md-6">
                 <div class="left-landing-image">
@@ -177,11 +177,11 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid ">
     <div class="row">
         <div class="col-md-6">
             <div class="service-page">
-                <div class="service-page-img">
+                <div class="service-page-img mouse-parallax">
                     <img src="./images/doing-img.png" alt="">
 
                     <div class="service-img-box">
@@ -191,7 +191,7 @@
                 </div>
 
 
-                <div class="service-page-img">
+                <div class="service-page-img  mouse-parallax">
                     <img src="./images/doing-img.png" alt="">
 
                     <div class="service-img-box">
@@ -201,7 +201,7 @@
                 </div>
 
 
-                <div class="service-page-img">
+                <div class="service-page-img  mouse-parallax">
                     <img src="./images/doing-img.png" alt="">
 
                     <div class="service-img-box">
@@ -213,13 +213,13 @@
         </div>
 
         <div class="col-md-6">
-            <div class="right-service-page">
+            <div class="right-service-page ">
                 <div class="service-line">
                     <h3>SERVICE</h3>
                 </div>
 
                 <div class="service-page">
-                    <div class="service-page-img">
+                    <div class="service-page-img  mouse-parallax">
                         <img src="./images/doing-img.png" alt="">
     
                         <div class="service-img-box">
@@ -229,7 +229,7 @@
                     </div>
     
     
-                    <div class="service-page-img">
+                    <div class="service-page-img  mouse-parallax">
                         <img src="./images/doing-img.png" alt="">
     
                         <div class="service-img-box">
@@ -239,7 +239,7 @@
                     </div>
     
     
-                    <div class="service-page-img">
+                    <div class="service-page-img  mouse-parallax">
                         <img src="./images/doing-img.png" alt="">
     
                         <div class="service-img-box">
@@ -352,6 +352,7 @@
         </div>
     </div>
   </div>
+</div>
   
   
   <div class="container-fluid-max">
@@ -444,6 +445,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Adjust on window resize
     window.addEventListener('resize', updateWidth);
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const mouseParallaxElements = document.querySelectorAll(".mouse-parallax");
+
+    mouseParallaxElements.forEach(mouseParallaxElement => {
+        mouseParallaxElement.addEventListener("mousemove", function(e) {
+            const rect = mouseParallaxElement.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const moveX = (x - centerX) / centerX * 60; // Adjust 20 to increase/decrease movement
+            const moveY = (y - centerY) / centerY * 60;
+
+            const img = mouseParallaxElement.querySelector("img");
+            const scale = mouseParallaxElement.matches(':hover') ? 1.1 : 1;
+            img.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
+        });
+
+        mouseParallaxElement.addEventListener("mouseleave", function() {
+            const img = mouseParallaxElement.querySelector("img");
+            img.style.transform = `translate(0px, 0px) scale(1)`;
+        });
+    });
 });
 
 </script>

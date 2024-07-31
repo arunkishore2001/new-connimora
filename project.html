@@ -106,7 +106,7 @@
       </div>
 
 
-      <div class="container">
+      <div class="container-fluid-max">
         <div class="row">
             <div class="col-md-6">
                 <div class="left-landing-image">
@@ -372,75 +372,77 @@
     </div>
 </div>
 
-
 <div class="container-fluid-max">
-    <div class="google-map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15544.127155918764!2d80.1244362405913!3d13.097171895328328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526237656b9a93%3A0x37587770c442f4d5!2sAyappakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1721850667848!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+  <div class="google-map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15544.127155918764!2d80.1244362405913!3d13.097171895328328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526237656b9a93%3A0x37587770c442f4d5!2sAyappakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1721850667848!5m2!1sen!2sin"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
 
-  
-  
-      <div  class="container-fluid p-0 m-0 container-fluid-max footer-container">
-       
-        <div class="container-fluid">
-          <div class="row footer-container-row">
-            <div class="col-lg-6">
-              <div data-aos="fade-right" class="creations">
-                <img src="images/logo.png" alt="" />
-              </div>
+  <div class="container-fluid p-0 m-0 container-fluid-max footer-container">
+    <div class="container-fluid">
+      <div class="row footer-container-row">
+        <div class="col-lg-6">
+          <div data-aos="fade-right" class="creations">
+            <img src="images/logo.png" alt="" />
+          </div>
+        </div>
+
+        <div class="col-lg-6 creation-common">
+          <div class="creation-secound">
+            <div data-aos="fade-left" class="creations-list">
+              <p>COMPANY</p>
+              <ul>
+                <a href=""><li>About Us</li></a>
+                <a href=""><li>Projects</li></a>
+                <a href=""><li>Contact Us</li></a>
+              </ul>
             </div>
-  
-            <div class="col-lg-6 creation-common">
-              <div class="creation-secound">
-                <div data-aos="fade-left" class="creations-list">
-                  <p>COMPANY</p>
-                  <ul >
-                    <a href=""><li>About Us</li></a>
-                    <a href=""><li>Projects</li></a>
-                    <a href=""><li>Contact Us</li></a>
-                  </ul>
-                </div>
-  
-                <div data-aos="fade-left" class="creations-list">
-                  <p>Services</p>
-                  <ul>
-                    <a href=""><li>Renovation</li></a>
-                    <a href=""><li>Building</li></a>
-                    <a href=""><li>Construction</li></a>
-                    <a href=""><li>Making</li></a>
-                  </ul>
-                </div>
-  
-                <div data-aos="fade-left" class="creations-list">
-                  <p>Contact</p>
-                  <ul>
-                    <li>+91 89268 72938</li>
-                    <li>demo@gmail.com</li>
-                    <li>
-                      132 Dartmouth Street Boston, Massachusetts 02156 United
-                      States
-                    </li>
-                  </ul>
-                </div>
-              </div>
+
+            <div data-aos="fade-left" class="creations-list">
+              <p>Services</p>
+              <ul>
+                <a href=""><li>Renovation</li></a>
+                <a href=""><li>Building</li></a>
+                <a href=""><li>Construction</li></a>
+                <a href=""><li>Making</li></a>
+              </ul>
+            </div>
+
+            <div data-aos="fade-left" class="creations-list">
+              <p>Contact</p>
+              <ul>
+                <li>+91 89268 72938</li>
+                <li>demo@gmail.com</li>
+                <li>
+                  132 Dartmouth Street Boston, Massachusetts 02156 United
+                  States
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-  
-      <div class="footer-rights rights">
-        <div class="container-fluid">
-          <p class="text-center">
-            Copyright @ 2024 CONNEMARA by High On Code. All Rights Reserved
-          </p>
-        </div>
-      </div>
-  
-    
-    
+    </div>
+  </div>
+
+  <div class="footer-rights rights">
+    <div class="container-fluid">
+      <p class="text-center">
+        Copyright @ 2024 CONNEMARA by High On Code. All Rights Reserved
+      </p>
+    </div>
+  </div>
 </div>
 
-</div>
+
+
 
 
 <script>
@@ -463,8 +465,29 @@ document.addEventListener('DOMContentLoaded', () => {
     updateWidth();
 
     // Adjust on window resize
-    window.addEventListener('resize', updateWidth);
+    window.addEventListener('resize', updateWidth); 
 });
+
+
+
+
+document.querySelectorAll('.project-item').forEach(item => {
+  item.addEventListener('mousemove', (e) => {
+    const rect = item.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+
+    const background = item.querySelector('.background-image');
+    background.style.transform = `translate(-${x * 20}px, -${y * 20}px)`;
+  });
+
+  item.addEventListener('mouseleave', () => {
+    const background = item.querySelector('.background-image');
+    background.style.transform = `translate(0, 0)`;
+  });
+});
+
+
 </script>
 </body>
 </html>
