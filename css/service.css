@@ -1,3 +1,18 @@
+.mouse-parallax {
+    position: relative;
+    overflow: hidden;
+    perspective: 1000px; /* Control the perspective depth */
+}
+
+.mouse-parallax img {
+    transform: translateZ(0);
+    transition: transform 0.3s ease-out; /* Smooth transition */
+}
+
+.mouse-parallax:hover img {
+    transform: scale(1.1); /* Zoom in on hover */
+}
+
 .service-page{
     display: flex;
     justify-content: center;

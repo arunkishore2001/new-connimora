@@ -141,14 +141,17 @@
                 src="./images/sketch-img.png"
                 alt=""
                 class="image first-image"
+                id="firstImage"
               />
               <img
                 src="./images/sketch-small.png"
                 alt=""
                 class="image second-image"
+                id="secondImage"
               />
             </div>
           </div>
+          
         </div>
 
         <div class="col-md-6 sketch-info">
@@ -228,8 +231,8 @@
           </div>
         </div>
 
-        <div class="col-md-6 sliding-area">
-          <div class="about-image mt-2">
+        <div class="col-md-6 sliding-area moving-area">
+          <div class="about-image moving-img mt-2">
             <img src="./images/about-company.png" alt="" />
           </div>
         </div>
@@ -259,8 +262,8 @@
     <!-- ------------ Space Section---------------- -->
 
     <div class="container-fluid make-space">
-      <div class="space">
-        <div class="space-contain">
+      <div class="space  ">
+        <div class="space-contain ">
           <img src="./images/space-1.png" alt="" />
           <h5>Public Spaces</h5>
           <h1>01</h1>
@@ -458,8 +461,8 @@
           <h2 class="sketch-heading process-head">Our Working Process</h2>
         </div>
         <div class="whole-process">
-          <div class="procedure">
-            <div class="working-circle">
+          <div class="procedure ">
+            <div class="working-circle ">
               <h1>01</h1>
               <img src="./images/idea.png" alt="" />
             </div>
@@ -592,7 +595,7 @@
     <!--------------- Gallery -------------------->
     <div class="container-fluid container-fluid-max whole-gallery">
       <div class="gallery-show">
-        <div class="first-half-gallery">
+        <div class="first-half-gallery ">
           <div class="gallery">
             <img src="./images/gallery1.png" alt="" />
           </div>
@@ -1127,6 +1130,74 @@
 
     var copy = document.querySelector(".skilled").cloneNode(true);
     document.querySelector(".skill-slide").appendChild(copy);
+
+
+
+    // Swapiing Image
+
+
+    const firstImage = document.getElementById('firstImage');
+const secondImage = document.getElementById('secondImage');
+
+const originalSrcFirstImage = firstImage.src;
+const originalSrcSecondImage = secondImage.src;
+
+let isSwapped = false;
+
+function swapImages() {
+  if (isSwapped) {
+    firstImage.src = originalSrcFirstImage;
+    secondImage.src = originalSrcSecondImage;
+    firstImage.style.opacity = '1';
+    secondImage.style.opacity = '1';
+  } else {
+    firstImage.src = originalSrcSecondImage;
+    secondImage.src = originalSrcFirstImage;
+    firstImage.style.opacity = '1';
+    secondImage.style.opacity = '1';
+  }
+  isSwapped = !isSwapped;
+}
+
+setInterval(swapImages, 2000); 
+
+
+
+// Mouse Interaction
+
+var lFollowX = 0,
+    lFollowY = 0,
+    x = 0,
+    y = 0,
+    friction = 1 / 30;
+
+function moveBackground() {
+  x += (lFollowX - x) * friction;
+  y += (lFollowY - y) * friction;
+
+  var translate = 'translate(' + x + 'px, ' + y + 'px)';
+
+  document.querySelector('.moving-img img').style.transform = translate;
+
+  window.requestAnimationFrame(moveBackground);
+}
+
+document.querySelector('.moving-area').addEventListener('mousemove', function(e) {
+  var boundingBox = this.getBoundingClientRect();
+  var lMouseX = Math.max(-100, Math.min(100, (boundingBox.width / 2) - (e.clientX - boundingBox.left)));
+  var lMouseY = Math.max(-100, Math.min(100, (boundingBox.height / 2) - (e.clientY - boundingBox.top)));
+  lFollowX = (20 * lMouseX) / 100;
+  lFollowY = (10 * lMouseY) / 100;
+});
+
+moveBackground();
+
+
+
+
+
+
+
   </script>
 
   <script src="./js/animation.js"></script>

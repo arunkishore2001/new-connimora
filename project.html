@@ -465,8 +465,29 @@ document.addEventListener('DOMContentLoaded', () => {
     updateWidth();
 
     // Adjust on window resize
-    window.addEventListener('resize', updateWidth);
+    window.addEventListener('resize', updateWidth); 
 });
+
+
+
+
+document.querySelectorAll('.project-item').forEach(item => {
+  item.addEventListener('mousemove', (e) => {
+    const rect = item.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+
+    const background = item.querySelector('.background-image');
+    background.style.transform = `translate(-${x * 20}px, -${y * 20}px)`;
+  });
+
+  item.addEventListener('mouseleave', () => {
+    const background = item.querySelector('.background-image');
+    background.style.transform = `translate(0, 0)`;
+  });
+});
+
+
 </script>
 </body>
 </html>
