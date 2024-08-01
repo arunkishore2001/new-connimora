@@ -55,12 +55,10 @@ p {
 
 .comman-sub-heading {
   color: #2589cd;
-  font-family: Montserrat;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.48px;
   text-transform: uppercase;
-  margin-top: 20px;
 }
 
 .sketch-heading {
@@ -993,7 +991,6 @@ p {
 /*--------------------Partner------------------*/
 .partner-title {
   text-align: center;
-  margin-top: 80px;
 }
 
 .partner-box {
@@ -1020,11 +1017,16 @@ p {
 .scroll-inner {
   display: flex;
   animation: scroll 15s linear infinite;
+  gap: 20px;
 }
 
 .partner-detail {
   display: flex;
   align-items: center;
+  gap: 30px;
+}
+.partner-detail img{
+  height: 100px;
 }
 
 .whole-partner-box {
