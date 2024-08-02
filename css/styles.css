@@ -97,7 +97,7 @@ p {
   .sketch-para {
     font-size: 13px;
     line-height: 1.6;
-    padding: 5px;
+   
   }
 }
 
@@ -1165,7 +1165,7 @@ p {
   width: 100%;
   overflow: hidden;
   position: relative;
-  height: 200px; /* Set a height for the container */
+  height: 340px; /* Set a height for the container */
 }
 
 .scroll-inner-partner {
@@ -1180,6 +1180,7 @@ p {
 }
 
 .skill-team-partner {
+  position: relative;
   display: inline-block;
   min-width: 200px; /* Adjust this value as per your requirement */
   margin: 0 10px; /* Adjust this value as per your requirement */
@@ -1187,7 +1188,8 @@ p {
 }
 
 .skill-team-partner img {
-  max-height: 100%; /* Ensure the image fits within the height of the container */
+  max-height: 100%;
+    
 }
 
 @keyframes scrollPartner {
@@ -1573,6 +1575,7 @@ text-transform: capitalize;
   left: 0;
   width: 100%;
   height: 25%;
+  
   background: rgba(0, 0, 0, 0.70);
   transition: transform 300ms ease;
   transform: translateY(-100%);
@@ -1609,8 +1612,33 @@ text-transform: capitalize;
   }
 
   .project ul li a figcaption {
-    font-size: 1rem;
+    top: 15%;
   }
+
+  .project ul li a figure::before{
+    height: 50%;
+  }
+
+ 
+}
+
+@media (max-width: 1100px) {
+  .project ul li a figcaption {
+    top: 15%;
+  }
+
+  .project ul li a figure::before{
+    height: 30%;
+  }
+
+  .project-box h6{
+    font-size: 14px;
+  }
+
+  .project-box h5{
+    font-size: 16px;
+  }
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1620,6 +1648,16 @@ text-transform: capitalize;
 
   .project ul li a:hover img {
     transform: scale(1.2);
+  }
+
+  @media (max-width: 768px) {
+    .project ul li a figcaption {
+      top: 15%;
+    }
+
+    .project ul li a figure::before{
+      height: 30%;
+    }
   }
 }
 
@@ -1726,8 +1764,9 @@ text-transform: capitalize;
   background-color: #fff;
   width: 100%;
   max-width: 260px;
-  bottom: 10px;
-  left: 10px;
+  top: 80%;
+  left: 5%;
+  transform: translate(1%,-10%);
 }
 
 .skill-box h5 {
