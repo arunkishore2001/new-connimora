@@ -97,11 +97,7 @@
 @media (max-width: 480px) {
 
     html,body{
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
+      
     }
     .left-landing-image {
         display: none; 
@@ -130,7 +126,7 @@
    
     position: absolute;
     top: 10%;
-    left: 30%;
+    left: 22%;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
