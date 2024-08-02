@@ -202,6 +202,7 @@
     letter-spacing: 0.72px;
     text-transform: capitalize;
     font-size: 24px;
+    margin-bottom: 4%;
 }
 
 .about-page-heading p {
@@ -216,6 +217,7 @@
     margin-top: 20px;
     min-width: 250px;
     max-width: 900px;
+    margin-bottom: 8%;
 }
 
 @media (max-width: 768px) {
@@ -333,10 +335,10 @@
     color: #38393C;
     text-align: justify;
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 28px;
     letter-spacing: 0.36px;
     text-transform: capitalize;
 }
@@ -453,11 +455,6 @@
     text-transform: capitalize;
     padding-left: 1.5em; 
     position: relative;
-    display: inline-block;
-    padding: 6px 10px;
-    border-radius: 3px;
-    background: #bbdbee;
-    margin-top: 10px;
 }
 
 .benefit-list ul li::before {

@@ -1272,7 +1272,7 @@ padding: 20px 20px;
 }
 
 
-/* Common Styles */
+
 .gallery img {
   width: 100%;
   height: auto;
@@ -1280,7 +1280,7 @@ padding: 20px 20px;
   object-fit: cover; /* Ensure the image covers the container without distorting */
 }
 
-/* For Desktop and Larger Screens */
+
 .first-half-gallery,
 .secound-half-gallery {
   display: grid;
@@ -1295,7 +1295,7 @@ padding: 20px 20px;
   grid-template-columns: 1fr 1fr 2fr;
 }
 
-/* For Tablets and Smaller Screens */
+
 @media (max-width: 768px) {
   .first-half-gallery,
   .secound-half-gallery {
@@ -1533,7 +1533,7 @@ text-transform: capitalize;
  
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 25%;
   background: rgba(0, 0, 0, 0.70);
   transition: transform 300ms ease;
   transform: translateY(-100%);
@@ -1546,7 +1546,7 @@ text-transform: capitalize;
 
 .project ul li a figcaption {
   position: absolute;
-  top: 50%;
+  top: 13%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
