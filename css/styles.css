@@ -1161,6 +1161,45 @@ p {
   margin: 0 40px;
 }
 
+.scroll-container-partner {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 200px; /* Set a height for the container */
+}
+
+.scroll-inner-partner {
+  display: flex;
+  white-space: nowrap;
+  position: absolute;
+  animation: scrollPartner 20s linear infinite;
+}
+
+.partner-detail-partner {
+  display: flex;
+}
+
+.skill-team-partner {
+  display: inline-block;
+  min-width: 200px; /* Adjust this value as per your requirement */
+  margin: 0 10px; /* Adjust this value as per your requirement */
+  height: 100%; /* Ensure the skill-team div takes the full height of the container */
+}
+
+.skill-team-partner img {
+  max-height: 100%; /* Ensure the image fits within the height of the container */
+}
+
+@keyframes scrollPartner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
