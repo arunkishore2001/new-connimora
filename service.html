@@ -182,7 +182,10 @@
         <div class="col-md-6">
             <div class="service-page">
                 <div class="service-page-img mouse-parallax">
+                  <div class="service-page-info">
                     <img src="./images/doing-img.png" alt="">
+                  </div>
+                    
 
                     <div class="service-img-box">
                         <h3>Casagrand House</h3>
@@ -192,7 +195,9 @@
 
 
                 <div class="service-page-img  mouse-parallax">
+                  <div class="service-page-info">
                     <img src="./images/doing-img.png" alt="">
+                  </div>
 
                     <div class="service-img-box">
                         <h3>Casagrand House</h3>
@@ -202,7 +207,9 @@
 
 
                 <div class="service-page-img  mouse-parallax">
+                  <div class="service-page-info">
                     <img src="./images/doing-img.png" alt="">
+                  </div>
 
                     <div class="service-img-box">
                         <h3>Casagrand House</h3>
@@ -220,7 +227,9 @@
 
                 <div class="service-page">
                     <div class="service-page-img  mouse-parallax">
+                      <div class="service-page-info">
                         <img src="./images/doing-img.png" alt="">
+                      </div>
     
                         <div class="service-img-box">
                             <h3>Casagrand House</h3>
@@ -230,7 +239,9 @@
     
     
                     <div class="service-page-img  mouse-parallax">
+                      <div class="service-page-info">
                         <img src="./images/doing-img.png" alt="">
+                      </div>
     
                         <div class="service-img-box">
                             <h3>Casagrand House</h3>
@@ -240,7 +251,9 @@
     
     
                     <div class="service-page-img  mouse-parallax">
+                      <div class="service-page-info">
                         <img src="./images/doing-img.png" alt="">
+                      </div>
     
                         <div class="service-img-box">
                             <h3>Casagrand House</h3>
@@ -252,21 +265,20 @@
         </div>
     </div>
 </div>
+</div>
 
 
 
+<div class="my-5 py-5 container-fluid-max">
+  <div class="contact-bg">
+    <img src="./images/contact.png" alt="" />
+    <h2>Have a Project in Mind?</h2>
+  </div>
 
-<div class="container-fluid-max">
-    <div class="contact-bg">
-        <div class="contact-line"></div>
-        <img src="./images/contact.png" alt="">
-        <h2>Have a Project in Mind?</h2>
-    </div>
-  
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="contact-heading">
+                <div class="contact-heading my-5">
                     <h5 class="comman-sub-heading">[ Contact Us ]</h5>
                     <h3 class="sketch-heading">Get In Touch</h3>
                     <p class="sketch-para">Your email address will not be published. Required fields are marked *</p>
@@ -285,13 +297,14 @@
                             <textarea id="about" required></textarea>
                             <label for="about">About</label>
                         </div>
-                        <div class="process-btn contact-btn">
-                            <a href="#">Submit</a>
+                        <div class="button-container landing-btn working-btn">
+                          <button class="custom-button">GET IN TOUCH</button>
+                          <div class="line contacts-line"></div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 d-flex justify-content-center">
                 <div class="right-contact">
                     <div class="contact-details">
                         <div class="contact-heading">
@@ -351,7 +364,7 @@
             </div>
         </div>
     </div>
-  </div>
+  
 </div>
   
   
@@ -429,25 +442,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tabsBox = document.querySelector('.tabs-box');
     
-    // Clone the list items and append to create a continuous effect
+   
     const items = tabsBox.innerHTML;
     tabsBox.innerHTML += items;
 
-    // Adjust the width of the container dynamically
+    
     const updateWidth = () => {
         const tabWidth = document.querySelector('.tab').offsetWidth;
         const totalTabs = document.querySelectorAll('.tab').length;
         tabsBox.style.width = `${tabWidth * totalTabs * 2}px`; // Double the total width
     };
 
-    // Initial width adjustment
+    
     updateWidth();
 
-    // Adjust on window resize
+ 
     window.addEventListener('resize', updateWidth);
 });
-
-
 
 
 
@@ -456,19 +467,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
     mouseParallaxElements.forEach(mouseParallaxElement => {
         mouseParallaxElement.addEventListener("mousemove", function(e) {
-            const rect = mouseParallaxElement.getBoundingClientRect();
+            const servicePageInfo = mouseParallaxElement.querySelector(".service-page-info");
+            const img = servicePageInfo.querySelector("img");
+            
+            const rect = servicePageInfo.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
 
-            const moveX = (x - centerX) / centerX * 60; // Adjust 20 to increase/decrease movement
-            const moveY = (y - centerY) / centerY * 60;
+            const moveX = (x - centerX) / centerX * 40; 
+            const moveY = (y - centerY) / centerY * 40;
 
-            const img = mouseParallaxElement.querySelector("img");
-            const scale = mouseParallaxElement.matches(':hover') ? 1.1 : 1;
-            img.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
+            const scale = 1.2; 
+
+           
+            const maxMoveX = (img.width * scale - rect.width) / 2;
+            const maxMoveY = (img.height * scale - rect.height) / 2;
+
+            const constrainedMoveX = Math.max(-maxMoveX, Math.min(maxMoveX, moveX));
+            const constrainedMoveY = Math.max(-maxMoveY, Math.min(maxMoveY, moveY));
+
+            img.style.transform = `translate(${constrainedMoveX}px, ${constrainedMoveY}px) scale(${scale})`;
         });
 
         mouseParallaxElement.addEventListener("mouseleave", function() {
@@ -477,6 +498,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
 
 </script>
     

@@ -8,6 +8,14 @@
   box-sizing: border-box;
 }
 
+html body{
+  width: 100%;
+  height: 10%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /* common css */
 
 .col-md-6 {
@@ -76,7 +84,7 @@ p {
 
 .sketch-image-background-container {
   background: linear-gradient(90deg, #1d60c5 0%, #0e2e5f 100%);
-  margin-top: -75px !important;
+  margin-top: -155px !important;
 }
 
 p {
@@ -101,6 +109,79 @@ p {
   }
 }
 
+/*About us Image */
+
+
+.about-left-img {
+  background-image: url(../images/sketch-img.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  max-width: 475px;
+  aspect-ratio: 475 / 575; /* Set aspect ratio */
+  position: relative;
+  margin: 0 auto;
+  border: 5px solid white;
+}
+
+.about-left-img::before {
+  content: '';
+  background-image: url(../images/sketch-small.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 123px; 
+  left: -68px; 
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 420 / 500; 
+  border: 5px solid white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-left-img {
+    max-width: 100%;
+    height: 70%;
+  }
+
+  .about-left-img::before {
+    max-width: 70%;
+    height: 70%;
+    top: 160px; 
+    
+  }
+}
+
+@media (max-width: 480px) {
+  .about-left-img {
+    max-width: 100%;
+  }
+
+  .about-left-img::before {
+    max-width: 60%;
+  bottom: 0; 
+    left: 0; 
+  }
+}
+
+
+
+
+/* .about-left-img::before{
+  background-image: url(../images/sketch-small.png);
+  background-size: cover;
+  top: 123px;
+  left: -68px;
+  position: absolute;
+  z-index: 10;
+  width: 420px;
+  height: 500px;
+  border: 5px solid white;
+} */
+
 /*------------------Button----------*/
 
 .button-container {
@@ -110,7 +191,7 @@ p {
 
 .custom-button {
   position: relative;
-  background-color: #3498db; /* Blue color */
+  background-color: #3498db; 
   color: white;
   border: none;
   padding: 10px 20px;
@@ -137,6 +218,20 @@ p {
   width: 2px;
   height: 55px;
   background-color: white;
+}
+
+.contacts-line{
+  background-color: #000;
+}
+
+.contacts-line::after{
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: -7px;
+  width: 2px;
+  height: 55px;
+  background-color: #000;
 }
 
 /*--------------Navigation------------*/
@@ -349,14 +444,33 @@ p {
     margin: 0 auto;
   }
   .sketch-info {
-    padding-top: 60px;
+  
   }
   .sketch {
     margin-top: 40px;
   }
 }
 
+@media (max-width: 1000px){
+
+  .sketch-image-background-container{
+    margin-top: 0px !important;
+  }
+
+}
+
+@media (max-width: 760px){
+
+  .sketch-image-background-container{
+    margin-top: -80px !important;
+  }
+
+}
 @media (max-width: 480px) {
+
+  .sketch-image-background-container{
+    margin-top: 0px !important;
+  }
   .second-image {
     width: 70%;
     margin: 0 auto;
@@ -407,9 +521,11 @@ p {
 }
 
 .award-list p {
+  display: inline-block;
+  padding: 6px 10px;
   border-radius: 3px;
   background: #bbdbee;
-  width: 80%;
+  
 }
 
 .award-list h6 {
@@ -646,7 +762,7 @@ p {
   justify-content: center;
   align-items: center;
   border: 1px solid #ddd;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -657,7 +773,7 @@ p {
 }
 
 .offer-box:hover {
-  transform: scale(1.1) rotateX(10deg) rotateY(10deg);
+  
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
   background-color: #f0f8ff;
 }
@@ -706,20 +822,8 @@ p {
   opacity: 0.8;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 .offer {
-  margin-top: 80px;
+  margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 80px;
@@ -732,7 +836,7 @@ p {
 }
 
 .serive-detail svg {
-  margin-top: -80px;
+  margin-top: -100px;
 }
 
 .service-icon {
@@ -755,6 +859,8 @@ p {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
 
 /*----------------Process-------------------*/
 /*----------------Process-------------------*/
@@ -796,6 +902,7 @@ p {
   background-color: white;
   position: relative;
   margin: 0 auto;
+  
 }
 
 .procedure h5 {
@@ -805,6 +912,7 @@ p {
   line-height: 42px;
   text-transform: capitalize;
   text-align: center;
+  margin-top: 20px;
 }
 
 .working-circle h1 {
@@ -816,17 +924,37 @@ p {
   font-style: normal;
   font-weight: 600;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0%;
+  left: 20%;
+  z-index: 1000;
   transform: translate(-50%, -50%);
 }
 
-.working-circle img {
+.working-circle svg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+.working-circle svg path {
+ 
+  transition: fill 0.3s ease;
+}
+
+.working-circle:hover {
+  background-color: #1D84C5; /* Blue background on hover */
+}
+
+.working-circle:hover h1 {
+  color: white; /* White text color on hover */
+}
+
+.working-circle:hover svg path {
+  fill: white; /* White SVG color on hover */
+}
+
 
 .working-btn {
   margin: 0 auto;
@@ -928,8 +1056,7 @@ p {
 
   .working-circle h1 {
     font-size: 10vw;
-    margin-top: -60px;
-    margin-left: -40px;
+    
   }
 }
 @media (max-width: 480px) {
@@ -1091,66 +1218,119 @@ p {
   display: flex;
   flex-wrap: wrap;
 }
-.gallery-show {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.first-half-gallery,
-.secound-half-gallery {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
+
 .gallery {
   position: relative;
   display: inline-block;
 }
+
+.gallery {
+  position: relative;
+  overflow: hidden;
+}
+
 .gallery img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 }
 
 .gallery-box {
   position: absolute;
-  bottom: 0;
+  bottom: -100%;
   left: 0;
-
   width: auto;
-  padding-right: 20px;
-  padding-bottom: 10px;
+padding: 20px 20px;
   height: auto;
   border-radius: 0px 30px 0px 0px;
   background: rgba(0, 0, 0, 0.75);
+  transition: bottom 0.5s ease-out;
 }
+
+.gallery:hover .gallery-box {
+  bottom: 0;
+}
+
 .gallery-box h5 {
   color: #fff;
   font-family: Montserrat;
-  margin-left: 20px;
-  margin-top: 10px;
+  margin: 0;
   font-style: normal;
   font-weight: 500;
-
   text-transform: capitalize;
+  margin-bottom: 10px;
 }
 
 .gallery-box h6 {
   color: #278bcb;
   font-family: Montserrat;
 
-  margin-left: 20px;
   font-weight: 600;
   line-height: normal;
   letter-spacing: 0.48px;
   text-transform: uppercase;
 }
 
-@media (max-width: 480px) {
-  .gallery-box {
-    border-radius: 0px 15px 0px 0px; /* Adjust for smaller screens */
+
+/* Common Styles */
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensure the image covers the container without distorting */
+}
+
+/* For Desktop and Larger Screens */
+.first-half-gallery,
+.secound-half-gallery {
+  display: grid;
+ 
+}
+
+.first-half-gallery {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.secound-half-gallery {
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+/* For Tablets and Smaller Screens */
+@media (max-width: 768px) {
+  .first-half-gallery,
+  .secound-half-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery {
+    width: 90%;
   }
 }
+
+/* For Mobile Screens */
+@media (max-width: 480px) {
+  .gallery {
+    width: 100%;
+    margin: 2px 0;
+  }
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+  .gallery-box {
+    width: 100%;
+    height: auto;
+    border-radius: 0px 15px 0px 0px;
+  }
+  .gallery-box h5 {
+    font-size: 14px;
+  }
+  .gallery-box h6 {
+    font-size: 12px;
+  }
+}
+
 
 @media (max-width: 768px) {
   .first-half-gallery,
@@ -1291,26 +1471,14 @@ p {
 }
 
 /*---------------Project-------------------*/
-
 .project ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* Display exactly 3 columns per row */
   max-width: 100%;
-  /* width: 70rem; */
-}
-
-.project-box {
-  background: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-  width: 100%;
 }
 
 .project ul li a figure {
@@ -1328,52 +1496,76 @@ p {
   transition: transform 1000ms;
 }
 
-.project ul li a figure::after {
+.project-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+  position: relative; /* Ensure positioning is relative for proper overlay placement */
+  z-index: 2; /* Ensure it's above the background overlay */
+}
+
+.project-box h6{
+  color: #1D84C5;
+  font-family: "Averia Libre";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.project-box h5{
+  color: #FFF;
+font-family: Montserrat;
+font-size: 21px;
+font-style: normal;
+font-weight: 600;
+line-height: 42px; /* 200% */
+text-transform: capitalize;
+}
+
+.project ul li a figure::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(0, 0, 0, 0.5);
-  transform-origin: center;
-  opacity: 0;
-  transform: scale(2);
-  transition: opacity 300ms;
+ 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.70);
+  transition: transform 300ms ease;
+  transform: translateY(-100%);
+  z-index: 1; /* Ensure it sits above the image but below the project-box */
+}
+
+.project ul li a:hover figure::before {
+  transform: translateY(0); /* Slide down to cover the image */
 }
 
 .project ul li a figcaption {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  place-items: center;
   text-align: center;
   padding: 1rem;
   color: white;
   font-size: 1.2rem;
-  z-index: 1;
+  z-index: 3; /* Ensure figcaption is above the overlay */
   opacity: 0;
-  transition: opacity 600ms, transform 600ms;
+  transition: opacity 300ms, transform 300ms;
 }
 
-.project ul li a:hover figure::after,
-.project ul li a:focus figure::after {
+.project ul li a:hover figcaption {
   opacity: 1;
-}
-
-.project ul li a:hover figcaption,
-.project ul li a:focus figcaption {
-  opacity: 1;
-  transition: opacity 600ms;
 }
 
 @media (max-width: 768px) {
   .project ul {
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* Adjust for smaller screens */
     width: 100%;
   }
 
@@ -1383,43 +1575,15 @@ p {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .project ul li a figure figcaption {
-    transform: translate3d(0, 2rem, 0);
+  .project ul li a figure img {
+    transition: transform 600ms;
   }
 
-  .project ul li a figure::after {
-    border-radius: 50%;
-    opacity: 1;
-    transform: scale(0);
-    transition: transform 900ms;
-  }
-
-  .project ul li a:hover figure::after,
-  .project ul li a:focus figure::after {
-    transform: scale(2.5);
-  }
-
-  .project ul li a figcaption {
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: opacity 600ms 400ms, transform 600ms 400ms;
-  }
-
-  .project ul li a:hover figcaption,
-  .project ul li a:focus figcaption {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .project ul li a img {
-    transition: transform 600ms 400ms;
-  }
-
-  .project ul li a:hover img,
-  .project ul li a:focus img {
+  .project ul li a:hover img {
     transform: scale(1.2);
   }
 }
+
 
 /*----------------Testimonial----------------*/
 .testimonial-container {
@@ -1652,6 +1816,7 @@ p {
   max-width: 600px;
   background: #fff;
   padding: 20px;
+  margin-left: -20px;
 }
 
 .input-container {
@@ -1841,7 +2006,7 @@ textarea:not(:placeholder-shown) + label {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 400px;
+  height: 350px;
   padding-top: 20%;
 }
 
@@ -1987,18 +2152,22 @@ textarea:not(:placeholder-shown) + label {
   max-width: 240px;
   min-width: 150px;
 }
-
-.rights {
-  border: 1px solid #fff;
-
+.footer-rights {
   background: #dfdfdf;
   width: 100%;
   height: 70px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   color: #000000;
-
-  font-weight: 400;
 }
+
+.rights p {
+  margin: 0; /* Remove default margin from the <p> element */
+  color: #000;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.4px;
+}
+

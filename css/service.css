@@ -1,19 +1,33 @@
 .mouse-parallax {
     position: relative;
     overflow: hidden;
-    perspective: 1000px; /* Control the perspective depth */
+    perspective: 1000px; 
 }
+
+.service-page-info {
+    width: 100%;
+    overflow: hidden; /* Prevents the image from moving outside */
+    position: relative;
+    height: 400px; /* Set a fixed height if not already set */
+}
+
+.service-page-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .mouse-parallax img {
     transform: translateZ(0);
-    transition: transform 0.3s ease-out; /* Smooth transition */
+    transition: transform 0.3s ease-out; 
 }
 
 .mouse-parallax:hover img {
-    transform: scale(1.1); /* Zoom in on hover */
+    transform: scale(1.1); 
 }
 
-.service-page{
+.service-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,21 +35,17 @@
 }
 
 .service-page-img {
-    width: 100%;
+    width: 90%;
     position: relative;
     margin-top: 100px;
 }
 
-.service-page-img img {
-    width: 90%;
-    height: 400px;
-    object-fit: cover;
-}
+
 
 .service-img-box {
     position: absolute;
     bottom: -10%;
-    left: 46%;
+    left: 50%;
     transform: translateX(-50%);
     padding: 20px;
     margin-top: 20px;
