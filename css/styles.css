@@ -235,6 +235,11 @@ p {
   background-color: #000;
 }
 
+.learn-line{
+  margin-left: 52px;
+  margin-bottom: 2px;
+}
+
 /*--------------Navigation------------*/
 
 .nav-bar {
@@ -1190,7 +1195,24 @@ p {
 
 .skill-team-partner img {
   max-height: 100%;
+  transition: transform 0.3s ease;
     
+}
+
+
+.skill-team-partner img:hover + .skill-box {
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s ease; 
+}
+
+.skill-team-partner img:hover + .skill-box p {
+  color: white; 
+  transition: color 0.3s ease; 
+}
+
+.skill-team-partner img:hover {
+  transform: scale(1.05); 
 }
 
 @keyframes scrollPartner {
