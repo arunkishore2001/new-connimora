@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Preloader</title>
+  <link rel="stylesheet" href="./css/loading.css">
+  <link rel="stylesheet" href="./css/preloader.css">
+</head>
+<body>
+  
+  <div class="loading-wrapper">
+    <div class="loading-container">
+      <div class="loading-bar"></div>
+      <div class="loading-bar short-bar"></div>
+    </div>
+  </div>
+
+  <div id="main-content" style="display: none;">
+    <!-- Main content goes here -->
+    <h1>Welcome to the Main Content</h1>
+    <p>This content will be displayed after the preloader finishes.</p>
+  </div>
+
+  <script>
+  // index.js
+
+// This function will be executed once the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+  // Select the preloader element
+  const preloader = document.querySelector('.loading-wrapper');
+
+  // Set a timeout to hide the preloader and redirect to the main page
+  setTimeout(() => {
+    // Hide the preloader
+    preloader.style.display = 'none';
+    
+    // Redirect to the index.html page
+    window.location.href = './index.html';
+  }, 3500); // Time in milliseconds (3500ms = 3.5 seconds)
+});
+
+  </script>
+</body>
+</html>

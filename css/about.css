@@ -177,7 +177,10 @@
 
 @media (max-width: 480px) {
     .right-loca {
-        padding: 2px; 
+        margin: 30px 32px;
+        padding: 8px;
+        width: 100%;
+        max-width: 200px; 
         font-size: 12px; 
     }
 

@@ -229,9 +229,22 @@ p {
   background-color: #000;
 }
 
+
 .learn-line{
   margin-left: 52px;
   margin-bottom: 2px;
+}
+
+@media (max-width: 480px){
+  .custom-button{
+   width: 100%;
+   min-width: 150px;
+   right: 30px;
+  }
+
+  .line{
+    margin-left: 42px;
+  }
 }
 
 /*--------------Navigation------------*/
@@ -301,6 +314,11 @@ p {
 .main-nav a:hover .nav-hover-line,
 .main-nav .active a .nav-hover-line {
   width: 100%;
+}
+
+@media (max-width: 480px){
+
+
 }
 
 /*----------Landing---------------*/
@@ -677,7 +695,7 @@ p {
 
 .space-contain img {
   width: 100%;
-
+object-fit: cover;
   display: block;
 }
 
@@ -707,7 +725,7 @@ p {
   font-weight: 600;
   transform: translate(-70%, -30%);
 }
-
+/* 
 .space-contain h1::after {
   position: absolute;
   content: "";
@@ -728,6 +746,30 @@ p {
   height: 2px;
   bottom: 0;
   right: 0;
+} */
+
+
+.space-contain .space-line-verticle{
+  position: absolute;
+  bottom: 35px;
+  left: 30px;
+  width: 90%;
+  height: 2px;
+  background-color: #fff;
+  z-index: 2;
+}
+
+
+.space-contain .space-line-horizontal{
+
+  position: absolute;
+
+  width: 2px;
+  height: 80%;
+  background-color: #fff;
+  top: 14%;
+  right: 6%;
+  z-index: 8;
 }
 
 /* Media Queries */
@@ -752,6 +794,22 @@ p {
 
   .space-contain h5 {
     font-size: 4vw;
+  }
+
+  @media (max-width: 768px) {
+    .space-contain h5{
+      font-size: 32px;
+   
+    }
+
+    .space-contain h1{
+      top: 44%;
+      
+    }
+
+    .space-contain .po-space{
+      left: 40%;
+    }
   }
 }
 
@@ -1034,7 +1092,10 @@ p {
   }
 
   .working-btn {
-    width: 50%;
+    width: 57%;
+  }
+  .contacts-line{
+    margin-left: 50px;
   }
   .procedure {
     display: flex;
@@ -1836,6 +1897,10 @@ p {
   .skill-box p {
     font-size: 10px;
   }
+
+  .contact-heading {
+    text-align: left;
+  }
 }
 
 /*----------COntact------------ */
@@ -2271,7 +2336,7 @@ textarea:not(:placeholder-shown) + label {
   border-radius: 50%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   position: relative;
-  background: #00736c;
+  background: linear-gradient(90deg, #1d60c5 0%, #0e2e5f 100%);
   color: #fff;
   height: 60px;
   width: 60px;
@@ -2290,18 +2355,20 @@ textarea:not(:placeholder-shown) + label {
   line-height: 58px;
 }
 
+
+
 /* Animations */
 @keyframes pulse {
   0% {
-    box-shadow: 0px 1px 0px 3px #00736c30, 0px 0px 0px 0px #00736c50;
+    box-shadow: 0px 1px 0px 3px #1411d430, 0px 0px 0px 0px #220b8850;
   }
   30% {
-    box-shadow: 0px 1px 0px 3px #00736c30, 0px 0px 0px 5px #00736c50;
+    box-shadow: 0px 1px 0px 3px #1411d430, 0px 0px 0px 5px #220b8850;
   }
   70% {
-    box-shadow: 0px 1px 0px 3px #00736c30, 0px 0px 0px 15px #00736c10;
+    box-shadow: 0px 1px 0px 3px #1411d430, 0px 0px 0px 15px #14309e50;
   }
   100% {
-    box-shadow: 1px 1px 2px 1px #00736c30, 0px 0px 0px 20px transparent;
+    box-shadow: 1px 1px 2px 1px #1411d430, 0px 0px 0px 20px transparent;
   }
 }

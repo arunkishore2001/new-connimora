@@ -94,7 +94,7 @@
 [id="main-navigation-toggle"] ~ label {
   cursor: pointer;
   position: fixed;
-  right: 1rem;
+  right: 4rem;
   top: 1rem;
   z-index: 100;
 }
