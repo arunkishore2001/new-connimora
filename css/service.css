@@ -1,6 +1,6 @@
 .mouse-parallax {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     perspective: 1000px; 
 }
 

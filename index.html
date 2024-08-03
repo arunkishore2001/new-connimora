@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="./css/animation.css" />
     <link rel="stylesheet" href="./css/navBar.css" />
+    <!-- <link rel="stylesheet" href="./css/service.css"> -->
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -59,7 +60,7 @@
   </head>
 
   <body>
-    <div class="nav-container sticky-top">
+    <div class="nav-container">
       <div class="container-fluid top-nav-bar h-100">
         <div class="row navigation h-100">
           <div
@@ -287,8 +288,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 sliding-area moving-area">
-            <div class="about-image moving-img mt-2">
+          <div class="col-md-6 sliding-area mouse-parallax moving-area">
+            <div class="about-image  moving-img mt-2">
               <img src="./images/about-company.png" alt="" />
             </div>
           </div>
@@ -1532,46 +1533,37 @@
 
       // Mouse Interaction
 
-      var lFollowX = 0,
-        lFollowY = 0,
-        x = 0,
-        y = 0,
-        friction = 1 / 30;
+      document.addEventListener("DOMContentLoaded", function() {
+    const mouseParallaxElements = document.querySelectorAll(".mouse-parallax");
 
-      function moveBackground() {
-        x += (lFollowX - x) * friction;
-        y += (lFollowY - y) * friction;
+    mouseParallaxElements.forEach(mouseParallaxElement => {
+        mouseParallaxElement.addEventListener("mousemove", function(e) {
+            const servicePageInfo = mouseParallaxElement.querySelector(".moving-img");
+            const img = servicePageInfo.querySelector("img");
+            
+            const rect = servicePageInfo.getBoundingClientRect();
+            const x = e.clientX - rect.left; // Mouse X relative to the element
+            const y = e.clientY - rect.top;  // Mouse Y relative to the element
 
-        var translate = "translate(" + x + "px, " + y + "px)";
+            const centerX = rect.width / 2;  // Center X of the element
+            const centerY = rect.height / 2; // Center Y of the element
 
-        document.querySelector(".moving-img img").style.transform = translate;
+            const moveX = (x - centerX) / centerX * 20; // Adjust movement intensity
+            const moveY = (y - centerY) / centerY * 20; // Adjust movement intensity
 
-        window.requestAnimationFrame(moveBackground);
-      }
-
-      document
-        .querySelector(".moving-area")
-        .addEventListener("mousemove", function (e) {
-          var boundingBox = this.getBoundingClientRect();
-          var lMouseX = Math.max(
-            -100,
-            Math.min(
-              100,
-              boundingBox.width / 2 - (e.clientX - boundingBox.left)
-            )
-          );
-          var lMouseY = Math.max(
-            -100,
-            Math.min(
-              100,
-              boundingBox.height / 2 - (e.clientY - boundingBox.top)
-            )
-          );
-          lFollowX = (20 * lMouseX) / 100;
-          lFollowY = (10 * lMouseY) / 100;
+            const scale = 1.1; // Scale for zoom effect
+            
+            // Apply translation and scaling
+            img.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
         });
 
-      moveBackground();
+        mouseParallaxElement.addEventListener("mouseleave", function() {
+            const img = mouseParallaxElement.querySelector("img");
+            img.style.transform = `translate(0px, 0px) scale(1)`;
+        });
+    });
+});
+
     </script>
 
     <script src="./js/animation.js"></script>
