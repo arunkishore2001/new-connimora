@@ -62,7 +62,7 @@ p {
 /*------------------Common----------*/
 
 .comman-sub-heading {
-  color: #1A55AD;
+  color: #1a55ad;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.48px;
@@ -135,7 +135,7 @@ p {
   width: 100%;
   max-width: 300px;
   height: 400px;
-  aspect-ratio: 420 / 500; 
+  aspect-ratio: 420 / 500;
   border: 5px solid white;
 }
 
@@ -186,7 +186,7 @@ p {
 
 .custom-button {
   position: relative;
-  background-color: #1A55AD;
+  background-color: #1a55ad;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -229,20 +229,19 @@ p {
   background-color: #000;
 }
 
-
-.learn-line{
+.learn-line {
   margin-left: 52px;
   margin-bottom: 2px;
 }
 
-@media (max-width: 480px){
-  .custom-button{
-   width: 100%;
-   min-width: 150px;
-   right: 30px;
+@media (max-width: 480px) {
+  .custom-button {
+    width: 100%;
+    min-width: 150px;
+    right: 30px;
   }
 
-  .line{
+  .line {
     margin-left: 42px;
   }
 }
@@ -297,14 +296,14 @@ p {
 }
 
 .main-nav a:hover {
-  color: #1A55AD;
+  color: #1a55ad;
 }
 
 .nav-hover-line {
   display: block;
   width: 0;
   height: 2px;
-  background-color: #1A55AD;
+  background-color: #1a55ad;
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -316,9 +315,7 @@ p {
   width: 100%;
 }
 
-@media (max-width: 480px){
-
-
+@media (max-width: 480px) {
 }
 
 /*----------Landing---------------*/
@@ -427,11 +424,10 @@ p {
   text-align: center;
   background: rgba(255, 255, 255, 0.2);
   margin: 5px;
-  padding: 5px;
+  padding: 16px 5px;
 }
 
 .icon-msg h5 {
-  font-family: Montserrat;
   color: white;
   font-style: normal;
   font-weight: 400;
@@ -443,7 +439,7 @@ p {
   width: 100%;
   max-width: 200px;
   margin: 0 auto;
-  /* text-align: center; */
+  font-size: 11px;
 }
 
 .icon-msg a {
@@ -526,13 +522,16 @@ p {
 
 .award-list .award-bold {
   font-weight: 700;
+  border-left: 2px solid #1a55ad;
+  padding-left: 20px;
 }
 
 .award-list p {
   display: inline-block;
   padding: 6px 10px;
   border-radius: 3px;
-  background: #bbdbee;
+  color: #fff;
+  background: #1a55ad;
 }
 
 .award-list h6 {
@@ -574,7 +573,6 @@ p {
   transition: transform 0.2s ease-out; /* Smooth transition for better visual effect */
 }
 
-
 .about-image {
   position: relative;
   width: 100%;
@@ -604,7 +602,6 @@ p {
 .whole-counting {
   display: flex;
   justify-content: space-around;
-  padding-top: 40px;
   flex-wrap: wrap;
 }
 
@@ -620,7 +617,7 @@ p {
   line-height: 1.5;
   letter-spacing: 1px;
   text-transform: capitalize;
-  color: #1A55AD;
+  color: #1a55ad;
   transition: all 1s ease;
 }
 
@@ -648,7 +645,7 @@ p {
 /*------------ Space Section---------------- */
 .make-space {
   width: 100%;
- 
+
   box-sizing: border-box;
 }
 
@@ -660,6 +657,7 @@ p {
 .space-contain {
   position: relative;
   overflow: hidden;
+  height: 230px;
   display: inline-block;
 }
 
@@ -667,19 +665,14 @@ p {
   display: block;
   transition: transform 0.5s ease, filter 0.5s ease;
   width: 100%;
-  height: 350px;
+  height: 230px;
   filter: grayscale(50%);
+  object-fit: contain;
 }
-
-
 
 .space-contain:hover img {
   transform: scale(1.2) rotate(5deg); /* Zoom in and slightly rotate */
   filter: grayscale(0%); /* Remove grayscale on hover */
-}
-
-.space-contain h1 {
-  font-size: 3rem; /* Adjust font size as needed */
 }
 
 .space-contain h5 {
@@ -689,13 +682,13 @@ p {
 .space-contain {
   position: relative;
   flex: 1 1 calc(33.333% - 30px);
- 
+
   box-sizing: border-box;
 }
 
 .space-contain img {
   width: 100%;
-object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -704,8 +697,7 @@ object-fit: cover;
   top: 58%;
   left: 20%;
   color: #fff;
-  font-family: Montserrat, sans-serif;
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-style: normal;
   font-weight: 500;
   font-variant: all-small-caps;
@@ -725,31 +717,8 @@ object-fit: cover;
   font-weight: 600;
   transform: translate(-70%, -30%);
 }
-/* 
-.space-contain h1::after {
-  position: absolute;
-  content: "";
-  background: #fff;
-  width: 2px;
-  height: 100%;
-  min-height: 220px;
-  top: -50px;
-  bottom: 0;
-}
 
-.space-contain h1::before {
-  position: absolute;
-  content: "";
-  background: #fff;
-  width: 100%;
-  min-width: 400px;
-  height: 2px;
-  bottom: 0;
-  right: 0;
-} */
-
-
-.space-contain .space-line-verticle{
+.space-contain .space-line-verticle {
   position: absolute;
   bottom: 35px;
   left: 30px;
@@ -759,11 +728,8 @@ object-fit: cover;
   z-index: 2;
 }
 
-
-.space-contain .space-line-horizontal{
-
+.space-contain .space-line-horizontal {
   position: absolute;
-
   width: 2px;
   height: 80%;
   background-color: #fff;
@@ -797,17 +763,15 @@ object-fit: cover;
   }
 
   @media (max-width: 768px) {
-    .space-contain h5{
+    .space-contain h5 {
       font-size: 32px;
-   
     }
 
-    .space-contain h1{
+    .space-contain h1 {
       top: 44%;
-      
     }
 
-    .space-contain .po-space{
+    .space-contain .po-space {
       left: 40%;
     }
   }
@@ -819,7 +783,7 @@ object-fit: cover;
   justify-content: center;
   border: 1px solid #ddd;
   padding: 40px 20px 0 20px;
-  background-color: #F4F4F4;
+  background-color: #1a55ad1a;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   transition: transform 0.4s ease, box-shadow 0.4s ease,
     background-color 0.4s ease;
@@ -846,7 +810,7 @@ object-fit: cover;
 
 .offer-box:hover .serive-detail svg {
   transform: rotate(30deg) scale(1.2);
-  stroke: #007bff; /* New stroke color on hover */
+  stroke: #fff; /* New stroke color on hover */
 }
 
 h6 {
@@ -856,7 +820,7 @@ h6 {
 }
 
 .offer-box:hover h6 {
-  color: #007bff;
+  color: #1a55ad;
   transform: translateY(-10px);
 }
 
@@ -977,15 +941,15 @@ p {
 }
 
 .working-circle:hover {
-  background-color: #1D84C5; 
+  background-color: #1d84c5;
 }
 
 .working-circle:hover h1 {
-  color: white; 
+  color: white;
 }
 
 .working-circle:hover svg path {
-  stroke: white; 
+  stroke: white;
 }
 
 .working-btn {
@@ -1019,7 +983,7 @@ p {
 .process-line {
   width: 100%;
   height: 2px;
-  background-color: #1A55AD;
+  background-color: #1a55ad;
   margin: 20px 0;
 }
 
@@ -1094,7 +1058,7 @@ p {
   .working-btn {
     width: 57%;
   }
-  .contacts-line{
+  .contacts-line {
     margin-left: 50px;
   }
   .procedure {
@@ -1150,7 +1114,7 @@ p {
   width: 50%;
   height: 160px;
   margin: 10px;
-  border: 2px solid #1A55AD;
+  border: 2px solid #1a55ad;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1216,32 +1180,30 @@ p {
 .skill-team-partner img {
   max-height: 100%;
   transition: transform 0.3s ease;
-    
 }
 
-
-.skill-team-partner img:hover + .skill-box {
-  background-color: black;
+.skill-box:hover {
+  background-color: #1a55ad;
   color: white;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
 
 .skill-team-partner:hover .skill-box {
-  background-color: black; 
+  background-color: #1a55ad;
   color: #f5f5f5;
 }
 
 .skill-team-partner:hover img {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 .skill-team-partner img:hover + .skill-box p {
-  color: white; 
-  transition: color 0.3s ease; 
+  color: white;
+  transition: color 0.3s ease;
 }
 
 .skill-team-partner img:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 @keyframes scrollPartner {
@@ -1306,11 +1268,6 @@ p {
 
 /*---------------------Gallery----------------------*/
 
-.whole-gallery {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .gallery {
   position: relative;
   display: inline-block;
@@ -1354,7 +1311,7 @@ p {
 }
 
 .gallery-box h6 {
-  color: #1A55AD;
+  color: #1a55ad;
   font-family: Montserrat;
 
   font-weight: 600;
@@ -1479,11 +1436,11 @@ p {
 }
 
 .consulting-left .right-now {
-  color: #1A55AD;
+  color: #1a55ad;
 }
 
 .consulting-left h5 {
-  color: #1A55AD;
+  color: #1a55ad;
   font-size: 4vh;
   font-weight: 500;
   line-height: 1.2;
@@ -1495,7 +1452,7 @@ p {
 .process-btn a {
   color: #fff;
   text-decoration: none;
-  background: #1A55AD;
+  background: #1a55ad;
   padding: 10px 20px;
   border-radius: 5px;
   transition: background 0.3s;
@@ -1570,69 +1527,47 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60vh;
-  
   width: 100%;
+  gap: 13px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
   position: relative; /* Ensure positioning is relative for proper overlay placement */
   z-index: 2; /* Ensure it's above the background overlay */
 }
 
 .project-box h6 {
   color: #1d84c5;
-  
-  font-size: 20px;
-  font-style: normal;
+  padding: 0;
+  margin: 0;
   font-weight: 400;
-  line-height: normal;
   text-transform: uppercase;
 }
 
 .project-box h5 {
   color: #fff;
-  font-family: Montserrat;
-  font-size: 21px;
-  font-style: normal;
+  padding: 0;
+  margin: 0;
   font-weight: 600;
-  line-height: 42px; /* 200% */
   text-transform: capitalize;
-}
-
-.project ul li a figure::before {
-  content: "";
-  position: absolute;
-
-  left: 0;
-  width: 100%;
-  height: 33%;
-  
-
-  background: rgba(0, 0, 0, 0.7);
-  transition: transform 300ms ease;
-  transform: translateY(-100%);
-  z-index: 1; /* Ensure it sits above the image but below the project-box */
-}
-
-.project ul li a:hover figure::before {
-  transform: translateY(0); /* Slide down to cover the image */
 }
 
 .project ul li a figcaption {
   position: absolute;
-  top: 15%;
+  top: -15%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   text-align: center;
-  padding: 1rem;
   color: white;
   font-size: 1.2rem;
   z-index: 3; /* Ensure figcaption is above the overlay */
   opacity: 0;
-  transition: opacity 300ms, transform 300ms;
+  transition: 300ms;
 }
 
 .project ul li a:hover figcaption {
   opacity: 1;
+  top: 15%;
 }
 
 @media (max-width: 768px) {
@@ -1643,25 +1578,9 @@ p {
     ); /* Adjust for smaller screens */
     width: 100%;
   }
-
-  .project ul li a figcaption {
-    top: 15%;
-  }
-
-  .project ul li a figure::before {
-    height: 50%;
-  }
 }
 
 @media (max-width: 1100px) {
-  .project ul li a figcaption {
-    top: 15%;
-  }
-
-  .project ul li a figure::before {
-    height: 30%;
-  }
-
   .project-box h6 {
     font-size: 14px;
   }
@@ -1678,16 +1597,6 @@ p {
 
   .project ul li a:hover img {
     transform: scale(1.2);
-  }
-
-  @media (max-width: 768px) {
-    .project ul li a figcaption {
-      top: 15%;
-    }
-
-    .project ul li a figure::before {
-      height: 30%;
-    }
   }
 }
 
@@ -1737,7 +1646,7 @@ p {
   gap: 10px;
 }
 
-.test-details img{
+.test-details img {
   height: 50px;
   width: 50px;
   border-radius: 100%;
@@ -1766,7 +1675,11 @@ p {
   z-index: 10;
 }
 
-.testimonial-main-container .swiper-pagination{
+.testimonial-main-container {
+  overflow-x: hidden;
+}
+
+.testimonial-main-container .swiper-pagination {
   position: relative;
 }
 
@@ -1824,7 +1737,7 @@ p {
 }
 
 .skill-box {
-  padding: 7px 14px;
+  padding: 10px 14px;
   position: absolute;
   background-color: #fff;
   width: 100%;
@@ -1833,20 +1746,19 @@ p {
   left: 5%;
   transform: translate(1%, -10%);
 }
-.skill-box:hover{
+.skill-box:hover {
   background-color: #000;
 }
 
-.skill-box:hover h5, .skill-box:hover p {
+.skill-box:hover h5,
+.skill-box:hover p {
   color: white; /* Text color on hover */
 }
-
-.skill-box
 
 .skill-box h5 {
   font-size: 16px;
   letter-spacing: 0.3px;
-  margin-bottom: 5px;
+  margin-bottom: 0;
   text-transform: capitalize;
 }
 
@@ -1932,7 +1844,7 @@ p {
 .contact-line {
   width: 5%;
   height: 2px;
-  background: #1A55AD;
+  background: #1a55ad;
   position: absolute;
   top: 40%;
   left: 10.2%;
@@ -2030,7 +1942,7 @@ textarea:focus + label,
 textarea:not(:placeholder-shown) + label {
   top: -10px;
   font-size: 12px;
-  color: #1A55AD;
+  color: #1a55ad;
 }
 
 textarea:not(:placeholder-shown) + label {
@@ -2307,7 +2219,7 @@ textarea:not(:placeholder-shown) + label {
   min-width: 150px;
 }
 .footer-rights {
-  background: #0C264F;
+  background: #0c264f;
   width: 100%;
   height: 60px;
   display: flex;
@@ -2355,8 +2267,6 @@ textarea:not(:placeholder-shown) + label {
   line-height: 58px;
 }
 
-
-
 /* Animations */
 @keyframes pulse {
   0% {
@@ -2371,4 +2281,10 @@ textarea:not(:placeholder-shown) + label {
   100% {
     box-shadow: 1px 1px 2px 1px #1411d430, 0px 0px 0px 20px transparent;
   }
+}
+
+/* secondary-pages-hero-section-container */
+
+.secondary-pages-hero-section-container {
+  margin-top: 60px;
 }
