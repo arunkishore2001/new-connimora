@@ -190,42 +190,29 @@ p {
   color: white;
   border: none;
   padding: 10px 20px;
-
+  text-wrap: nowrap;
   font-size: 16px;
   cursor: pointer;
   text-align: center;
 }
 
-.line {
-  width: 82px;
-  height: 2px;
-  background-color: white;
-  margin-left: 80px;
-  margin-top: 5px;
-  transform: translateX(7%);
-}
-
-.line::after {
-  content: "";
+.custom-button::after{
+  content: '';
   position: absolute;
-  right: 3px;
-  bottom: -7px;
-  width: 2px;
-  height: 55px;
-  background-color: white;
-}
-
-.contacts-line {
+  height: 100%;
+  width: 1px;
+  right: -7px;
+  bottom: -16px;
   background-color: #000;
 }
 
-.contacts-line::after {
-  content: "";
+.custom-button::before{
+  content: '';
   position: absolute;
-  right: 3px;
+  height: 1px;
+  width: 100%;
   bottom: -7px;
-  width: 2px;
-  height: 55px;
+  right: -14px;
   background-color: #000;
 }
 
@@ -302,10 +289,10 @@ p {
 .nav-hover-line {
   display: block;
   width: 0;
-  height: 2px;
+  height: 4px;
   background-color: #1a55ad;
   position: absolute;
-  bottom: -5px;
+  bottom: -12px;
   left: 0;
   transition: width 0.3s;
 }
@@ -1893,8 +1880,7 @@ p {
   margin-bottom: 20px;
 }
 
-.input-container input[type="text"],
-.input-container input[type="email"],
+.input-container input,
 .input-container textarea {
   border: none;
   border-bottom: 2px solid #ccc;
@@ -1905,8 +1891,7 @@ p {
   background: none;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
+input:focus,
 textarea:focus {
   outline: none;
   border-bottom: 2px solid #000;
@@ -1917,9 +1902,8 @@ textarea {
   height: 100px;
 }
 
-.input-container label {
+.input-container .contact-form-label {
   position: absolute;
-
   left: 0;
   margin-top: 25px;
   color: #aaa;
@@ -1927,25 +1911,23 @@ textarea {
   transition: all 0.3s ease;
 }
 
-.input-container input:focus ~ label,
-.input-container textarea:focus ~ label,
-.input-container input:valid ~ label,
-.input-container textarea:valid ~ label {
+.input-container input:focus ~ .contact-form-label,
+.input-container textarea:focus ~ .contact-form-label,
+.input-container input:valid ~ .contact-form-label,
+.input-container textarea:valid ~ .contact-form-label {
   transform: translateY(-20px);
 }
 
-input[type="text"]:focus + label,
-input[type="text"]:not(:placeholder-shown) + label,
-input[type="email"]:focus + label,
-input[type="email"]:not(:placeholder-shown) + label,
-textarea:focus + label,
-textarea:not(:placeholder-shown) + label {
+input:focus + .contact-form-label,
+input:not(:placeholder-shown) + .contact-form-label,
+textarea:focus + .contact-form-label,
+textarea:not(:placeholder-shown) + .contact-form-label {
   top: -10px;
   font-size: 12px;
   color: #1a55ad;
 }
 
-textarea:not(:placeholder-shown) + label {
+textarea:not(:placeholder-shown) + .contact-form-label {
   top: -20px;
 }
 
