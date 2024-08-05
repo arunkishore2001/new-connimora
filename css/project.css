@@ -1,97 +1,98 @@
-.project-section {
+.project-background {
+  background: #0e2e5f;
   width: 100%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-justify-content: center;
-}
-
-.project-page {
-  display: flex;
-  flex-wrap: wrap; /* Allows wrapping of flex items */
-  justify-content: space-between;
-  /* column-gap: 200px; */
-  row-gap: 20px;
-  width: 100%;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-
-.project-item {
+  height: 150px;
+  margin-bottom: 330px;
   position: relative;
-  width: 40%;
 }
 
-.project-item img {
+.project-back-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+}
+
+.project-back-heading h2 {
+  color: #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.project-back-heading h1 {
+  color: rgba(255, 255, 255, 0.13);
+  font-size: 12vh;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.project-back-para {
+  margin-top: 40px;
+  max-width: 400px;
+}
+
+.project-back-para p {
+  color: #535861;
+
+  font-weight: 500;
+
+  text-transform: capitalize;
+}
+
+.project-line {
+  width: 100%;
+  height: 1px;
+  background: #9f9e9e;
+  margin-top: 16%;
+  margin-bottom: 20px;
+}
+.project-img {
+  display: flex;
+
+  width: 55%;
+  height: 400px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.project-img img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
-.project-item-detail {
-  position: absolute;
-  top: 8%; 
-  left: 4%; 
-  color: black;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #C1D9E8 0%, #E7F6FF 100%);
-  padding: 8px; 
-  width: 30%;
-  text-align: center;
-}
+@media (min-width: 760px) {
+  .project-contact-bg {
+    position: absolute;
+    top: 20%;
+  }
 
-.project-item-detail p {
-  margin: 0;
-}
-
-.project-item-detail-heading {
-  position: absolute;
-  bottom: 10%;
-  left: 29%;
-  min-width: 200px;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.70);
-}
-
-.project-item-detail-heading h6 {
-  text-align: center;
-  color: white;
-  margin-bottom: 0px;
-}
-
-@media (min-width: 768px) { /* You can adjust the breakpoint as needed */
-  .image-item {
-    width: calc(50% - 16px); /* Two images per row, with a margin */
-    margin: 8px;
+  .project-img img {
+    width: 80%;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    /* margin: 0 35px; */
   }
 }
 
-/* Media query for small screens */
 @media (max-width: 480px) {
-  .project-page {
+  .project-img img {
     width: 100%;
-    padding: 0 16px; /* Optional: Add padding for spacing */
   }
-  .project-item {
-      position: relative;
-      width: 100%;
+  .project-background {
+    margin-bottom: 670px;
   }
+}
 
-  .project-item-detail{
-      width: 29%;
-      height: 27px;
-  }
-  .project-item-detail p{
-      font-size: 12px;
-      margin-top: -9px;
-  } 
+.read-more {
+  text-align: center;
+  margin-top: 20px;
+}
 
-  .project-item-detail-heading{
-      height: 40px;
-    transform: translate(-16%,-10%);
-  }
-  .project-item-detail-heading{
-      font-size: 12px;
-  }
+.project-complete-line {
+  background: #666973;
+  width: 100%;
+  height: 2px;
+  margin-top: 20px;
 }
