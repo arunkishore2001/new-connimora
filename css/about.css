@@ -13,6 +13,7 @@
 }
 .left-landing-image,
 .right-landing-image {
+  
   width: 100%;
   height: auto;
 }
@@ -98,18 +99,18 @@
 }
 
 @media (max-width: 480px) {
-  html,
-  body {
-  }
+  
   .left-landing-image {
     display: none;
   }
 
   .right-landing-image {
+    
     height: 80vh;
   }
 
   .right-landing-image img {
+  
     height: 100%;
     object-fit: cover;
   }
@@ -375,6 +376,9 @@
 }
 
 @media (max-width: 480px) {
+  p{
+    font-size: 14;
+  }
   .about-best {
     margin-top: 20px;
     padding: 0 10px;
@@ -385,7 +389,7 @@
   }
 
   .about-best-heading p {
-    font-size: 16px;
+   
     line-height: 28px;
   }
 

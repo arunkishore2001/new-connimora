@@ -2012,7 +2012,7 @@ textarea:not(:placeholder-shown) + label {
 @media (max-width: 768px) {
   .right-contact {
     padding: 20px;
-    margin-right: 20px;
+   
     margin-top: 80px;
   }
 
@@ -2287,4 +2287,6 @@ textarea:not(:placeholder-shown) + label {
 
 .secondary-pages-hero-section-container {
   margin-top: 60px;
+  width: 100vw;
+  overflow: hidden;
 }
