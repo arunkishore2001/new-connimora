@@ -42,19 +42,19 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
                     <nav id="main-navigation" class="nav-main">
                         <ul class="menu">
                             <li class="menu__item">
-                                <a class="menu__link" href="/index.php">Home</a>
+                                <a class="menu__link" href="index.php">Home</a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link" href="/about.php">About</a>
+                                <a class="menu__link" href="about.php">About</a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link" href="/services.php">Services</a>
+                                <a class="menu__link" href="services.php">Services</a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link" href="/projects.php">Projects</a>
+                                <a class="menu__link" href="projects.php">Projects</a>
                             </li>
                             <li class="menu__item">
-                                <a class="menu__link" href="/contact.php">Contact</a>
+                                <a class="menu__link" href="contact.php">Contact</a>
                             </li>
                         </ul>
                     </nav>

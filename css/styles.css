@@ -78,7 +78,6 @@ p {
 }
 .sketch-para {
   color: #535861;
-  text-transform: capitalize;
   text-align: justify;
 }
 
@@ -165,18 +164,6 @@ p {
   }
 }
 
-/* .about-left-img::before{
-  background-image: url(../images/sketch-small.png);
-  background-size: cover;
-  top: 123px;
-  left: -68px;
-  position: absolute;
-  z-index: 10;
-  width: 420px;
-  height: 500px;
-  border: 5px solid white;
-} */
-
 /*------------------Button----------*/
 
 .button-container {
@@ -219,18 +206,6 @@ p {
 .learn-line {
   margin-left: 52px;
   margin-bottom: 2px;
-}
-
-@media (max-width: 480px) {
-  .custom-button {
-    width: 100%;
-    min-width: 150px;
-    right: 30px;
-  }
-
-  .line {
-    margin-left: 42px;
-  }
 }
 
 /*--------------Navigation------------*/

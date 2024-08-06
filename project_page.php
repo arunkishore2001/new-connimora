@@ -25,15 +25,10 @@ if (isset($_GET['project']) && isset($_GET['image'])) {
   <link rel="stylesheet" href="./css/contact.css" />
   <link rel="stylesheet" href="./css/navBar.css" />
   <link rel="stylesheet" href="./css/about.css" />
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/animation.css" />
 
-  <script src="./assets/js/particles.min.js"></script>
-  <link rel="stylesheet" href="./css/footer.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/22cd64f621.js" crossorigin="anonymous"></script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -131,15 +126,6 @@ if (isset($_GET['project']) && isset($_GET['image'])) {
     </div>
   </div>
 
-  <div class="container-fluid-max mt-5">
-    <div class="google-map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15544.127155918764!2d80.1244362405913!3d13.097171895328328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526237656b9a93%3A0x37587770c442f4d5!2sAyappakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1721850667848!5m2!1sen!2sin"
-        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
-  </div>
   <!-- Footer -->
   <?php include 'footer.php'; ?>
 
