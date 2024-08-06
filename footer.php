@@ -1,8 +1,11 @@
+<script src="./assets/js/particles.min.js"></script>
+<link rel="stylesheet" href="./css/footer.css" />
+
 <section class="footer">
     <div class="container-fluid-max m-0 p-0">
         <div class="full-width-scree-footer" style="background-color: #0F2F60">
             <div id="particles-js">
-                <div class="container-lg position-relative h-100 footer-main-content py-4">
+                <div class="container-fluid position-relative h-100 footer-main-content py-4">
                     <div class="row h-100">
                         <div
                             class="col-md-6 flex-column align-items-center align-items-md-start justify-content-center h-100 footer-logo p-md-5 p-4">
@@ -20,19 +23,19 @@
                                 <div data-aos="slide-down" data-aos-duration="600"
                                     class="col-6 flex-column justify-content-center h-100 footer-logo">
                                     <ul class="text-decoration-none list-unstyled">
-                                        <a href="./index.html">
+                                        <a href="./index.php">
                                             <li>Home</li>
                                         </a>
-                                        <a href="./about-us.html">
+                                        <a href="./about.php">
                                             <li>About</li>
                                         </a>
-                                        <a href="./services.html">
+                                        <a href="./services.php">
                                             <li>Services</li>
                                         </a>
-                                        <a href="./gallery.html">
+                                        <a href="./projects.php">
                                             <li>Projects</li>
                                         </a>
-                                        <a href="./contact.html">
+                                        <a href="./contact.php">
                                             <li>Contact</li>
                                         </a>
                                     </ul>
@@ -70,5 +73,4 @@
 </div>
 
 <!-- footer animation -->
-
 <script src="./js/footer-animation.js"></script>

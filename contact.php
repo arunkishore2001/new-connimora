@@ -21,6 +21,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
 
+    <script src="https://kit.fontawesome.com/22cd64f621.js" crossorigin="anonymous"></script>
+
     <!-- *******  Owl Carousel Links  ******* -->
     <link
       rel="stylesheet"
@@ -58,83 +60,8 @@
     ></script>
   </head>
   <body>
-    <div class="nav-container h-100">
-      <div class="container-fluid top-nav-bar">
-        <div class="row navigation">
-          <div
-            class="col-12 d-flex flex-row align-items-center justify-content-between"
-          >
-            <div class="logo-container div-center">
-              <a href="index.html">
-                <img class="nav-logo" src="images/logo.png" alt="" />
-              </a>
-            </div>
-
-            <div class="nav-control d-none d-md-block">
-              <ul class="main-nav text-decoration-none p-0 m-0 div-center">
-                <li class="hidenav">
-                  <a href="index.html"
-                    >Home <span class="nav-hover-line"></span
-                  ></a>
-                </li>
-                <li class="hidenav">
-                  <a href="about.html"
-                    >About <span class="nav-hover-line"></span
-                  ></a>
-                </li>
-                <li class="hidenav">
-                  <a href="service.html"
-                    >Service <span class="nav-hover-line"></span
-                  ></a>
-                </li>
-                <li class="hidenav">
-                  <a href="project.html"
-                    >Project <span class="nav-hover-line"></span
-                  ></a>
-                </li>
-                <li class="hidenav active">
-                  <a href="contact.html"
-                    >Contact <span class="nav-hover-line"></span
-                  ></a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="mobile-nav d-md-none">
-              <input
-                type="checkbox"
-                id="main-navigation-toggle"
-                class="btn btn--close"
-                title="Toggle main navigation"
-              />
-              <label for="main-navigation-toggle">
-                <span></span>
-              </label>
-
-              <nav id="main-navigation" class="nav-main">
-                <ul class="menu">
-                  <li class="menu__item">
-                    <a class="menu__link" href="/index.html">Home</a>
-                  </li>
-                  <li class="menu__item">
-                    <a class="menu__link" href="/about.html">About</a>
-                  </li>
-                  <li class="menu__item">
-                    <a class="menu__link" href="/service.html">Services</a>
-                  </li>
-                  <li class="menu__item">
-                    <a class="menu__link" href="/project.html">Projects</a>
-                  </li>
-                  <li class="menu__item">
-                    <a class="menu__link" href="/contact.html">Contact</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Nav bar -->
+    <?php include 'navBar.php'; ?>
 
     <div class="container-fluid-max secondary-pages-hero-section-container">
       <div class="row">
@@ -386,60 +313,8 @@
       </div>
     </div>
 
-    <div class="container-fluid p-0 m-0 container-fluid-max footer-container">
-      <div class="container-fluid">
-        <div class="row footer-container-row">
-          <div class="col-lg-6">
-            <div data-aos="fade-right" class="creations">
-              <img src="images/logo.png" alt="" />
-            </div>
-          </div>
-
-          <div class="col-lg-6 creation-common">
-            <div class="creation-secound">
-              <div data-aos="fade-left" class="creations-list">
-                <p>COMPANY</p>
-                <ul>
-                  <a href=""><li>About Us</li></a>
-                  <a href=""><li>Projects</li></a>
-                  <a href=""><li>Contact Us</li></a>
-                </ul>
-              </div>
-
-              <div data-aos="fade-left" class="creations-list">
-                <p>Services</p>
-                <ul>
-                  <a href=""><li>Renovation</li></a>
-                  <a href=""><li>Building</li></a>
-                  <a href=""><li>Construction</li></a>
-                  <a href=""><li>Making</li></a>
-                </ul>
-              </div>
-
-              <div data-aos="fade-left" class="creations-list">
-                <p>Contact</p>
-                <ul>
-                  <li>+91 89268 72938</li>
-                  <li>demo@gmail.com</li>
-                  <li>
-                    132 Dartmouth Street Boston, Massachusetts 02156 United
-                    States
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-rights rights">
-      <div class="container-fluid">
-        <p class="text-center">
-          Copyright @ 2024 CONNEMARA by High On Code. All Rights Reserved
-        </p>
-      </div>
-    </div>
+    <!-- Footer -->
+    <?php include 'footer.php'; ?>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
