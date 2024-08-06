@@ -366,6 +366,10 @@
 }
 
 @media (max-width: 480px) {
+
+  p{
+    font-size: 14;
+  }
   .about-best {
     margin-top: 20px;
     padding: 0 10px;
@@ -376,7 +380,7 @@
   }
 
   .about-best-heading p {
-    font-size: 16px;
+   
     line-height: 28px;
   }
 

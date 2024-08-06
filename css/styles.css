@@ -551,10 +551,7 @@ p {
   height: 100%; /* Adjust as needed */
 }
 
-.mouse-parallax {
-  position: relative;
-  overflow: hidden; /* Ensure image doesn't move outside the container */
-}
+
 
 .moving-img img {
   transition: transform 0.2s ease-out; /* Smooth transition for better visual effect */
@@ -1880,7 +1877,8 @@ p {
   margin-bottom: 20px;
 }
 
-.input-container input,
+.input-container input[type="text"],
+.input-container input[type="email"],
 .input-container textarea {
   border: none;
   border-bottom: 2px solid #ccc;
@@ -1891,7 +1889,8 @@ p {
   background: none;
 }
 
-input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
 textarea:focus {
   outline: none;
   border-bottom: 2px solid #000;
@@ -1902,8 +1901,9 @@ textarea {
   height: 100px;
 }
 
-.input-container .contact-form-label {
+.input-container label {
   position: absolute;
+
   left: 0;
   margin-top: 25px;
   color: #aaa;
@@ -1911,23 +1911,25 @@ textarea {
   transition: all 0.3s ease;
 }
 
-.input-container input:focus ~ .contact-form-label,
-.input-container textarea:focus ~ .contact-form-label,
-.input-container input:valid ~ .contact-form-label,
-.input-container textarea:valid ~ .contact-form-label {
+.input-container input:focus ~ label,
+.input-container textarea:focus ~ label,
+.input-container input:valid ~ label,
+.input-container textarea:valid ~ label {
   transform: translateY(-20px);
 }
 
-input:focus + .contact-form-label,
-input:not(:placeholder-shown) + .contact-form-label,
-textarea:focus + .contact-form-label,
-textarea:not(:placeholder-shown) + .contact-form-label {
+input[type="text"]:focus + label,
+input[type="text"]:not(:placeholder-shown) + label,
+input[type="email"]:focus + label,
+input[type="email"]:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
   top: -10px;
   font-size: 12px;
   color: #1a55ad;
 }
 
-textarea:not(:placeholder-shown) + .contact-form-label {
+textarea:not(:placeholder-shown) + label {
   top: -20px;
 }
 
@@ -2269,4 +2271,6 @@ textarea:not(:placeholder-shown) + .contact-form-label {
 
 .secondary-pages-hero-section-container {
   margin-top: 60px;
+  width: 100vw;
+  overflow: hidden;
 }

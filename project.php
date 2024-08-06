@@ -158,9 +158,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
 
     <div class="container-fluid-max rolling-text">
       <div class="wrapper">
-        <div class="icon">
-          <i id="left" class="fa-solid fa-angle-left"></i>
-        </div>
+        
         <ul class="tabs-box">
           <li class="tab">FARM LAND</li>
           <li class="tab">INTERIOR</li>
@@ -224,6 +222,69 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
         </div>
       </div>
     </div>
+
+
+    <!----------------- New Added Project File----------------- -->
+
+
+
+    <div class="container-fluid">
+        <div class="desk-line"></div>
+        <div class="about-page-heading">
+          <h2>Our work tell About Us</h2>
+          <p>
+            Palar Farms managed farmland allows you to sit back and relax and
+            watch your investment grow without the hassles of managing it
+            yourself. Compared to other forms of real estate investments,
+            managed farmlands are stress-free investment options. In real
+            estate, your land value may appreciate over time but the plot will
+            remain ju.
+          </p>
+        </div>
+      </div>
+
+      <div class="container-fluid-max ">
+        <div class="project-background"></div>
+
+        <div class="container-fluid project-detail ">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="project-back-heading">
+                <h2>Farm Land</h2>
+                <h1>01</h1>
+              </div>
+
+              <div class="project-back-para">
+                <p>Palar Farms managed farmland allows you to 
+                  sit back and relax and watch your investment 
+                  grow without the hassles of managing it yourself. 
+                  Compared</p>
+              </div>
+
+             
+
+              <div class="read-more">
+                <div class="project-line"></div>
+                <h6>Read more 	&gt;&gt;</h6>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="project-img">
+                <img src="./images/doing-img.png" alt="">
+                <img src="./images/benefit.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-complete-line"></div>
+      </div>
+
+
+
+        <!----------------- Ended Added Project File----------------- -->
+
 
     <div class="container-fluid-max">
       <div class="contact-bg my-5 py-5">

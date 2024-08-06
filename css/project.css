@@ -75,3 +75,92 @@
       font-size: 12px;
   }
 }
+
+
+
+/* <!----------------- New Added Project File----------------- --> */
+
+
+.project-background {
+  background: #0e2e5f;
+  width: 100%;
+  height: 150px;
+
+  position: absolute;
+}
+
+.project-detail{
+  position: relative;
+
+}
+
+.project-back-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+}
+
+.project-back-heading h2 {
+  color: #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.project-back-heading h1 {
+  color: rgba(255, 255, 255, 0.13);
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.project-back-para {
+  margin-top: 40px;
+  max-width: 400px;
+}
+
+.project-back-para p {
+  color: #535861;
+
+  font-weight: 500;
+
+  text-transform: capitalize;
+}
+
+.project-line {
+  width: 100%;
+  height: 1px;
+  background: #9f9e9e;
+  margin-top: 16%;
+  margin-bottom: 20px;
+}
+.project-img {
+  display: flex;
+
+  width: 100%;
+  height: 400px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.project-img img {
+  width: 50%;
+  overflow: hidden;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+
+.read-more {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.project-complete-line {
+  background: #666973;
+  width: 100%;
+  height: 2px;
+  margin-top: 20px;
+}
