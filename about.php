@@ -157,14 +157,9 @@
                 <div class="col-md-6">
                     <div class="about-best-heading">
                         <h6 class="comman-sub-heading">[ About Us ]</h6>
-                        <h3 class="sketch-heading">We Make You Reach the Best</h3>
+                        <h3 class="sketch-heading">Why Choose us</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit, ed do
-                            eiusmod Lorem ipsum dolor sit amet consectetur adipisicing elit,
-                            sed do eiusmod Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit, sed do eiusmod. dolor sit amet consectetur
-                            adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit, sed do eiusmod.
+                        At Connemara, we pride ourselves on our commitment to delivering high-quality properties that appreciate in value over time. Our expertise in location identification and development ensures that our clients benefit from sustainable returns on their investments
                         </p>
                     </div>
                 </div>
@@ -213,7 +208,7 @@
         </div>
     </div>
 
-    <div class="container mt-5 pt-5">
+    <!-- <div class="container mt-5 pt-5">
         <div class="partner-title about-partner-title">
             <h5 class="comman-sub-heading my-3">[ Our Partner ]</h5>
             <h3 class="sketch-heading mb-5 py-3">Our Trusted Partner</h3>
@@ -243,6 +238,77 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+    <div class="container-fluid-max mt-5">
+      <div class="flex-container">
+        <div class="flex-item">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/kWSHdixzMco?si=jkyirRlQaQicCnKp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </div>
+        
+
+        <div class="flex-item">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/4jnzf1yj48M?si=GELvf10fWBqfu9W-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      </div>
+
+      <div class="flex-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OzUkvzyBttA?si=QRcBpAENRe6hElO2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
+    </div>
+    </div>
+
+
+    <div class="container-fluid mt-5 pt-4">
+      <div class="row">
+        <div class="col-md-4 mission-heading">
+          <div class="mission-heading1">
+          <h1>OUR</h1>
+
+          <div class="mission-heading2">
+            <h1>MISSION</h1>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-3">
+         <div class="mission-img">
+          <img src="./images/left-logo.png" alt="">
+         </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mission-para">
+            <p> To identify and develop ideal locations that appreciate in value over time, providing our clients with sustainable returns on their investments
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container connemara mt-5">
+      <span class="text1"> CONNEMARA</span>
+    </div>
+
+
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="mission-para">
+            <p>Our vision is to be the trusted partner of choice for Investors for generations. Expand our presence to new markets, including emerging cities and international hubs. To be ahead of the curve.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+         <div class="mission-img">
+          <img src="./images/right-logo.png" alt="">
+         </div>
+        </div>
+      
+
+        <div class="col-md-4  vision">
+          <div class="mission-heading1">
+          <h1>OUR</h1>
+          <div class="mission-heading2 ">
+            <h1>VISION</h1>
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
 
     <div class="container-fluid mt-5 pt-3">

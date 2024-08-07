@@ -172,10 +172,10 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
 
                 <p class="sketch-para">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ab
-                    eveniet nesciunt numquam at, suscipit asperiores iusto inventore
-                    quia, dolor voluptate enim repellat ratione repellendus odit
-                    blanditiis? Culpa, mollitia eum?
+                Connemara Realty LLP., was founded in the year 2019 by a first-generation entrepreneurs, having its corporate office at Chennai, with a wide experience mainly in the field of Construction, Farm Land Development and Management.  The Company is experienced in developing sustainable housing and eco-friendly farmlands.
+                <br>
+At Connemara, we take a meticulous approach to identifying ideal locations for development. Our team of experts uses a combination of market analysis, demographic research, and site assessment to pinpoint areas with high potential for growth and appreciation.
+
                 </p>
 
                 <div class="award-list">
@@ -208,21 +208,18 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <!------------- count Action------------- -->
     <div class="container-fluid whole-counting my-4">
         <div class="counting">
-            <h1 class="count" data-target="180">[ 0 + ]</h1>
+            <h1 class="count" data-target="100">[ 0 + ]</h1>
             <h5>Current Client</h5>
         </div>
         <div class="counting">
-            <h1 class="count" data-target="10">[ 0 + ]</h1>
+            <h1 class="count" data-target="5">[ 0 + ]</h1>
             <h5>Year Of Experience</h5>
         </div>
         <div class="counting">
-            <h1 class="count" data-target="35">[ 0 + ]</h1>
-            <h5>Award Winning</h5>
+            <h1 class="count" data-target="3">[ 0 + ]</h1>
+            <h5>Ongoing Projects</h5>
         </div>
-        <div class="counting">
-            <h1 class="count" data-target="5">[ 0 + ]</h1>
-            <h5>Offices Worldwide</h5>
-        </div>
+       
     </div>
 
     <!-- ------------ Space Section---------------- -->
@@ -230,24 +227,24 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <div class="container-fluid-max make-space">
         <div class="space">
             <div class="space-contain">
-                <img src="./images/space-1.png" alt="" />
-                <h5 class="po-space">Public Spaces</h5>
+                <img src="./images/Farm-land-img.jpeg" alt="" />
+                <h5 class="po-space">Farm Land</h5>
                 <h1>01</h1>
                 <span class="space-line-verticle"></span>
                 <span class="space-line-horizontal"></span>
             </div>
 
             <div class="space-contain">
-                <img src="./images/residential-space.png" alt="" />
-                <h5>Residential Spaces</h5>
+                <img src="./images/resort.jpeg" alt="" />
+                <h5>Resort Image</h5>
                 <h1>02</h1>
                 <span class="space-line-verticle"></span>
                 <span class="space-line-horizontal"></span>
             </div>
 
             <div class="space-contain">
-                <img src="./images/office-space.png" alt="" />
-                <h5 class="po-space">Office Spaces</h5>
+                <img src="./images/commercial.jpeg" alt="" />
+                <h5 class="po-space">Commercial Office Interior</h5>
                 <h1>03</h1>
                 <span class="space-line-verticle"></span>
                 <span class="space-line-horizontal"></span>
@@ -267,14 +264,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="85" viewBox="0 0 85 85" fill="none">
-                            <path d="M18.2 82.6031H83V1.73706H18.2V21.9536" stroke="#A7CEE6" stroke-width="3"
-                                stroke-linejoin="round" />
-                            <path d="M10.1 82.603H58.7V21.9535H10.1V42.17" stroke="#A7CEE6" stroke-width="3"
-                                stroke-linejoin="round" />
-                            <path d="M34.4 42.17H2V82.603H34.4V42.17Z" stroke="#A7CEE6" stroke-width="3"
-                                stroke-linejoin="round" />
-                        </svg>
+                        <img src="./images/Farm Land Icon.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -287,11 +277,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="76" viewBox="0 0 108 76" fill="none">
-                            <path
-                                d="M77.1429 0V9.40572H30.8571V0H0V25.0819H30.8571V15.6762H57.9459C55.3978 18.3752 54.0114 21.6799 54 25.0819V50.1638C53.9959 52.6574 52.7755 55.0478 50.6063 56.811C48.4371 58.5742 45.4963 59.5663 42.4286 59.5696H30.8571V50.1638H0V75.2458H30.8571V65.84H42.4286C47.5416 65.8351 52.4434 64.1819 56.0589 61.2431C59.6743 58.3043 61.7082 54.3199 61.7143 50.1638V25.0819C61.7143 22.589 62.9318 20.198 65.0994 18.4344C67.267 16.6708 70.2072 15.6787 73.2741 15.6762H77.1429V25.0819H108V0H77.1429ZM23.1429 18.8114H7.71429V6.27048H23.1429V18.8114ZM23.1429 68.9753H7.71429V56.4343H23.1429V68.9753ZM100.286 18.8114H84.8571V6.27048H100.286V18.8114Z"
-                                fill="#8EC2E2" />
-                        </svg>
+                       <img src="./images/Project management.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -304,11 +290,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="93" viewBox="0 0 80 93" fill="none">
-                            <path
-                                d="M58.3022 47.3689V39.3115H64.5785L78.3968 30.2004C78.5989 30.0799 78.7632 29.9225 78.8764 29.741C78.9897 29.5594 79.0487 29.3587 79.0487 29.1552V1.97521C79.0487 1.63579 78.8847 1.30991 78.592 1.06753C78.2993 0.825154 77.9013 0.685597 77.4832 0.678823L35.5027 0.000313723C35.2203 -0.00473902 34.9413 0.0513213 34.6944 0.162738C34.4475 0.274155 34.2415 0.436914 34.0977 0.634301L23.1014 15.6581C22.6053 16.2111 22.9805 17.4526 23.6275 23.2823C19.2727 23.2709 18.7474 23.1243 18.0463 23.7536L0.703588 37.6474C0.0144908 38.1134 0 38.5704 0 38.5704L1.14099 67.0991H12.3224V92.6638H53.3974L66.142 85.5276C66.3613 85.4092 66.5412 85.2487 66.6657 85.0603C66.7902 84.8719 66.8553 84.6614 66.8554 84.4476V55.3165C66.8554 54.9725 66.6871 54.6427 66.3876 54.3995C66.088 54.1563 65.6817 54.0197 65.2581 54.0197H51.5459C56.492 49.3961 58.3031 48.3888 58.3022 47.3689ZM36.369 2.60829L73.7591 3.2126L60.1822 14.8584H27.4007L36.369 2.60829ZM4.09981 38.5704L19.8075 25.9865L23.8025 26.0653L24.6448 38.5704H4.09981ZM53.3974 89.2893V66.2654L63.6607 59.0742V83.7521L53.3974 89.2893ZM62.2843 56.6132L49.4333 65.6172H37.6518L48.7001 56.6132H62.2843ZM55.1075 46.8752L40.0649 60.5835L40.6184 39.3115H55.1075V46.8752ZM64.6559 35.1728L65.0349 14.8584L75.854 5.1884V28.4984L64.6559 35.1728Z"
-                                fill="#8EC2E2" />
-                        </svg>
+                    <img src="./images/Commercial iconn.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -321,11 +303,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="73" viewBox="0 0 130 73" fill="none">
-                            <path
-                                d="M127.758 18.952L86.2704 1.73263V36.1714L127.758 18.952ZM44.1821 53.3997V18.952L2.09386 1.73263V36.1759L44.1821 53.3997ZM0.990121 0.26344C1.29266 0.105255 1.64001 0.0150383 1.99778 0.0017229C2.35555 -0.0115925 2.71132 0.0524555 3.02988 0.187525L44.1821 17.0273L85.3398 0.187525C85.6308 0.0686468 85.9511 0.00680037 86.2758 0.00680037C86.6005 0.00680037 86.9208 0.0686468 87.2118 0.187525L128.7 17.4114C129.044 17.5563 129.334 17.7767 129.537 18.0484C129.741 18.3201 129.849 18.6327 129.852 18.952V53.3818C129.85 53.7019 129.742 54.0155 129.539 54.288C129.335 54.5606 129.045 54.7817 128.7 54.9269L87.2118 72.1642C86.8922 72.2939 86.538 72.3546 86.1822 72.3409C85.8264 72.3271 85.4807 72.2392 85.1771 72.0854C84.8736 71.9316 84.6222 71.7169 84.4463 71.4613C84.2704 71.2057 84.1757 70.9175 84.1711 70.6236V38.9624L45.1127 54.9493C44.822 55.0635 44.5041 55.1228 44.1821 55.1228C43.8602 55.1228 43.5422 55.0635 43.2515 54.9493L1.16326 37.721C0.815665 37.5769 0.52307 37.3564 0.317789 37.0837C0.112509 36.8111 0.00252991 36.4969 0 36.1759L0 1.73263C0.00140023 1.43867 0.0929268 1.14979 0.266053 0.892897C0.439179 0.636006 0.68827 0.419462 0.990121 0.26344Z"
-                                fill="#8EC2E2" />
-                        </svg>
+                    <img src="./images/Retail shop.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -338,11 +316,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="74" viewBox="0 0 133 74" fill="none">
-                            <path
-                                d="M133 18.1772L89.0201 36.6424V0L133 18.1772ZM85.9029 1.26794L45.891 17.5432V54.1804L85.9027 37.9099L85.9029 1.26794ZM42.7738 17.5381L0 0V36.6424L42.7738 54.1755V17.5381ZM89.0199 39.528V73.2848L133 54.8144V21.0628L89.0199 39.528Z"
-                                fill="#8EC2E2" />
-                        </svg>
+                    <img src="./images/HSB Icon.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -355,11 +329,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="74" viewBox="0 0 128 74" fill="none">
-                            <path
-                                d="M123.239 0H44.0139C41.4171 0 39.3191 1.732 39.3191 3.87579V32.4598H4.69482C2.098 32.4598 0 34.1918 0 36.3356V69.2798C0 71.4236 2.098 73.1556 4.69482 73.1556H83.9199C86.5167 73.1556 88.6147 71.4236 88.6147 69.2798V40.6958H123.239C125.836 40.6958 127.934 38.9638 127.934 36.82V3.87579C127.934 1.732 125.836 0 123.239 0ZM49.2956 8.23606H78.6382V32.4598H49.2956V8.23606ZM39.3191 64.9196H9.97649V40.6958H39.3191V64.9196ZM78.6382 64.9196H49.2956V40.6958H78.6382V64.9196ZM117.957 32.4598H88.6147V8.23606H117.957V32.4598Z"
-                                fill="#8EC2E2" />
-                        </svg>
+                    <img src="./images/Resort.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -398,28 +368,17 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <div class="procedure">
                     <div class="working-circle">
                         <h1>01</h1>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="39" viewBox="0 0 50 39" fill="none">
-                            <path
-                                d="M8.51662 -0.00012207L6.02516 2.02216L9.73227 5.03401L12.2202 3.01173L8.51662 -0.00012207ZM41.0312 -0.00012207L37.3241 3.01173L39.8138 5.03401L43.5191 2.0236L41.0312 -0.00012207ZM24.773 0.897391C24.1891 0.903145 23.5981 0.930473 23.0035 0.989444C22.9858 0.989444 22.9681 0.986568 22.9505 0.989444C15.7733 1.65826 10.0614 6.37165 9.0687 12.1796C8.27596 16.8541 10.6471 21.0929 14.5984 23.8228C16.2147 24.9441 17.3079 26.4827 17.695 28.1809V36.8109H21.7295C22.3453 37.6696 23.4689 38.2492 24.773 38.2492C26.0772 38.2492 27.2008 37.6696 27.8166 36.8109H31.851V31.0576H32.0174V29.3489C32.0174 27.2403 33.3657 25.1144 35.5564 23.4618C38.4867 21.0771 40.6986 17.6898 40.6986 13.7991C40.6986 6.69383 33.5038 0.831229 24.773 0.897391ZM24.773 3.77404C31.6122 3.69637 37.1596 8.24722 37.1596 13.7991C37.1596 16.811 35.4431 19.4633 33.0667 21.3935L33.1233 21.4395C30.7617 23.2097 29.2346 25.5945 28.8057 28.1824H21.0659C20.6766 25.7171 19.3761 23.3309 16.9182 21.6193C13.7915 19.4618 11.9282 16.2112 12.5511 12.5406C13.3244 8.0099 17.8472 4.36663 23.3893 3.86753C23.8468 3.81567 24.3077 3.78494 24.7695 3.77548L24.773 3.77404ZM0 13.7991V16.6758H5.30851V13.7991H0ZM44.2376 13.7991V16.6758H49.5461V13.7991H44.2376ZM9.73227 25.4409L6.02693 28.4513L8.51662 30.4751L12.2184 27.4632L9.73227 25.4409ZM39.8138 25.4409L37.3259 27.4632L41.0295 30.4751L43.5191 28.4513L39.8138 25.4409ZM21.234 31.059H28.312V33.9357H21.234V31.059Z"
-                                fill="#1D84C5" />
-                        </svg>
+                        <img src="./images/Root Map Icon.png" alt="">
                     </div>
-                    <h5>Creating Concept</h5>
+                    <h5>Identifying Strategic</h5>
                     <p></p>
                 </div>
                 <div class="procedure">
                     <div class="working-circle">
                         <h1>02</h1>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="54" height="45" viewBox="0 0 54 45" fill="none">
-                            <path
-                                d="M27.1792 29.2883C29.9615 29.2883 32.215 27.7615 32.215 25.8785C32.215 23.9956 29.9615 22.4667 27.1792 22.4667C24.3969 22.4667 22.1433 20.9399 22.1433 19.0549C22.1433 17.172 24.3969 15.6452 27.1792 15.6452M27.1792 29.2883C24.3969 29.2883 22.1433 27.7615 22.1433 25.8785M27.1792 29.2883V30.6534M27.1792 15.6452V14.28M27.1792 15.6452C29.9615 15.6452 32.215 17.172 32.215 19.0549"
-                                stroke="#1D84C5" stroke-width="2.47665" stroke-linecap="round" />
-                            <path
-                                d="M39.7689 4.73835C35.9429 2.93912 31.5995 1.99437 27.1793 1.9999C13.2728 1.9999 2 11.1629 2 22.4666C2 25.7413 2.94674 28.8359 4.6262 31.5805C5.07439 32.3091 5.22295 33.1421 4.9636 33.93L3.46543 38.4859C3.31705 38.9368 3.31719 39.4114 3.46582 39.8623C3.61446 40.3131 3.90637 40.7242 4.31225 41.0543C4.71813 41.3844 5.2237 41.6219 5.77822 41.743C6.33273 41.8641 6.91668 41.8646 7.47145 41.7442L13.0764 40.5244C14.0493 40.3254 15.0782 40.4222 15.9695 40.7966C19.4516 42.206 23.2893 42.9375 27.1793 42.9333C41.0858 42.9333 52.3585 33.7704 52.3585 22.4666C52.3585 18.7396 51.1323 15.2419 48.9895 12.2333"
-                                stroke="#1D84C5" stroke-width="2.47665" stroke-linecap="round" />
-                        </svg>
+                        <img src="./images/Land Work JCB Icon.png" alt="">
                     </div>
-                    <h5>Budget Planning</h5>
+                    <h5>Land Development</h5>
                     <p></p>
                 </div>
                 <div class="procedure">
@@ -431,25 +390,15 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                                 fill="#1D84C5" />
                         </svg>
                     </div>
-                    <h5>Design Process</h5>
+                    <h5>Creating Value for Money</h5>
                     <p></p>
                 </div>
                 <div class="procedure">
                     <div class="working-circle">
                         <h1>04</h1>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="47" height="42" viewBox="0 0 47 42" fill="none">
-                            <path
-                                d="M23.2655 11.3468C24.5504 11.3468 25.5921 10.5001 25.5921 9.45568C25.5921 8.41125 24.5504 7.56458 23.2655 7.56458C21.9806 7.56458 20.939 8.41125 20.939 9.45568C20.939 10.5001 21.9806 11.3468 23.2655 11.3468Z"
-                                fill="#1D84C5" />
-                            <path
-                                d="M9.30615 30.2579H37.2247V34.0401H9.30615V30.2579ZM18.6123 20.4809L25.108 25.7646L34.256 18.3231L37.2247 20.8024V13.2379H27.9185L30.9663 15.6491L25.1057 20.4128L18.6123 15.129L9.30615 22.6935L12.5959 25.3675L18.6123 20.4809Z"
-                                fill="#1D84C5" />
-                            <path
-                                d="M39.5513 3.78235H31.8783C31.6479 3.50389 31.3994 3.2356 31.1338 2.97863L31.1106 2.95593C29.4006 1.33823 26.9959 0.311552 24.3868 0.0852291C23.6458 -0.0284097 22.8851 -0.0284097 22.1441 0.0852291C19.535 0.311552 17.1303 1.33823 15.4203 2.95593L15.3971 2.97863C15.1316 3.23499 14.8831 3.50265 14.6526 3.78046V3.78235H6.97963C5.12909 3.78385 3.35486 4.38205 2.04633 5.44568C0.737793 6.50931 0.00184778 7.95147 0 9.45567V35.9312C0.00184778 37.4354 0.737793 38.8776 2.04633 39.9412C3.35486 41.0048 5.12909 41.603 6.97963 41.6045H39.5513C41.4018 41.603 43.176 41.0048 44.4846 39.9412C45.7931 38.8776 46.529 37.4354 46.5309 35.9312V9.45567C46.529 7.95147 45.7931 6.50931 44.4846 5.44568C43.176 4.38205 41.4018 3.78385 39.5513 3.78235ZM41.8778 35.9312C41.8778 36.4328 41.6327 36.9138 41.1964 37.2684C40.7601 37.6231 40.1683 37.8223 39.5513 37.8223H6.97963C6.3626 37.8223 5.77083 37.6231 5.33452 37.2684C4.89821 36.9138 4.65309 36.4328 4.65309 35.9312V9.45567C4.65309 8.95412 4.89821 8.47311 5.33452 8.11846C5.77083 7.76381 6.3626 7.56456 6.97963 7.56456H17.5654C17.8324 6.49581 18.5457 5.53496 19.5846 4.84479C20.6234 4.15463 21.9238 3.77761 23.2654 3.77761C24.6071 3.77761 25.9075 4.15463 26.9463 4.84479C27.9852 5.53496 28.6985 6.49581 28.9655 7.56456H39.5513C40.1683 7.56456 40.7601 7.76381 41.1964 8.11846C41.6327 8.47311 41.8778 8.95412 41.8778 9.45567V35.9312Z"
-                                fill="#1D84C5" />
-                        </svg>
+                        <img src="./images/Happy face icon.png" alt="">
                     </div>
-                    <h5>Building Dream</h5>
+                    <h5>Building Happy Customer</h5>
                     <p></p>
                 </div>
             </div>
@@ -458,7 +407,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
     <!--------------------- Partner --------------------------------------->
 
-    <div class="container-fluid mt-4 mb-5 py-5">
+    <!-- <div class="container-fluid mt-4 mb-5 py-5">
         <div class="partner-title">
             <h5 class="comman-sub-heading">[ Our Partner ]</h5>
             <h3 class="sketch-heading mt-4 mb-5">Our Trusted Partner</h3>
@@ -488,27 +437,27 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!--------------- Gallery -------------------->
-    <div class="container-fluid mt-4 container-fluid-max whole-gallery">
+    <div class="mt-4 container-fluid-max whole-gallery">
         <div class="first-half-gallery">
             <div class="gallery">
-                <img src="./images/gallery1.png" alt="" />
+                <img src="./images/gallery1.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
                     <h6>[ Interior ]</h6>
                 </div>
             </div>
             <div class="gallery">
-                <img src="./images/gallery3.png" alt="" />
+                <img src="./images/gallery2.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
                     <h6>[ Interior ]</h6>
                 </div>
             </div>
             <div class="gallery">
-                <img src="./images/gallery2.png" alt="" />
+                <img src="./images/gallery3.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
                     <h6>[ Interior ]</h6>
@@ -518,29 +467,43 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
         <div class="secound-half-gallery">
             <div class="gallery">
-                <img src="./images/gallery3.png" alt="" />
+                <img src="./images/gallery4.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
                     <h6>[ Interior ]</h6>
                 </div>
             </div>
             <div class="gallery">
-                <img src="./images/gallery2.png" alt="" />
+                <img src="./images/gallery5.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
                     <h6>[ Interior ]</h6>
                 </div>
             </div>
             <div class="gallery">
-                <img src="./images/gallery1.png" alt="" />
+                <img src="./images/gallery6.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
                     <h6>[ Interior ]</h6>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="container-fluid-max consulting py-5">
         <div class="container-fluid">
@@ -677,6 +640,24 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <!-- professional -->
 
     <div class="container-fluid mt-5 pt-3">
+    <div class="professional-svg">
+            <svg width="241" height="698" viewBox="0 0 241 698" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.1">
+              <path d="M241 2L40.1667 185.619V531.817L241 696.31V2Z" fill="url(#paint0_linear_123_3)" stroke="black"/>
+              <path d="M74.5952 277.429V420.881L0 453.397V239.175L74.5952 277.429Z" fill="#9499A3"/>
+              <path d="M149.19 239.175L74.5952 277.429V420.881L149.19 453.397V239.175Z" fill="#D9D9D9"/>
+              </g>
+              <defs>
+              <linearGradient id="paint0_linear_123_3" x1="140.583" y1="2" x2="140.583" y2="696.31" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#1C537D"/>
+              <stop offset="1" stop-color="#4BAEEF"/>
+              </linearGradient>
+              </defs>
+              </svg>
+              
+          </div>
+
+
         <div class="professional-heading my-5 partner-title">
             <h5 class="comman-sub-heading">[ Our Professional ]</h5>
             <h3 class="sketch-heading">meet our skilled team</h3>
@@ -688,45 +669,33 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                     <div class="skill-team-partner">
                         <img src="./images/pro1.png" alt="oleve steve" />
                         <div class="skill-box">
-                            <h5>oleve steve</h5>
+                            <h5>Mr. Goutham Chandra</h5>
                             <p>Chief Executive Officer</p>
                         </div>
                     </div>
                     <div class="skill-team-partner">
                         <img src="./images/pro1.png" alt="oleve steve" />
                         <div class="skill-box">
-                            <h5>oleve steve</h5>
-                            <p>Chief Executive Officer</p>
+                            <h5>Mr. Siva Chandran</h5>
+                            <p>Project & Marketing Head</p>
                         </div>
                     </div>
                     <div class="skill-team-partner">
                         <img src="./images/pro1.png" alt="oleve steve" />
                         <div class="skill-box">
-                            <h5>oleve steve</h5>
-                            <p>Chief Executive Officer</p>
+                            <h5>Mr. Gopala Krishnan</h5>
+                            <p>Farming Manager</p>
                         </div>
                     </div>
+                   
                     <div class="skill-team-partner">
                         <img src="./images/pro1.png" alt="oleve steve" />
                         <div class="skill-box">
-                            <h5>oleve steve</h5>
-                            <p>Chief Executive Officer</p>
+                            <h5>Mr. Ravi Teja</h5>
+                            <p>Purchase Manager</p>
                         </div>
                     </div>
-                    <div class="skill-team-partner">
-                        <img src="./images/pro1.png" alt="oleve steve" />
-                        <div class="skill-box">
-                            <h5>oleve steve</h5>
-                            <p>Chief Executive Officer</p>
-                        </div>
-                    </div>
-                    <div class="skill-team-partner">
-                        <img src="./images/pro1.png" alt="oleve steve" />
-                        <div class="skill-box">
-                            <h5>oleve steve</h5>
-                            <p>Chief Executive Officer</p>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>

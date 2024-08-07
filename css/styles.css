@@ -110,7 +110,7 @@ p {
 /*About us Image */
 
 .about-left-img {
-  background-image: url(../images/sketch-img.png);
+  background-image: url(../images/farm-land1.jpeg);
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -124,7 +124,7 @@ p {
 
 .about-left-img::before {
   content: "";
-  background-image: url(../images/sketch-small.png);
+  background-image: url(../images/farm-land2.jpeg);
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -762,12 +762,16 @@ p {
   margin-bottom: 15px;
 }
 
-.serive-detail svg {
+.serive-detail img{
+  width: 34%;
+}
+
+.serive-detail img {
   transition: transform 0.4s ease, stroke 0.4s ease;
   stroke: #a7cee6; /* Initial stroke color */
 }
 
-.offer-box:hover .serive-detail svg {
+.offer-box:hover .serive-detail img {
   transform: rotate(30deg) scale(1.2);
   stroke: #fff; /* New stroke color on hover */
 }
@@ -802,7 +806,7 @@ p {
   column-gap: 40px;
 }
 
-.serive-detail svg {
+.serive-detail img {
   margin-top: -100px;
 }
 
@@ -888,12 +892,23 @@ p {
   transform: translate(-50%, -50%);
 }
 
+.working-circle img {
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 76px;
+}
+
 .working-circle svg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
 }
+
 
 .working-circle svg path {
   transition: fill 0.3s ease;
@@ -1052,8 +1067,8 @@ p {
   }
 
   .working-circle img {
-    width: 40%;
-    height: auto;
+    width: 20%;
+    height: 40px;
   }
 
   .working-circle h1 {
@@ -1225,45 +1240,46 @@ p {
   }
 } */
 
-/*---------------------Gallery----------------------*/
-
+/*-
+--------------------Gallery----------------------*/
+.whole-gallery{
+  padding: 0 0;
+}
 .gallery {
   position: relative;
   display: inline-block;
-}
-
-.gallery {
-  position: relative;
   overflow: hidden;
 }
 
 .gallery img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 420px;
+  object-fit: cover;
 }
 
 .gallery-box {
   position: absolute;
   bottom: -100%;
   left: 0;
-  width: auto;
-  padding: 20px 20px;
-  height: auto;
-  border-radius: 0px 30px 0px 0px;
+  width: 100%;
+  padding: 20px;
   background: rgba(0, 0, 0, 0.75);
   transition: bottom 0.5s ease-out;
+  border-radius: 0 30px 0 0;
 }
 
 .gallery:hover .gallery-box {
   bottom: 0;
 }
 
+.gallery-box h5, .gallery-box h6 {
+  margin: 0;
+  font-family: Montserrat;
+}
+
 .gallery-box h5 {
   color: #fff;
-  font-family: Montserrat;
-  margin: 0;
-  font-style: normal;
   font-weight: 500;
   text-transform: capitalize;
   margin-bottom: 10px;
@@ -1271,24 +1287,14 @@ p {
 
 .gallery-box h6 {
   color: #1a55ad;
-  font-family: Montserrat;
-
   font-weight: 600;
-  line-height: normal;
-  letter-spacing: 0.48px;
   text-transform: uppercase;
+  letter-spacing: 0.48px;
 }
 
-.gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover; /* Ensure the image covers the container without distorting */
-}
-
-.first-half-gallery,
-.secound-half-gallery {
+.first-half-gallery, .secound-half-gallery {
   display: grid;
+
 }
 
 .first-half-gallery {
@@ -1300,8 +1306,7 @@ p {
 }
 
 @media (max-width: 768px) {
-  .first-half-gallery,
-  .secound-half-gallery {
+  .first-half-gallery, .secound-half-gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1311,20 +1316,14 @@ p {
   }
 }
 
-/* For Mobile Screens */
 @media (max-width: 480px) {
   .gallery {
     width: 100%;
     margin: 2px 0;
   }
-  .gallery img {
-    width: 100%;
-    height: auto;
-  }
   .gallery-box {
-    width: 100%;
-    height: auto;
-    border-radius: 0px 15px 0px 0px;
+    border-radius: 0 15px 0 0;
+    padding: 10px;
   }
   .gallery-box h5 {
     font-size: 14px;
@@ -1334,35 +1333,7 @@ p {
   }
 }
 
-@media (max-width: 768px) {
-  .first-half-gallery,
-  .secound-half-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-  .gallery {
-    width: 90%;
-  }
-}
 
-@media (max-width: 480px) {
-  .gallery-box {
-    width: 100%;
-    height: auto;
-    border-radius: 0px 15px 0px 0px;
-  }
-  .gallery {
-    width: 100%;
-    margin: 2px 0;
-  }
-  .gallery-box h5 {
-    font-size: 14px;
-  }
-
-  .gallery-box h6 {
-    font-size: 12px;
-  }
-}
 
 /*-----------------COunceling --------------------*/
 .consulting {
@@ -1431,7 +1402,7 @@ p {
   margin: 0;
 }
 
-/* Media Queries for Responsiveness */
+
 
 @media (min-width: 768px) {
   .consulting-left {
@@ -2248,4 +2219,54 @@ textarea:not(:placeholder-shown) + label {
   margin-top: 60px;
   width: 100vw;
   overflow: hidden;
+}
+
+
+.professional-svg{
+  position: absolute;
+  right: 0;
+  
+  margin-top: -200px;
+ 
+}
+
+.professional-svg svg{
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 480px){
+  .professional-svg svg{
+    width: 50%;
+    overflow: hidden;
+  }
+  
+  .professional-svg{
+    right: -40%;
+  }
+}
+
+
+/* Scrollo BAr UPdaTion */
+
+
+::-webkit-scrollbar {
+  width: 12px; 
+  height: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 120px;
+  background: linear-gradient(90deg, #1d60c5 0%, #0e2e5f 100%);
+  border-radius: 6px; 
+  transition: background 0.3s; 
+}
+
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #0e2e5f 0%, #1d60c5 100%);
 }
