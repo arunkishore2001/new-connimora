@@ -247,8 +247,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
         </div>
     </div> -->
 
-      <div class="container mt-5">
-        <h2>About Us</h2>
+     
         <div class="container-fluid-max mt-5">
             <div class="flex-container">
                 <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
@@ -260,7 +259,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
                 <?php endwhile; ?>
             </div>
         </div>
-    </div>
+    
 
     <div class="container-fluid mt-5 pt-4">
       <div class="row">
@@ -294,20 +293,20 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
 
     <div class="container-fluid mt-5">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 order-3 order-md-0">
           <div class="mission-para">
             <p>Our vision is to be the trusted partner of choice for Investors for generations. Expand our presence to new markets, including emerging cities and international hubs. To be ahead of the curve.</p>
           </div>
         </div>
         
-        <div class="col-md-3">
+        <div class="col-md-3 order-1 order-md-1">
          <div class="mission-img">
           <img src="./images/right-logo.png" alt="">
          </div>
         </div>
       
 
-        <div class="col-md-4  vision">
+        <div class="col-md-4 order-0 order-md-2 vision">
           <div class="mission-heading1">
           <h1>OUR</h1>
           <div class="mission-heading2 ">
@@ -318,7 +317,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
       </div>
     </div>
 
-    <div class="container-fluid mt-5 pt-3">
+    <div class="container-fluid mt-4">
         <div class="professional-heading my-5 partner-title">
             <h5 class="comman-sub-heading">[ Our Professional ]</h5>
             <h3 class="sketch-heading">meet our skilled team</h3>
