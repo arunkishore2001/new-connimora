@@ -579,7 +579,6 @@ margin-left: 40px;
 /*Youtube*/
 
 
-
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -589,14 +588,35 @@ margin-left: 40px;
 }
 
 .flex-item {
-  flex: 1 1 300px; 
+  flex: 1 1 calc(33.333% - 32px); /* 3 items per row with gap consideration */
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 560px; 
+  max-width: 560px;
+  box-sizing: border-box;
 }
 
 .flex-item iframe {
   width: 100%;
+  min-width: 500px;
   height: 320px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 1024px) {
+  .flex-item {
+    flex: 1 1 calc(50% - 32px); /* 2 items per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .flex-item {
+    flex: 1 1 calc(100% - 32px); /* 1 item per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .flex-item iframe {
+    height: 200px; /* Adjust iframe height for very small screens */
+  }
 }

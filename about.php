@@ -1,3 +1,10 @@
+<?php
+include './admin_php/config.php';
+
+// Fetch video links
+$videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -240,20 +247,20 @@
         </div>
     </div> -->
 
-    <div class="container-fluid-max mt-5">
-      <div class="flex-container">
-        <div class="flex-item">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/kWSHdixzMco?si=jkyirRlQaQicCnKp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </div>
-        
-
-        <div class="flex-item">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/4jnzf1yj48M?si=GELvf10fWBqfu9W-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      </div>
-
-      <div class="flex-item">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/OzUkvzyBttA?si=QRcBpAENRe6hElO2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
+      <div class="container mt-5">
+        <h2>About Us</h2>
+        <div class="container-fluid-max mt-5">
+            <div class="flex-container">
+                <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
+                    <div class="flex-item ">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $video['embed_url']; ?>" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+        </div>
     </div>
-    </div>
-
 
     <div class="container-fluid mt-5 pt-4">
       <div class="row">

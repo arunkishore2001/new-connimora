@@ -94,6 +94,47 @@ if (isset($_POST['delete'])) {
     exit;
 }
 
+// Add Video Link
+if (isset($_POST['add_video'])) {
+    $video_url = mysqli_real_escape_string($conn, $_POST['video_url']);
+
+    // Extract video ID from the URL
+    parse_str(parse_url($video_url, PHP_URL_QUERY), $url_params);
+    $video_id = isset($url_params['v']) ? $url_params['v'] : '';
+
+    if (!$video_id) {
+        $_SESSION['error'] = 'Invalid YouTube URL';
+        header('Location: admin_dashboard.php');
+        exit;
+    }
+
+    $embed_url = 'https://www.youtube.com/embed/' . $video_id;
+
+    $insertQuery = "INSERT INTO video_links (video_url, embed_url) VALUES ('$video_url', '$embed_url')";
+    if (mysqli_query($conn, $insertQuery)) {
+        $_SESSION['success'] = 'Video link added successfully';
+    } else {
+        $_SESSION['error'] = 'Failed to add video link';
+    }
+    header('Location: admin_dashboard.php');
+    exit;
+}
+
+// Delete Video Link
+if (isset($_POST['delete_video'])) {
+    $videoId = mysqli_real_escape_string($conn, $_POST['video_id']);
+
+    $deleteQuery = "DELETE FROM video_links WHERE id = '$videoId'";
+    if (mysqli_query($conn, $deleteQuery)) {
+        $_SESSION['success'] = 'Video link deleted successfully';
+    } else {
+        $_SESSION['error'] = 'Failed to delete video link';
+    }
+    header('Location: admin_dashboard.php');
+    exit;
+}
+
+$videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
 $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
 ?>
 
@@ -106,6 +147,14 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .video-card {
+            margin-bottom: 1.5rem;
+        }
+        .embed-responsive-16by9 {
+            margin-bottom: 0.5rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -126,6 +175,9 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
                 unset($_SESSION['success']); ?>
             </div>
         <?php endif; ?>
+
+
+
 
         <!-- Upload Image Form -->
         <form method="post" enctype="multipart/form-data" class="mt-4">
@@ -150,6 +202,41 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
             <button type="submit" name="upload" class="btn btn-primary">Upload Images</button>
         </form>
 
+
+
+         <!-- Add Video Link Form -->
+         <form method="post" class="mt-4">
+            <div class="form-group">
+                <label for="video_url">Video URL</label>
+                <input type="text" name="video_url" class="form-control" required>
+            </div>
+            <button type="submit" name="add_video" class="btn btn-primary">Add Video Link</button>
+        </form>
+
+        <!-- Display Existing Videos -->
+        <div class="mt-5">
+            <h3>Existing Videos</h3>
+            <div class="row">
+                <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card video-card">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="<?php echo $video['embed_url']; ?>" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body">
+                                <!-- Delete Button Form -->
+                                <form method="post" class="mt-2">
+                                    <input type="hidden" name="video_id" value="<?php echo $video['id']; ?>">
+                                    <button type="submit" name="delete_video" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+        </div>
+
+        
         <!-- contact info -->
 
         <hr>
