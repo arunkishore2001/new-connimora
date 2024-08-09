@@ -35,20 +35,20 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
                 <div class="contact-form">
                     <form method="post" id="contactForm">
                         <div class="input-container">
-                            <input type="text" id="name" name='name' />
                             <label class="contact-form-label" for="name">Enter Your Name</label>
+                            <input type="text" id="name" name='name' />
                         </div>
                         <div class="input-container">
-                            <input type="text" id="email" name='email' />
                             <label class="contact-form-label" for="email">Enter Your Email</label>
+                            <input type="text" id="email" name='email' />
                         </div>
                         <div class="input-container">
-                            <input type="text" id="phone" name='phone' />
                             <label class="contact-form-label" for="phone">Enter Your Phone Number</label>
+                            <input type="text" id="phone" name='phone' />
                         </div>
                         <div class="input-container">
-                            <textarea id="message" name='message'></textarea>
                             <label class="contact-form-label" for="message">Message...</label>
+                            <textarea id="message" name='message'></textarea>
                         </div>
                         <button class="custom-button">SEND</button>
                     </form>
