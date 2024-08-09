@@ -15,7 +15,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Document</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <!-- Swiper CSS -->
@@ -30,13 +30,13 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
@@ -47,6 +47,9 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script src="./aos.js"></script>
+    <link rel="stylesheet" href="./css/aos.css">
 </head>
 
 <body>
@@ -172,9 +175,14 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
 
                 <p class="sketch-para">
-                Connemara Realty LLP., was founded in the year 2019 by a first-generation entrepreneurs, having its corporate office at Chennai, with a wide experience mainly in the field of Construction, Farm Land Development and Management.  The Company is experienced in developing sustainable housing and eco-friendly farmlands.
-                <br>
-At Connemara, we take a meticulous approach to identifying ideal locations for development. Our team of experts uses a combination of market analysis, demographic research, and site assessment to pinpoint areas with high potential for growth and appreciation.
+                    Connemara Realty LLP., was founded in the year 2019 by a first-generation entrepreneurs, having its
+                    corporate office at Chennai, with a wide experience mainly in the field of Construction, Farm Land
+                    Development and Management. The Company is experienced in developing sustainable housing and
+                    eco-friendly farmlands.
+                    <br>
+                    At Connemara, we take a meticulous approach to identifying ideal locations for development. Our team
+                    of experts uses a combination of market analysis, demographic research, and site assessment to
+                    pinpoint areas with high potential for growth and appreciation.
 
                 </p>
 
@@ -219,14 +227,14 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
             <h1 class="count" data-target="3">[ 0 + ]</h1>
             <h5>Ongoing Projects</h5>
         </div>
-       
+
     </div>
 
     <!-- ------------ Space Section---------------- -->
 
     <div class="container-fluid-max make-space">
         <div class="space">
-            <div class="space-contain">
+            <div class="space-contain" data-animation="slideInUp">
                 <img src="./images/Farm-land-img.jpeg" alt="" />
                 <h5 class="po-space">Farm Land</h5>
                 <h1>01</h1>
@@ -234,7 +242,7 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
                 <span class="space-line-horizontal"></span>
             </div>
 
-            <div class="space-contain">
+            <div class="space-contain" data-animation="slideInUp" data-animation-delay="200ms">
                 <img src="./images/resort.jpeg" alt="" />
                 <h5>Resort Image</h5>
                 <h1>02</h1>
@@ -242,7 +250,7 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
                 <span class="space-line-horizontal"></span>
             </div>
 
-            <div class="space-contain">
+            <div class="space-contain" data-animation="slideInUp" data-animation-delay="400ms">
                 <img src="./images/commercial.jpeg" alt="" />
                 <h5 class="po-space">Commercial Office Interior</h5>
                 <h1>03</h1>
@@ -277,7 +285,7 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                       <img src="./images/Project management.png" alt="">
+                        <img src="./images/Project management.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -290,7 +298,7 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                    <img src="./images/Commercial iconn.png" alt="">
+                        <img src="./images/Commercial iconn.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -303,7 +311,7 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                    <img src="./images/Retail shop.png" alt="">
+                        <img src="./images/Retail shop.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -316,7 +324,7 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                    <img src="./images/HSB Icon.png" alt="">
+                        <img src="./images/HSB Icon.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -329,7 +337,7 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
             <div class="offer-box">
                 <div class="service-icon">
                     <div class="serive-detail">
-                    <img src="./images/Resort.png" alt="">
+                        <img src="./images/Resort.png" alt="">
                         <h6>Designing & Planning</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -487,28 +495,14 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
                     <h6>[ Interior ]</h6>
                 </div>
             </div>
-
         </div>
     </div>
     <!-- </div> -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="container-fluid-max consulting py-5">
+    <div class="container-fluid-max consulting py-5" data-animation="slideInUp">
         <div class="container-fluid">
             <div class="consulting-left">
-                <div class="counsel-heading">
+                <div class="counsel-heading" data-animation="slideInUp">
                     <h3>Get Incredible Interior</h3>
                 </div>
                 <h3 class="right-now">Right Now!</h3>
@@ -518,7 +512,7 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
                         all the details and consulting the builders
                     </p>
                 </div>
-                    <button class="custom-button">GET IN TOUCH</button>
+                <button class="custom-button">GET IN TOUCH</button>
             </div>
         </div>
     </div>
@@ -537,13 +531,13 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
                         <ul class="slider">
                             <?php
                             while ($projectResult = mysqli_fetch_assoc($projectQuery)) {
-                              $projectName = $projectResult['project_name'];
-                              $imageQuery = mysqli_query($conn, "SELECT * FROM images WHERE project_name = '$projectName' ORDER BY id LIMIT 1");
-                              $imageResult = mysqli_fetch_assoc($imageQuery);
-                              if ($imageResult) {
-                                $imageUrl = $imageResult['url'];
-                                $imageAddress = $imageResult['address'];
-                              ?>
+                                $projectName = $projectResult['project_name'];
+                                $imageQuery = mysqli_query($conn, "SELECT * FROM images WHERE project_name = '$projectName' ORDER BY id LIMIT 1");
+                                $imageResult = mysqli_fetch_assoc($imageQuery);
+                                if ($imageResult) {
+                                    $imageUrl = $imageResult['url'];
+                                    $imageAddress = $imageResult['address'];
+                                    ?>
                             <li>
                                 <a href="">
                                     <figure class="slider-hover">
@@ -551,14 +545,19 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
                                             alt="Volcano and lava field against a stormy sky" />
                                         <figcaption>
                                             <div class="project-box">
-                                                <h5><?php echo $projectName; ?></h5>
-                                                <h6>[ <?php echo $imageAddress ?> ]</h6>
+                                                <h5>
+                                                    <?php echo $projectName; ?>
+                                                </h5>
+                                                <h6>[
+                                                    <?php echo $imageAddress ?> ]
+                                                </h6>
                                             </div>
                                         </figcaption>
                                     </figure>
                                 </a>
                             </li>
-                            <?php }} ?>
+                            <?php }
+                            } ?>
                         </ul>
                     </div>
                 </div>
@@ -639,63 +638,64 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
 
     <!-- professional -->
 
-    <div class="container-fluid mt-5 pt-3">
-    <div class="professional-svg">
+    <div class="container-fluid-max">
+        <div class="professional-svg">
             <svg width="241" height="698" viewBox="0 0 241 698" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g opacity="0.1">
-              <path d="M241 2L40.1667 185.619V531.817L241 696.31V2Z" fill="url(#paint0_linear_123_3)" stroke="black"/>
-              <path d="M74.5952 277.429V420.881L0 453.397V239.175L74.5952 277.429Z" fill="#9499A3"/>
-              <path d="M149.19 239.175L74.5952 277.429V420.881L149.19 453.397V239.175Z" fill="#D9D9D9"/>
-              </g>
-              <defs>
-              <linearGradient id="paint0_linear_123_3" x1="140.583" y1="2" x2="140.583" y2="696.31" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#1C537D"/>
-              <stop offset="1" stop-color="#4BAEEF"/>
-              </linearGradient>
-              </defs>
-              </svg>
-              
-          </div>
-
-
-        <div class="professional-heading my-5 partner-title">
-            <h5 class="comman-sub-heading">[ Our Professional ]</h5>
-            <h3 class="sketch-heading">meet our skilled team</h3>
+                <g opacity="0.1">
+                    <path d="M241 2L40.1667 185.619V531.817L241 696.31V2Z" fill="url(#paint0_linear_123_3)"
+                        stroke="black" />
+                    <path d="M74.5952 277.429V420.881L0 453.397V239.175L74.5952 277.429Z" fill="#9499A3" />
+                    <path d="M149.19 239.175L74.5952 277.429V420.881L149.19 453.397V239.175Z" fill="#D9D9D9" />
+                </g>
+                <defs>
+                    <linearGradient id="paint0_linear_123_3" x1="140.583" y1="2" x2="140.583" y2="696.31"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#1C537D" />
+                        <stop offset="1" stop-color="#4BAEEF" />
+                    </linearGradient>
+                </defs>
+            </svg>
         </div>
+        <div class="container-fluid mt-5 pt-3">
+            <div class="professional-heading my-5 partner-title">
+                <h5 class="comman-sub-heading">[ Our Professional ]</h5>
+                <h3 class="sketch-heading">meet our skilled team</h3>
+            </div>
 
-        <div class="scroll-container-partner">
-            <div class="scroll-inner-partner">
-                <div class="partner-detail-partner">
-                    <div class="skill-team-partner">
-                        <img src="./images/pro1.png" alt="oleve steve" />
-                        <div class="skill-box">
-                            <h5>Mr. Goutham Chandra</h5>
-                            <p>Chief Executive Officer</p>
+            <div class="scroll-container-partner">
+                <div class="scroll-inner-partner">
+                    <div class="partner-detail-partner">
+                        <div class="skill-team-partner">
+                            <img src="./images/pro1.png" alt="oleve steve" />
+                            <div class="skill-box">
+                                <h5>Mr. Goutham Chandra</h5>
+                                <p>Chief Executive Officer</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-team-partner">
-                        <img src="./images/pro1.png" alt="oleve steve" />
-                        <div class="skill-box">
-                            <h5>Mr. Siva Chandran</h5>
-                            <p>Project & Marketing Head</p>
+                        <div class="skill-team-partner">
+                            <img src="./images/pro1.png" alt="oleve steve" />
+                            <div class="skill-box">
+                                <h5>Mr. Siva Chandran</h5>
+                                <p>Project & Marketing Head</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-team-partner">
-                        <img src="./images/pro1.png" alt="oleve steve" />
-                        <div class="skill-box">
-                            <h5>Mr. Gopala Krishnan</h5>
-                            <p>Farming Manager</p>
+                        <div class="skill-team-partner">
+                            <img src="./images/pro1.png" alt="oleve steve" />
+                            <div class="skill-box">
+                                <h5>Mr. Gopala Krishnan</h5>
+                                <p>Farming Manager</p>
+                            </div>
                         </div>
-                    </div>
-                   
-                    <div class="skill-team-partner">
-                        <img src="./images/pro1.png" alt="oleve steve" />
-                        <div class="skill-box">
-                            <h5>Mr. Ravi Teja</h5>
-                            <p>Purchase Manager</p>
+
+                        <div class="skill-team-partner">
+                            <img src="./images/pro1.png" alt="oleve steve" />
+                            <div class="skill-box">
+                                <h5>Mr. Ravi Teja</h5>
+                                <p>Purchase Manager</p>
+                            </div>
                         </div>
+
                     </div>
-                   
                 </div>
             </div>
         </div>
@@ -703,18 +703,18 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
 
     <!-- Footer -->
     <?php include 'footer.php'; ?>
-    
+
     </div>
 
     <script>
-    // Assuming you have a PHP script to fetch reviews, replace 'fetch_reviews.php' with your actual script
-    $.get('./admin_php/fetch_userReview.php', function(data) {
-        var reviews = JSON.parse(data); // Assuming your data is in JSON format
+        // Assuming you have a PHP script to fetch reviews, replace 'fetch_reviews.php' with your actual script
+        $.get('./admin_php/fetch_userReview.php', function (data) {
+            var reviews = JSON.parse(data); // Assuming your data is in JSON format
 
-        var reviewsWrapper = $('#reviewsWrapper');
+            var reviewsWrapper = $('#reviewsWrapper');
 
-        reviews.forEach(function(review) {
-            var totalReviews = `
+            reviews.forEach(function (review) {
+                var totalReviews = `
                   <div class="swiper-slide">
                     <div class="testimonial">
                         <div class="testimonial-box">
@@ -724,7 +724,7 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
                             <p>${review.review}</p>
                         </div>
                         <div class="test-details">
-                            ${review.photo ?` <img src="${review.photo}" alt="" />`: ``}
+                            ${review.photo ? ` <img src="${review.photo}" alt="" />` : ``}
                             <div class="test-proof">
                                 <h6>${review.name}</h6>
                                 <p>${review.designation}</p>
@@ -733,307 +733,307 @@ At Connemara, we take a meticulous approach to identifying ideal locations for d
                     </div>
                 </div>
           `
-            reviewsWrapper.append(totalReviews);
-        });
-        reloadReviews();
-    });
-
-    $("#reviewForm").on('submit', function(e) {
-        e.preventDefault();
-        if ($("#reviewForm").valid()) { // Check if the form is valid
-            $.ajax({
-                url: $(this).attr('action'),
-                type: 'POST',
-                data: new FormData(this),
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function(data) {
-                    $("#ReviewSubmitMessage").html('<div class="alert alert-success my-4">' + data +
-                        '</div>'); // Display success message
-                    $("#reviewForm")[0].reset(); // Clear the form fields
-                    $('.modal-footer button').click();
-                    $("#myModal").modal('hide'); // Close the modal
-                },
-                error: function() {
-                    $("#ReviewSubmitMessage").html(
-                        '<div class="alert alert-danger">An error occurred.</div>'
-                        ); // Display error message
-                }
+                reviewsWrapper.append(totalReviews);
             });
-        }
-    });
+            reloadReviews();
+        });
 
-    $.validator.addMethod('filesize', function(value, element, param) {
-        return this.optional(element) || (element.files[0].size <= param * 1024)
-    }, 'File size must be less than {0}KB');
-
-
-    $("#reviewForm").validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 4
-            },
-            designation: {
-                required: true,
-                minlength: 3,
-            },
-            photo: {
-                extension: "jpg|jpeg|png|gif",
-                filesize: 200
-            },
-            title: {
-                required: true,
-                minlength: 5
-            },
-            review: {
-                required: true,
-                minlength: 10
+        $("#reviewForm").on('submit', function (e) {
+            e.preventDefault();
+            if ($("#reviewForm").valid()) { // Check if the form is valid
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function (data) {
+                        $("#ReviewSubmitMessage").html('<div class="alert alert-success my-4">' + data +
+                            '</div>'); // Display success message
+                        $("#reviewForm")[0].reset(); // Clear the form fields
+                        $('.modal-footer button').click();
+                        $("#myModal").modal('hide'); // Close the modal
+                    },
+                    error: function () {
+                        $("#ReviewSubmitMessage").html(
+                            '<div class="alert alert-danger">An error occurred.</div>'
+                        ); // Display error message
+                    }
+                });
             }
-        },
-        messages: {
-            name: {
-                required: "Please enter your name",
-                minlength: "Your name must consist of at least 4 characters"
+        });
+
+        $.validator.addMethod('filesize', function (value, element, param) {
+            return this.optional(element) || (element.files[0].size <= param * 1024)
+        }, 'File size must be less than {0}KB');
+
+
+        $("#reviewForm").validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 4
+                },
+                designation: {
+                    required: true,
+                    minlength: 3,
+                },
+                photo: {
+                    extension: "jpg|jpeg|png|gif",
+                    filesize: 200
+                },
+                title: {
+                    required: true,
+                    minlength: 5
+                },
+                review: {
+                    required: true,
+                    minlength: 10
+                }
             },
-            designation: {
-                required: "Please enter your designation",
-                minlength: "Your designation must consist of at least 3 characters"
+            messages: {
+                name: {
+                    required: "Please enter your name",
+                    minlength: "Your name must consist of at least 4 characters"
+                },
+                designation: {
+                    required: "Please enter your designation",
+                    minlength: "Your designation must consist of at least 3 characters"
+                },
+                photo: {
+                    extension: "Invalid file type. Only JPG, JPEG, PNG, and GIF files are allowed",
+                    filesize: "File size must be less than 200KB"
+                },
+                title: {
+                    required: "Please enter your review title",
+                    minlength: "Review title must consist of at least 5 characters"
+                },
+                review: {
+                    required: "Please write a review",
+                    minlength: "Your review must consist of at least 10 characters"
+                }
             },
-            photo: {
-                extension: "Invalid file type. Only JPG, JPEG, PNG, and GIF files are allowed",
-                filesize: "File size must be less than 200KB"
-            },
-            title: {
-                required: "Please enter your review title",
-                minlength: "Review title must consist of at least 5 characters"
-            },
-            review: {
-                required: "Please write a review",
-                minlength: "Your review must consist of at least 10 characters"
-            }
-        },
-    });
+        });
     </script>
     <!--  testimonial slider -->
     <script>
-    function reloadReviews() {
-        const swiper = new Swiper(".swiper-container", {
-            loop: true,
-            slidesPerView: 3,
-            spaceBetween: 30,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                renderBullet: function(index, className) {
-                    return '<span class="' + className + '"></span>';
+        function reloadReviews() {
+            const swiper = new Swiper(".swiper-container", {
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 30,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '"></span>';
+                    },
                 },
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    550: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    900: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 50,
+                    },
                 },
-                550: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                900: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-                1200: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-            },
+            });
+        };
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            const $scrollInner = $(".scroll-inner-partner");
+            const $partnerDetail = $(".partner-detail-partner");
+            const clonedContent = $partnerDetail.clone();
+            $scrollInner.append(clonedContent);
         });
-    };
     </script>
 
     <script>
-    $(document).ready(function() {
-        const $scrollInner = $(".scroll-inner-partner");
-        const $partnerDetail = $(".partner-detail-partner");
-        const clonedContent = $partnerDetail.clone();
-        $scrollInner.append(clonedContent);
-    });
-    </script>
+        var $slider = $(".slideshow .slider"),
+            maxItems = $(".item", $slider).length,
+            dragging = false,
+            tracking,
+            rightTracking;
 
-    <script>
-    var $slider = $(".slideshow .slider"),
-        maxItems = $(".item", $slider).length,
-        dragging = false,
-        tracking,
-        rightTracking;
+        $sliderRight = $(".slideshow")
+            .clone()
+            .addClass("slideshow-right")
+            .appendTo($(".split-slideshow"));
 
-    $sliderRight = $(".slideshow")
-        .clone()
-        .addClass("slideshow-right")
-        .appendTo($(".split-slideshow"));
+        rightItems = $(".item", $sliderRight).toArray();
+        reverseItems = rightItems.reverse();
+        $(".slider", $sliderRight).html("");
+        for (i = 0; i < maxItems; i++) {
+            $(reverseItems[i]).appendTo($(".slider", $sliderRight));
+        }
 
-    rightItems = $(".item", $sliderRight).toArray();
-    reverseItems = rightItems.reverse();
-    $(".slider", $sliderRight).html("");
-    for (i = 0; i < maxItems; i++) {
-        $(reverseItems[i]).appendTo($(".slider", $sliderRight));
-    }
+        $slider
+            .addClass("slideshow-left")
+            .slick({
+                vertical: true,
+                swipe: false,
+                verticalSwiping: false,
+                arrows: false,
+                infinite: true,
+                dots: true,
+                speed: 1000,
+                cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
+            })
+            .on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+                if (
+                    currentSlide > nextSlide &&
+                    nextSlide == 0 &&
+                    currentSlide == maxItems - 1
+                ) {
+                    $(".slideshow-right .slider").slick("slickGoTo", -1);
+                    $(".slideshow-text").slick("slickGoTo", maxItems);
+                } else if (
+                    currentSlide < nextSlide &&
+                    currentSlide == 0 &&
+                    nextSlide == maxItems - 1
+                ) {
+                    $(".slideshow-right .slider").slick("slickGoTo", maxItems);
+                    $(".slideshow-text").slick("slickGoTo", -1);
+                } else {
+                    $(".slideshow-right .slider").slick(
+                        "slickGoTo",
+                        maxItems - 1 - nextSlide
+                    );
+                    $(".slideshow-text").slick("slickGoTo", nextSlide);
+                }
+            });
 
-    $slider
-        .addClass("slideshow-left")
-        .slick({
-            vertical: true,
+        $(".slideshow-right .slider").slick({
             swipe: false,
-            verticalSwiping: false,
+            vertical: true,
             arrows: false,
             infinite: true,
-            dots: true,
-            speed: 1000,
+            speed: 950,
             cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
-        })
-        .on("beforeChange", function(event, slick, currentSlide, nextSlide) {
-            if (
-                currentSlide > nextSlide &&
-                nextSlide == 0 &&
-                currentSlide == maxItems - 1
-            ) {
-                $(".slideshow-right .slider").slick("slickGoTo", -1);
-                $(".slideshow-text").slick("slickGoTo", maxItems);
-            } else if (
-                currentSlide < nextSlide &&
-                currentSlide == 0 &&
-                nextSlide == maxItems - 1
-            ) {
-                $(".slideshow-right .slider").slick("slickGoTo", maxItems);
-                $(".slideshow-text").slick("slickGoTo", -1);
-            } else {
-                $(".slideshow-right .slider").slick(
-                    "slickGoTo",
-                    maxItems - 1 - nextSlide
-                );
-                $(".slideshow-text").slick("slickGoTo", nextSlide);
-            }
+            initialSlide: maxItems - 1,
         });
 
-    $(".slideshow-right .slider").slick({
-        swipe: false,
-        vertical: true,
-        arrows: false,
-        infinite: true,
-        speed: 950,
-        cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
-        initialSlide: maxItems - 1,
-    });
+        $(".slideshow-text").slick({
+            swipe: false,
+            vertical: true,
+            arrows: false,
+            infinite: true,
+            speed: 900,
+            cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
+        });
 
-    $(".slideshow-text").slick({
-        swipe: false,
-        vertical: true,
-        arrows: false,
-        infinite: true,
-        speed: 900,
-        cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
-    });
-
-    setInterval(() => {
-        $slider.slick("slickNext");
-    }, 4000);
+        setInterval(() => {
+            $slider.slick("slickNext");
+        }, 4000);
     </script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const menuToggle = document.querySelector(".menu-toggle");
-        const smallNav = document.querySelector(".small-nav");
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const smallNav = document.querySelector(".small-nav");
 
-        menuToggle.addEventListener("click", function() {
-            smallNav.classList.toggle("show");
+            menuToggle.addEventListener("click", function () {
+                smallNav.classList.toggle("show");
+            });
         });
-    });
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const counters = document.querySelectorAll(".count");
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".count");
 
-        counters.forEach((counter) => {
-            const updateCount = () => {
-                const target = +counter.getAttribute("data-target");
-                const count = +counter.innerText.replace(/[^\d]/g, "");
-                const increment = target / 1000; // Adjust this value for speed
-                const delay = 20; // Adjust this value for speed
+            counters.forEach((counter) => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute("data-target");
+                    const count = +counter.innerText.replace(/[^\d]/g, "");
+                    const increment = target / 1000; // Adjust this value for speed
+                    const delay = 20; // Adjust this value for speed
 
-                if (count < target) {
-                    counter.innerText = `[ ${Math.ceil(count + increment)} + ]`;
-                    setTimeout(updateCount, delay);
-                } else {
-                    counter.innerText = `[ ${target} + ]`;
-                }
-            };
+                    if (count < target) {
+                        counter.innerText = `[ ${Math.ceil(count + increment)} + ]`;
+                        setTimeout(updateCount, delay);
+                    } else {
+                        counter.innerText = `[ ${target} + ]`;
+                    }
+                };
 
-            updateCount();
+                updateCount();
+            });
         });
-    });
 
-    var copy = document.querySelector(".skilled").cloneNode(true);
-    document.querySelector(".skill-slide").appendChild(copy);
+        var copy = document.querySelector(".skilled").cloneNode(true);
+        document.querySelector(".skill-slide").appendChild(copy);
 
-    // Swapiing Image
+        // Swapiing Image
 
-    const firstImage = document.getElementById("firstImage");
-    const secondImage = document.getElementById("secondImage");
+        const firstImage = document.getElementById("firstImage");
+        const secondImage = document.getElementById("secondImage");
 
-    const originalSrcFirstImage = firstImage.src;
-    const originalSrcSecondImage = secondImage.src;
+        const originalSrcFirstImage = firstImage.src;
+        const originalSrcSecondImage = secondImage.src;
 
-    let isSwapped = false;
+        let isSwapped = false;
 
-    function swapImages() {
-        if (isSwapped) {
-            firstImage.src = originalSrcFirstImage;
-            secondImage.src = originalSrcSecondImage;
-            firstImage.style.opacity = "1";
-            secondImage.style.opacity = "1";
-        } else {
-            firstImage.src = originalSrcSecondImage;
-            secondImage.src = originalSrcFirstImage;
-            firstImage.style.opacity = "1";
-            secondImage.style.opacity = "1";
+        function swapImages() {
+            if (isSwapped) {
+                firstImage.src = originalSrcFirstImage;
+                secondImage.src = originalSrcSecondImage;
+                firstImage.style.opacity = "1";
+                secondImage.style.opacity = "1";
+            } else {
+                firstImage.src = originalSrcSecondImage;
+                secondImage.src = originalSrcFirstImage;
+                firstImage.style.opacity = "1";
+                secondImage.style.opacity = "1";
+            }
+            isSwapped = !isSwapped;
         }
-        isSwapped = !isSwapped;
-    }
 
-    setInterval(swapImages, 2000);
+        setInterval(swapImages, 2000);
 
-    // Mouse Interaction
+        // Mouse Interaction
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const mouseParallaxElements = document.querySelectorAll(".mouse-parallax");
+        document.addEventListener("DOMContentLoaded", function () {
+            const mouseParallaxElements = document.querySelectorAll(".mouse-parallax");
 
-        mouseParallaxElements.forEach(mouseParallaxElement => {
-            mouseParallaxElement.addEventListener("mousemove", function(e) {
-                const servicePageInfo = mouseParallaxElement.querySelector(".moving-img");
-                const img = servicePageInfo.querySelector("img");
+            mouseParallaxElements.forEach(mouseParallaxElement => {
+                mouseParallaxElement.addEventListener("mousemove", function (e) {
+                    const servicePageInfo = mouseParallaxElement.querySelector(".moving-img");
+                    const img = servicePageInfo.querySelector("img");
 
-                const rect = servicePageInfo.getBoundingClientRect();
-                const x = e.clientX - rect.left; // Mouse X relative to the element
-                const y = e.clientY - rect.top; // Mouse Y relative to the element
+                    const rect = servicePageInfo.getBoundingClientRect();
+                    const x = e.clientX - rect.left; // Mouse X relative to the element
+                    const y = e.clientY - rect.top; // Mouse Y relative to the element
 
-                const centerX = rect.width / 2; // Center X of the element
-                const centerY = rect.height / 2; // Center Y of the element
+                    const centerX = rect.width / 2; // Center X of the element
+                    const centerY = rect.height / 2; // Center Y of the element
 
-                const moveX = (x - centerX) / centerX * 20; // Adjust movement intensity
-                const moveY = (y - centerY) / centerY * 20; // Adjust movement intensity
+                    const moveX = (x - centerX) / centerX * 20; // Adjust movement intensity
+                    const moveY = (y - centerY) / centerY * 20; // Adjust movement intensity
 
-                const scale = 1.1; // Scale for zoom effect
+                    const scale = 1.1; // Scale for zoom effect
 
-                // Apply translation and scaling
-                img.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
-            });
+                    // Apply translation and scaling
+                    img.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
+                });
 
-            mouseParallaxElement.addEventListener("mouseleave", function() {
-                const img = mouseParallaxElement.querySelector("img");
-                img.style.transform = `translate(0px, 0px) scale(1)`;
+                mouseParallaxElement.addEventListener("mouseleave", function () {
+                    const img = mouseParallaxElement.querySelector("img");
+                    img.style.transform = `translate(0px, 0px) scale(1)`;
+                });
             });
         });
-    });
     </script>
 
     <script src="./js/animation.js"></script>

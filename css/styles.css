@@ -764,6 +764,7 @@ p {
 
 .serive-detail img{
   width: 34%;
+  max-height: 100px;
 }
 
 .serive-detail img {
@@ -772,7 +773,7 @@ p {
 }
 
 .offer-box:hover .serive-detail img {
-  transform: rotate(30deg) scale(1.2);
+  transform: rotate(15deg) scale(0.9);
   stroke: #fff; /* New stroke color on hover */
 }
 
@@ -871,9 +872,7 @@ p {
 
 .procedure h5 {
   color: #fff;
-  font-family: Montserrat;
   font-weight: 600;
-  line-height: 42px;
   text-transform: capitalize;
   text-align: center;
   margin-top: 20px;
@@ -1064,11 +1063,6 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .working-circle img {
-    width: 20%;
-    height: 40px;
   }
 
   .working-circle h1 {
@@ -2225,9 +2219,7 @@ textarea:not(:placeholder-shown) + label {
 .professional-svg{
   position: absolute;
   right: 0;
-  
   margin-top: -200px;
- 
 }
 
 .professional-svg svg{
@@ -2238,11 +2230,8 @@ textarea:not(:placeholder-shown) + label {
 @media (max-width: 480px){
   .professional-svg svg{
     width: 50%;
+    float: right;
     overflow: hidden;
-  }
-  
-  .professional-svg{
-    right: -40%;
   }
 }
 
