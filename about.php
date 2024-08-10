@@ -16,6 +16,9 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
     <link rel="stylesheet" href="./css/contact.css" />
     <link rel="stylesheet" href="./css/navBar.css" />
     <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/aos.css" />
+
+
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/animation.css" />
@@ -55,7 +58,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
 
     <div class="container-fluid-max secondary-pages-hero-section-container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" data-animation="slideInRight">
                 <div class="left-landing-image">
                     <div class="box">
                         <h1>Where Dimension Takes Shape</h1>
@@ -64,7 +67,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6" data-animation="slideInLeft">
                 <div class="right-landing-image">
                     <div class="right-loca">
                         <div class="about-item">
@@ -91,7 +94,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
         </div>
     </div>
 
-    <div class="container-fluid-max rolling-text">
+    <div class="container-fluid-max rolling-text" data-animation="slideInDown">
         <div class="wrapper">
             <ul class="tabs-box">
                 <li class="tab">FARM LAND</li>
@@ -118,8 +121,8 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
 
     <div class="container-fluid container-fluid-max">
         <div class="about-page-heading">
-            <h2>Our work tell About Us</h2>
-            <p>
+            <h2 data-animation="slideInDown">Our work tell About Us</h2>
+            <p data-animation="slideInDown" data-animation-delay="200ms">
                 Palar Farms managed farmland allows you to sit back and relax and
                 watch your investment grow without the hassles of managing it
                 yourself. Compared to other forms of real estate investments, managed
@@ -129,7 +132,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
         </div>
 
         <div class="row">
-            <div class="col-md-4 about-main-pic">
+            <div class="col-md-4 about-main-pic" data-animation="slideInRight">
                 <div class="about-pic-image">
                     <img src="./images/doing-img.png" alt="" />
                     <div class="about-pic-detail">
@@ -138,7 +141,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
                 </div>
             </div>
 
-            <div class="col-md-4 about-main-pic">
+            <div class="col-md-4 about-main-pic " data-animation="slideInDown" >
                 <div class="about-pic-image">
                     <img src="./images/doing-img.png" alt="" />
                     <div class="about-pic-detail">
@@ -147,7 +150,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
                 </div>
             </div>
 
-            <div class="col-md-4 about-main-pic">
+            <div class="col-md-4 about-main-pic" data-animation="slideInLeft">
                 <div class="about-pic-image">
                     <img src="./images/doing-img.png" alt="" />
                     <div class="about-pic-detail">
@@ -162,7 +165,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="about-best-heading">
+                    <div class="about-best-heading" data-animation="slideInRight">
                         <h6 class="comman-sub-heading">[ About Us ]</h6>
                         <h3 class="sketch-heading">Why Choose us</h3>
                         <p>
@@ -170,7 +173,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" data-animation="slideInLeft">
                     <div class="about-image">
                         <img src="./images/about-company.png" alt="About Company" />
                     </div>
@@ -182,13 +185,13 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
     <div class="container-fluid mt-sm-6 benefits">
         <div class="row">
             <div class="col-md-4">
-                <div class="benefit-img">
+                <div class="benefit-img" data-animation="slideInRight">
                     <img src="./images/benefit.png" alt="" />
                 </div>
             </div>
 
             <div class="col-md-8">
-                <div class="benefit-heading">
+                <div class="benefit-heading" data-animation="slideInLeft">
                     <h6 class="comman-sub-heading">[ Benefits ]</h6>
                     <h3 class="sketch-heading">
                         ADVANTAGES OF INVESTING IN AGRICULTURAL LANDS
@@ -198,17 +201,17 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
 
                 <div class="benefit-list">
                     <ul>
-                        <li>Productive investment with high wealth appreciation</li>
+                        <li data-animation="slideInDown" data-animation-delay="200ms">Productive investment with high wealth appreciation</li>
                         <br />
-                        <li>Resale value is high</li>
+                        <li data-animation="slideInDown" data-animation-delay="300ms">Resale value is high</li>
                         <br />
-                        <li>Guaranteed and good return on investment.</li>
+                        <li data-animation="slideInDown" data-animation-delay="400ms">Guaranteed and good return on investment.</li>
                         <br />
-                        <li>A great hedge against inflation</li>
+                        <li data-animation="slideInDown" data-animation-delay="500ms">A great hedge against inflation</li>
                         <br />
-                        <li>Income earned and profit made from selling the</li>
+                        <li data-animation="slideInDown" data-animation-delay="600ms">Income earned and profit made from selling the</li>
                         <br />
-                        <li>Farmland are free from taxation.</li>
+                        <li data-animation="slideInDown" data-animation-delay="700ms">Farmland are free from taxation.</li>
                     </ul>
                 </div>
             </div>
@@ -251,7 +254,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
         <div class="container-fluid-max mt-5">
             <div class="flex-container">
                 <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
-                    <div class="flex-item ">
+                    <div class="flex-item  " data-animation="slideInDown" >
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" src="<?php echo $video['embed_url']; ?>" allowfullscreen></iframe>
                         </div>
@@ -263,7 +266,7 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
 
     <div class="container-fluid mt-5 pt-4">
       <div class="row">
-        <div class="col-md-4 mission-heading">
+        <div class="col-md-4 mission-heading" data-animation="slideInRight">
           <div class="mission-heading1">
           <h1>OUR</h1>
 
@@ -272,12 +275,12 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
           </div>
         </div>
       </div>
-        <div class="col-md-3">
+        <div class="col-md-3" data-animation="slideInDown">
          <div class="mission-img">
           <img src="./images/left-logo.png" alt="">
          </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-animation="slideInLeft">
           <div class="mission-para">
             <p> To identify and develop ideal locations that appreciate in value over time, providing our clients with sustainable returns on their investments
             </p>
@@ -292,21 +295,21 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
 
 
     <div class="container-fluid mt-5">
-      <div class="row">
-        <div class="col-md-4 order-3 order-md-0">
+      <div class="row" >
+        <div class="col-md-4 order-3 order-md-0" data-animation="slideInRight">
           <div class="mission-para">
             <p>Our vision is to be the trusted partner of choice for Investors for generations. Expand our presence to new markets, including emerging cities and international hubs. To be ahead of the curve.</p>
           </div>
         </div>
         
-        <div class="col-md-3 order-1 order-md-1">
+        <div class="col-md-3 order-1 order-md-1" data-animation="slideInDown">
          <div class="mission-img">
           <img src="./images/right-logo.png" alt="">
          </div>
         </div>
       
 
-        <div class="col-md-4 order-0 order-md-2 vision">
+        <div class="col-md-4 order-0 order-md-2 vision" data-animation="slideInLeft">
           <div class="mission-heading1">
           <h1>OUR</h1>
           <div class="mission-heading2 ">
@@ -318,12 +321,12 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
     </div>
 
     <div class="container-fluid mt-4">
-        <div class="professional-heading my-5 partner-title">
+        <div class="professional-heading my-5 partner-title" data-animation="slideInDown">
             <h5 class="comman-sub-heading">[ Our Professional ]</h5>
             <h3 class="sketch-heading">meet our skilled team</h3>
         </div>
 
-        <div class="scroll-container-partner">
+        <div class="scroll-container-partner" data-animation="slideInDown" data-animation-delay="200ms">
             <div class="scroll-inner-partner">
                 <div class="partner-detail-partner">
                     <div class="skill-team-partner">
@@ -372,6 +375,8 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
             </div>
         </div>
     </div>
+
+    <script src="./aos.js"></script>
     
     <!-- Footer -->
     <?php include 'footer.php'; ?>

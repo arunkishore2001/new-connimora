@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/about.css" />
     <link rel="stylesheet" href="./css/service.css" />
     <link rel="stylesheet" href="./css/animation.css" />
+    <link rel="stylesheet" href="./css/aos.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -44,7 +45,7 @@
 
         <div class="container-fluid-max secondary-pages-hero-section-container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" data-animation="slideInRight">
                     <div class="left-landing-image">
                         <div class="box">
                             <!-- Add your content here -->
@@ -54,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6" data-animation="slideInLeft">
                     <div class="right-landing-image">
                         <div class="right-loca">
                             <div class="about-item">
@@ -80,7 +81,7 @@
             </div>
         </div>
 
-        <div class="container-fluid-max rolling-text">
+        <div class="container-fluid-max rolling-text" data-animation="slideInDown">
             <div class="wrapper">
                 <div class="icon">
                     <i id="left" class="fa-solid fa-angle-left"></i>
@@ -110,8 +111,8 @@
 
         <div class="container-fluid">
             <div class="about-page-heading">
-                <h2>Our work tell About Us</h2>
-                <p>
+                <h2 data-animation="slideInDown">Our work tell About Us</h2>
+                <p data-animation="slideInDown" data-animation-delay="200ms">
                     Palar Farms managed farmland allows you to sit back and relax and
                     watch your investment grow without the hassles of managing it
                     yourself. Compared to other forms of real estate investments,
@@ -123,9 +124,9 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6" >
                         <div class="service-page">
-                            <div class="service-page-img mouse-parallax">
+                            <div class="service-page-img mouse-parallax" data-animation="slideInRight">
                                 <div class="service-page-info">
                                     <img src="./images/doing-img.png" alt="" />
                                 </div>
@@ -139,7 +140,7 @@
                                 </div>
                             </div>
 
-                            <div class="service-page-img mouse-parallax">
+                            <div class="service-page-img mouse-parallax" data-animation="slideInRight" data-animation-delay="200ms">
                                 <div class="service-page-info">
                                     <img src="./images/doing-img.png" alt="" />
                                 </div>
@@ -153,7 +154,7 @@
                                 </div>
                             </div>
 
-                            <div class="service-page-img mouse-parallax">
+                            <div class="service-page-img mouse-parallax"  data-animation="slideInRight" data-animation-delay="300ms">
                                 <div class="service-page-info">
                                     <img src="./images/doing-img.png" alt="" />
                                 </div>
@@ -171,12 +172,12 @@
 
                     <div class="col-md-6">
                         <div class="right-service-page">
-                            <div class="service-line">
+                            <div class="service-line" data-animation="slideInLeft">
                                 <h3>SERVICE</h3>
                             </div>
 
                             <div class="service-page">
-                                <div class="service-page-img mouse-parallax">
+                                <div class="service-page-img mouse-parallax" data-animation="slideInLeft">
                                     <div class="service-page-info">
                                         <img src="./images/doing-img.png" alt="" />
                                     </div>
@@ -190,7 +191,7 @@
                                     </div>
                                 </div>
 
-                                <div class="service-page-img mouse-parallax">
+                                <div class="service-page-img mouse-parallax"  data-animation="slideInLeft" data-animation-delay="200ms">
                                     <div class="service-page-info">
                                         <img src="./images/doing-img.png" alt="" />
                                     </div>
@@ -204,7 +205,7 @@
                                     </div>
                                 </div>
 
-                                <div class="service-page-img mouse-parallax">
+                                <div class="service-page-img mouse-parallax"  data-animation="slideInLeft" data-animation-delay="300ms">
                                     <div class="service-page-info">
                                         <img src="./images/doing-img.png" alt="" />
                                     </div>
@@ -290,6 +291,7 @@
             });
         });
         </script>
+         <script src="./aos.js"></script>
     </div>
 </body>
 

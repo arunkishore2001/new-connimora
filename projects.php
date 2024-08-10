@@ -24,6 +24,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
     <link rel="stylesheet" href="./css/about.css" />
     <link rel="stylesheet" href="./css/project.css" />
     <link rel="stylesheet" href="./css/animation.css" />
+    <link rel="stylesheet" href="./css/aos.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -58,7 +59,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
         <div class="container-fluid-max secondary-pages-hero-section-container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="left-landing-image">
+                    <div class="left-landing-image" data-animation="slideInRight">
                         <div class="box">
                             <!-- Add your content here -->
                             <h1>Where Dimension Takes Shape</h1>
@@ -68,7 +69,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
                 </div>
 
                 <div class="col-md-6">
-                    <div class="right-landing-image">
+                    <div class="right-landing-image" data-animation="slideInLeft">
                         <div class="right-loca">
                             <div class="about-item">
                                 <h6>Home</h6>
@@ -93,7 +94,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
             </div>
         </div>
 
-        <div class="container-fluid-max rolling-text">
+        <div class="container-fluid-max rolling-text" data-animation="slideInDown">
             <div class="wrapper">
 
                 <ul class="tabs-box">
@@ -127,8 +128,8 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
         <div class="container-fluid">
             <div class="desk-line"></div>
             <div class="about-page-heading">
-                <h2>Our work tell About Us</h2>
-                <p>
+                <h2 data-animation="slideInDown" data-animation-delay="200ms">Our work tell About Us</h2>
+                <p data-animation="slideInDown" data-animation-delay="400ms">
                     Palar Farms managed farmland allows you to sit back and relax and
                     watch your investment grow without the hassles of managing it
                     yourself. Compared to other forms of real estate investments,
@@ -151,19 +152,19 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
               $imageAddress = $images[0]['address']; 
               $imageUrl2 = $images[1]['url'];
               $i++;?>
-            <div class="project-background"></div>
+            <div class="project-background"  data-animation="slideInRight" data-animation-delay="200ms"></div>
 
             <div class="container-fluid project-detail ">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="project-back-heading">
+                    <div class="col-md-6"  data-animation="slideInRight" data-animation-delay="400ms">
+                        <div class="project-back-heading"  data-animation="slideInRight" data-animation-delay="500ms">
                             <h2><?php echo $projectName; ?></h2>
                             <h1>0<?php echo $i; ?></h1>
                         </div>
-                        <div class="project-back-para">
+                        <div class="project-back-para"  data-animation="slideInRight" data-animation-delay="600ms">
                             <p><?php echo $imageAddress ?></p>
                         </div>
-                        <div class="">
+                        <div class=""  data-animation="slideInRight" data-animation-delay="700ms">
                             <a class="read-more"
                                 href="project_page.php?project=<?php echo urlencode($projectName); ?>&image=<?php echo urlencode($imageUrl1); ?>">
                                 <div class="project-line"></div>
@@ -174,18 +175,19 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
 
                     <div class="col-md-6">
                         <div class="project-img">
-                            <img src="<?php echo $imageUrl1; ?>" alt="">
-                            <img src="<?php echo $imageUrl2; ?>" alt="">
+                            <img  data-animation="slideInRight" data-animation-delay="200ms" src="<?php echo $imageUrl1; ?>" alt="">
+                            <img  data-animation="slideInRight" data-animation-delay="400ms" src="<?php echo $imageUrl2; ?>" alt="">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="project-complete-line"></div>
+            <div data-animation="slideInUp" data-animation-delay="500ms" class="project-complete-line"></div>
             <?php }
           } ?>
         </div>
 
+        <script src="./aos.js"></script>
 
 
         <!----------------- Ended Added Project File----------------- -->

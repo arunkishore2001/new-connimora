@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/project.css" />
     <link rel="stylesheet" href="./css/about.css" />
     <link rel="stylesheet" href="./css/animation.css" />
+    <link rel="stylesheet" href="./css/aos.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
@@ -37,7 +38,7 @@
 
     <div class="container-fluid-max secondary-pages-hero-section-container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" data-animation="slideInRight">
                 <div class="left-landing-image">
                     <div class="box">
                         <!-- Add your content here -->
@@ -47,7 +48,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6" data-animation="slideInLeft">
                 <div class="right-landing-image">
                     <div class="right-loca">
                         <div class="about-item">
@@ -71,7 +72,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid-max rolling-text">
+    <div class="container-fluid-max rolling-text"data-animation="slideInDown" >
         <div class="wrapper">
             <ul class="tabs-box">
                 <li class="tab">FARM LAND</li>
@@ -96,6 +97,7 @@
         </div>
     </div>
 
+    <script src="./aos.js"></script>
 
     <!-- Footer -->
     <?php include 'footer.php'; ?>

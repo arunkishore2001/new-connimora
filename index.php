@@ -96,12 +96,12 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
     <div class="container-fluid mt-5">
         <div class="row">
-            <div class="col-md-6 order-1 order-md-0">
+            <div class="col-md-6 order-1 order-md-0"  data-animation="slideInRight">
                 <div class="about-left-img"></div>
             </div>
 
             <div class="col-md-6 order-0 order-md-1 sketch-info">
-                <div class="sketch-details">
+                <div class="sketch-details"  data-animation="slideInLeft">
                     <div>
                         <h6 class="comman-sub-heading">[ About Us ]</h6>
                     </div>
@@ -127,14 +127,14 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
         </div>
     </div>
 
-    <div class="container-fluid-max py-3 sketch-image-background-container">
-        <div class="container-fluid">
+    <div class="container-fluid-max py-3 sketch-image-background-container" >
+        <div class="container-fluid" data-animation="slideInUp">
             <div class="row">
                 <div class="col-md-6"></div>
 
                 <div class="col-md-6 sketch-info">
                     <div class="sketch-icon">
-                        <div class="icon-msg">
+                        <div class="icon-msg" data-animation="slideInDown" data-animation-delay="200ms">
                             <img src="./images/tree.png" alt="" />
                             <h5>Trees</h5>
                             <p>
@@ -142,7 +142,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                             </p>
                         </div>
 
-                        <div class="icon-msg">
+                        <div class="icon-msg" data-animation="slideInDown" data-animation-delay="400ms">
                             <img src="./images/tree.png" alt="" />
                             <h5>Irrigation</h5>
                             <p>
@@ -150,7 +150,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                             </p>
                         </div>
 
-                        <div class="icon-msg">
+                        <div class="icon-msg " data-animation="slideInDown" data-animation-delay="600ms">
                             <img src="./images/tree.png" alt="" />
                             <h5>Leisure</h5>
                             <p>
@@ -167,14 +167,14 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-md-6 left-about">
-                <div class="about-heading">
+                <div class="about-heading"  data-animation="slideInRight">
                     <h6 class="comman-sub-heading">[ About Company ]</h6>
                     <h4 class="sketch-heading my-4">
                         We Makes You To Reaches the Best
                     </h4>
                 </div>
 
-                <p class="sketch-para">
+                <p class="sketch-para" data-animation="slideInRight">
                     Connemara Realty LLP., was founded in the year 2019 by a first-generation entrepreneurs, having its
                     corporate office at Chennai, with a wide experience mainly in the field of Construction, Farm Land
                     Development and Management. The Company is experienced in developing sustainable housing and
@@ -186,27 +186,27 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
                 </p>
 
-                <div class="award-list">
-                    <h6 class="award-bold mb-4">
+                <div class="award-list" data-animation="slideInRight">
+                    <h6 class="award-bold mb-4" data-animation="slideInRight">
                         ADVANTAGES OF INVESTING IN AGRICULTURAL LANDS
                     </h6>
-                    <p>
+                    <p data-animation="slideInRight" data-animation-delay="200ms">
                         Income earned and profit made from selling the farmland are free
                         from taxation.
                     </p>
                     <br />
-                    <p>Productive investment with high wealth appreciation</p>
+                    <p data-animation="slideInRight" data-animation-delay="300ms">Productive investment with high wealth appreciation</p>
                     <br />
 
-                    <p>Guaranteed and good return on investment.</p>
+                    <p data-animation="slideInRight" data-animation-delay="400ms">Guaranteed and good return on investment.</p>
                     <br />
-                    <p>Resale value is high</p>
+                    <p data-animation="slideInRight" data-animation-delay="300ms">Resale value is high</p>
                     <br />
                 </div>
             </div>
 
             <div class="col-md-6 sliding-area mouse-parallax moving-area">
-                <div class="about-image  moving-img mt-2">
+                <div class="about-image  moving-img mt-2" data-animation="slideInLeft">
                     <img src="./images/about-company.png" alt="" />
                 </div>
             </div>
@@ -215,15 +215,15 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
     <!------------- count Action------------- -->
     <div class="container-fluid whole-counting my-4">
-        <div class="counting">
+        <div class="counting" data-animation="slideInRight" data-animation-delay="100ms">
             <h1 class="count" data-target="100">[ 0 + ]</h1>
             <h5>Current Client</h5>
         </div>
-        <div class="counting">
+        <div class="counting" data-animation="slideInDown" data-animation-delay="200ms">
             <h1 class="count" data-target="5">[ 0 + ]</h1>
             <h5>Year Of Experience</h5>
         </div>
-        <div class="counting">
+        <div class="counting" data-animation="slideInLeft" data-animation-delay="300ms">
             <h1 class="count" data-target="3">[ 0 + ]</h1>
             <h5>Ongoing Projects</h5>
         </div>
@@ -234,7 +234,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
     <div class="container-fluid-max make-space">
         <div class="space">
-            <div class="space-contain" data-animation="slideInUp">
+            <div class="space-contain" data-animation="slideInRight">
                 <img src="./images/Farm-land-img.jpeg" alt="" />
                 <h5 class="po-space">Farm Land</h5>
                 <h1>01</h1>
@@ -242,7 +242,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <span class="space-line-horizontal"></span>
             </div>
 
-            <div class="space-contain" data-animation="slideInUp" data-animation-delay="200ms">
+            <div class="space-contain" data-animation="slideInDown" data-animation-delay="200ms">
                 <img src="./images/resort.jpeg" alt="" />
                 <h5>Resort Image</h5>
                 <h1>02</h1>
@@ -250,7 +250,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <span class="space-line-horizontal"></span>
             </div>
 
-            <div class="space-contain" data-animation="slideInUp" data-animation-delay="400ms">
+            <div class="space-contain" data-animation="slideInLeft" data-animation-delay="400ms">
                 <img src="./images/commercial.jpeg" alt="" />
                 <h5 class="po-space">Commercial Office Interior</h5>
                 <h1>03</h1>
@@ -263,13 +263,13 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <!-------------- Service Section ----------------------->
 
     <div class="container-fluid service-contain mt-5">
-        <div class="services-heading">
+        <div class="services-heading" data-animation="slideInDown">
             <h5 class="comman-sub-heading">[ What We Can Offer ]</h5>
             <h3 class="sketch-heading">Our Services</h3>
         </div>
 
         <div class="offer">
-            <div class="offer-box">
+            <div class="offer-box" data-animation="slideInRight" data-animation-delay="200ms">
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/Farm Land Icon.png" alt="">
@@ -282,7 +282,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
             </div>
 
-            <div class="offer-box">
+            <div class="offer-box" data-animation="slideInDown" data-animation-delay="300ms">
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/Project management.png" alt="">
@@ -295,7 +295,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
             </div>
 
-            <div class="offer-box">
+            <div class="offer-box" data-animation="slideInLeft" data-animation-delay="400ms">
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/Commercial iconn.png" alt="">
@@ -308,7 +308,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
             </div>
 
-            <div class="offer-box">
+            <div class="offer-box"  data-animation="slideInRight" data-animation-delay="200ms">
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/Retail shop.png" alt="">
@@ -321,7 +321,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
             </div>
 
-            <div class="offer-box">
+            <div class="offer-box"  data-animation="slideInUp" data-animation-delay="300ms">
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/HSB Icon.png" alt="">
@@ -334,7 +334,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
             </div>
 
-            <div class="offer-box">
+            <div class="offer-box" data-animation="slideInLeft" data-animation-delay="400ms">
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/Resort.png" alt="">
@@ -351,17 +351,17 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
     <!-- Working Process -->
 
-    <div class="container-fluid-max process pt-5 pb-4">
-        <div class="container-fluid">
+    <div class="container-fluid-max process pt-5 pb-4" data-animation="slideInDown">
+        <div class="container-fluid" >
             <div class="row">
                 <div class="col-md-6">
-                    <div class="process-heading">
+                    <div class="process-heading" data-animation="slideInRight" data-animation-delay="100ms">
                         <h5 class="comman-sub-heading">[ Steps to reach ]</h5>
                         <h2 class="sketch-heading process-head">Our Process</h2>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="process-para">
+                    <div class="process-para" data-animation="slideInLeft" data-animation-delay="200ms">
                         <p>
                             Original design project of high quality raises profit – this
                             is proved in practice by many of our customers. A professional
@@ -373,25 +373,25 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             </div>
 
             <div class="whole-process mt-5">
-                <div class="procedure">
-                    <div class="working-circle">
-                        <h1>01</h1>
+                <div class="procedure" data-animation="slideInRight" data-animation-delay="200ms">
+                    <div class="working-circle" >
+                        <h1 >01</h1>
                         <img src="./images/Root Map Icon.png" alt="">
                     </div>
                     <h5>Identifying Strategic</h5>
                     <p></p>
                 </div>
-                <div class="procedure">
+                <div class="procedure" data-animation="slideInRight" data-animation-delay="300ms">
                     <div class="working-circle">
-                        <h1>02</h1>
+                        <h1 >02</h1>
                         <img src="./images/Land Work JCB Icon.png" alt="">
                     </div>
                     <h5>Land Development</h5>
                     <p></p>
                 </div>
-                <div class="procedure">
+                <div class="procedure"  data-animation="slideInLeft" data-animation-delay="400ms">
                     <div class="working-circle">
-                        <h1>03</h1>
+                        <h1 >03</h1>
                         <svg xmlns="http://www.w3.org/2000/svg" width="56" height="40" viewBox="0 0 56 40" fill="none">
                             <path
                                 d="M1.58604 27.629C2.45307 27.6084 3.07374 27.0644 3.09806 26.3398C3.37086 17.5767 8.922 11.0904 17.3481 8.55237L23.1213 21.4443C23.171 21.5449 23.1466 21.6257 23.0229 21.6661C22.9235 21.7065 22.8495 21.6661 22.7745 21.6059L19.8509 19.0275C17.9423 17.355 15.5136 17.2347 13.6304 18.5239C11.4988 19.9936 11.4734 22.1895 13.5564 24.2651L21.8577 32.4231C28.1279 38.5872 35.4871 40.5004 43.7155 38.0629C53.5542 35.1622 57.7424 27.8301 53.7762 18.9665L51.9184 14.8376C49.9856 10.4664 46.2933 8.67355 41.956 9.90259C40.7908 8.67355 39.006 8.2507 37.0742 8.8145C36.3797 9.03087 35.7284 9.32947 35.1413 9.70061C33.8767 8.37102 31.9196 7.88714 29.8863 8.47158C29.3316 8.64373 28.8069 8.87401 28.3256 9.15657L25.5003 2.87217C24.4356 0.474266 21.7583 -0.532167 19.0081 0.273151C16.2326 1.0991 14.9934 3.25549 16.0581 5.65168L16.2569 6.09516C6.66665 9.01562 0 16.5291 0 26.2994C0 27.024 0.743323 27.6488 1.58604 27.629ZM42.6496 35.4244C36.1575 37.3582 30.0607 36.3706 24.3362 30.7506L16.0338 22.633C15.1424 21.7873 15.1424 20.9613 15.9355 20.3966C16.6788 19.8535 17.6949 20.0348 18.5122 20.7189L24.2368 25.5337C25.2032 26.3398 26.0459 26.4198 26.8643 26.1783C27.8307 25.8964 28.2516 25.0506 27.8551 24.1843L19.0822 4.56445C18.711 3.75828 19.1562 2.99335 20.0983 2.71059C21.0647 2.42869 21.9571 2.81201 22.3293 3.61733L28.5994 17.618C28.8955 18.2824 29.8133 18.584 30.6306 18.3425C31.4237 18.101 31.8445 17.3954 31.5474 16.7508L29.292 11.6954C29.6399 11.4333 30.1104 11.1712 30.582 11.0302C31.7451 10.6881 32.7126 11.111 33.1588 12.0977L35.1413 16.5093C35.4374 17.1943 36.3552 17.4564 37.1482 17.214C37.9169 16.9923 38.4117 16.3288 38.0892 15.6232L36.4789 12.0573C36.8456 11.7589 37.2845 11.5256 37.7678 11.3723C38.933 11.0302 39.8994 11.4531 40.3457 12.4406L41.6589 15.3817C41.9803 16.0864 42.8981 16.3486 43.6911 16.1062C43.882 16.0526 44.0578 15.9688 44.2086 15.8596C44.3593 15.7504 44.482 15.6181 44.5695 15.4702C44.657 15.3223 44.7076 15.1617 44.7183 14.9978C44.7291 14.834 44.6998 14.67 44.6322 14.5153L43.6414 12.3392C45.7223 11.735 47.6805 13.1049 49.0181 16.1268L50.5798 19.5716C53.975 27.1855 50.8769 32.9869 42.6496 35.4244Z"
@@ -401,9 +401,9 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                     <h5>Creating Value for Money</h5>
                     <p></p>
                 </div>
-                <div class="procedure">
-                    <div class="working-circle">
-                        <h1>04</h1>
+                <div class="procedure" data-animation="slideInLeft" data-animation-delay="500ms">
+                    <div class="working-circle" >
+                        <h1 >04</h1>
                         <img src="./images/Happy face icon.png" alt="">
                     </div>
                     <h5>Building Happy Customer</h5>
@@ -450,21 +450,21 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <!--------------- Gallery -------------------->
     <div class="mt-4 container-fluid-max whole-gallery">
         <div class="first-half-gallery">
-            <div class="gallery">
+            <div class="gallery" data-animation="slideInRight">
                 <img src="./images/gallery1.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
                     <h6>[ Interior ]</h6>
                 </div>
             </div>
-            <div class="gallery">
+            <div class="gallery" data-animation="slideInLeft">
                 <img src="./images/gallery2.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
                     <h6>[ Interior ]</h6>
                 </div>
             </div>
-            <div class="gallery">
+            <div class="gallery" data-animation="slideInRight">
                 <img src="./images/gallery3.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
@@ -474,21 +474,21 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
         </div>
 
         <div class="secound-half-gallery">
-            <div class="gallery">
+            <div class="gallery" data-animation="slideInLeft">
                 <img src="./images/gallery4.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
                     <h6>[ Interior ]</h6>
                 </div>
             </div>
-            <div class="gallery">
+            <div class="gallery" data-animation="slideInRight">
                 <img src="./images/gallery5.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
                     <h6>[ Interior ]</h6>
                 </div>
             </div>
-            <div class="gallery">
+            <div class="gallery" data-animation="slideInLeft">
                 <img src="./images/gallery6.jpeg" alt="" />
                 <div class="gallery-box">
                     <h5>Stylish family appartment</h5>
@@ -502,33 +502,33 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <div class="container-fluid-max consulting py-5" data-animation="slideInUp">
         <div class="container-fluid">
             <div class="consulting-left">
-                <div class="counsel-heading" data-animation="slideInUp">
+                <div class="counsel-heading" data-animation="slideInRight">
                     <h3>Get Incredible Interior</h3>
                 </div>
-                <h3 class="right-now">Right Now!</h3>
-                <div class="consulting-btn consulting-para">
+                <h3 class="right-now" data-animation="slideInRight" data-animation-delay="200ms">Right Now!</h3>
+                <div class="consulting-btn consulting-para" data-animation="slideInLeft" data-animation-delay="200ms">
                     <p>
                         At every stage, we could supervise your project – controlling
                         all the details and consulting the builders
                     </p>
                 </div>
-                <button class="custom-button">GET IN TOUCH</button>
+                <button data-animation="slideInLeft" class="custom-button">GET IN TOUCH</button>
             </div>
         </div>
     </div>
 
     <!------------ Project Section ------------->
     <div class="container-fluid mt-5">
-        <div class="project-heading partner-title">
+        <div class="project-heading partner-title" data-animation="slideInDown">
             <h5 class="comman-sub-heading">[ Our Portfolio ]</h5>
             <h3 class="sketch-heading">Introduce Our Project</h3>
         </div>
 
         <div class="row mt-5">
             <div class="col">
-                <div class="whole-project">
-                    <div class="project">
-                        <ul class="slider">
+                <div class="whole-project " >
+                    <div class="project" >
+                        <ul class="slider" data-animation="slideInRight">
                             <?php
                             while ($projectResult = mysqli_fetch_assoc($projectQuery)) {
                                 $projectName = $projectResult['project_name'];
@@ -611,14 +611,14 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
     <div class="container-fluid testimonial-main-container mt-5 pt-4">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" data-animation="slideInRight">
                 <div class="process-heading">
                     <h5 class="comman-sub-heading">[ What People Says ]</h5>
                     <h2 class="sketch-heading">Testimonial</h2>
                 </div>
                 <div class="" id="ReviewSubmitMessage"></div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" data-animation="slideInLeft">
                 <div class="d-md-flex flex-md-row-reverse">
                     <button class="custom-button" type="button" data-bs-toggle="modal" data-bs-target="#myModal">Add My
                         Review</button>
@@ -627,7 +627,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             </div>
         </div>
 
-        <div class="swiper-container">
+        <div class="swiper-container" data-animation="slideInDown">
             <div class="swiper-wrapper mt-5 mb-2" id="reviewsWrapper">
                 <!-- generated from javascript -->
             </div>
@@ -657,12 +657,12 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             </svg>
         </div>
         <div class="container-fluid mt-5 pt-3">
-            <div class="professional-heading my-5 partner-title">
+            <div class="professional-heading my-5 partner-title " data-animation="slideInDown">
                 <h5 class="comman-sub-heading">[ Our Professional ]</h5>
                 <h3 class="sketch-heading">meet our skilled team</h3>
             </div>
 
-            <div class="scroll-container-partner">
+            <div class="scroll-container-partner" data-animation="slideInUp">
                 <div class="scroll-inner-partner">
                     <div class="partner-detail-partner">
                         <div class="skill-team-partner">
