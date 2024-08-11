@@ -99,16 +99,16 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div> -->
                 <div class="about-whole-left-img">
         <div class="about-img about-left-img">
-            <img src="./images/resort.jpeg" alt="Farm Land Image 1">
+            <img src="./images/farm-land1.jpeg" alt="Farm Land Image 1">
         </div>
         <div class="about-img about-left-img1">
-            <img src="./images/farm-land1.jpeg" alt="Farm Land Image 2">
+            <img src="./images/fruit.jpeg" alt="Farm Land Image 2">
         </div>
         <div class="about-img about-left-img2">
-            <img src="./images/farm-land1.jpeg" alt="Farm Land Image 3">
+            <img src="./images/farm-land2.jpeg" alt="Farm Land Image 3">
         </div>
         <div class="about-img about-left-img3">
-            <img src="./images/farm-land1.jpeg" alt="Farm Land Image 4">
+            <img src="./images/orange.jpeg" alt="Farm Land Image 4">
         </div>
     </div>
             </div>
@@ -406,7 +406,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <div class="procedure" data-animation="slideInRight" data-animation-delay="300ms">
                     <div class="working-circle">
                         <h1>02</h1>
-                        <img src="./images/Land Work JCB Icon.png" alt="">
+                        <img src="./images/Land Work JCB.png" alt="">
                     </div>
                     <h5>Land Development</h5>
                     <p></p>

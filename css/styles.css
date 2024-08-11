@@ -1749,7 +1749,8 @@ p {
 }
 
 .skill-box img{
-  width: 20%;
+  width: 30%;
+ 
   padding-right: 20px;
 }
 .skill-box:hover {
