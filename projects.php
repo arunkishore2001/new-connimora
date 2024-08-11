@@ -178,6 +178,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
                             <h2><?php echo $projectName; ?></h2>
                             <h1>0<?php echo $i; ?></h1>
                         </div>
+                        <div class="whole-project-readmore">
                         <div class="project-back-para"  data-animation="slideInRight" data-animation-delay="600ms">
                             <p><?php echo $imageAddress ?></p>
                         </div>
@@ -187,6 +188,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
                                 <div class="project-line"></div>
                                 <h6>Read more &gt;&gt;</h6>
                             </a>
+                        </div>
                         </div>
                     </div>
 

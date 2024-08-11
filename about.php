@@ -113,7 +113,7 @@
             </div>
         </div>
     </div>
-
+<!-- 
     <div class="container-fluid container-fluid-max">
         <div class="about-page-heading">
             <h2 data-animation="slideInDown">Our work tell About Us</h2>
@@ -154,7 +154,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container-fluid-max about-best">
         <div class="container-fluid">

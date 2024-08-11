@@ -2305,26 +2305,3 @@ textarea {
 }
 
 
-/* Scrollo BAr UPdaTion */
-
-
-::-webkit-scrollbar {
-  width: 12px; 
-  height: 50px;
-}
-
-::-webkit-scrollbar-thumb {
-  height: 120px;
-  background: linear-gradient(90deg, #1d60c5 0%, #0e2e5f 100%);
-  border-radius: 6px; 
-  transition: background 0.3s; 
-}
-
-
-::-webkit-scrollbar-track {
-  background: #ffffff;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(90deg, #0e2e5f 0%, #1d60c5 100%);
-}
