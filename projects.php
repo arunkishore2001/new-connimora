@@ -2,8 +2,12 @@
 include './admin_php/config.php';
 include './admin_php/functions.php';
 
+
+
+
 session_start();
 
+$videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
 $result = mysqli_query($conn, "SELECT * FROM images");
 $allImages = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -117,6 +121,19 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
                 <div class="icon">
                     <i id="right" class="fa-solid fa-angle-right"></i>
                 </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid-max mt-5">
+            <div class="flex-container">
+                <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
+                    <div class="flex-item  " data-animation="slideInDown" >
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $video['embed_url']; ?>" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
             </div>
         </div>
 

@@ -1,445 +1,106 @@
-@import url('https://fonts.googleapis.com/css?family=Barlow');
-
-body {
-	background: #310404 url(https://i.ytimg.com/vi/wOvQAhzWCrM/maxresdefault.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	font-family: 'Barlow', sans-serif;
-}
-.container {
-	width: 100%;
-	position: relative;
-	overflow: hidden;
-}
-a {
-	text-decoration: none;
-}
-
-
-h1.main, p.demos {
-	-webkit-animation-delay: 18s;
-	-moz-animation-delay: 18s;
-	-ms-animation-delay: 18s;
-	animation-delay: 18s;
-}
-.sp-container {
+.preloader-video {
 	position: fixed;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 0;
-	background: -webkit-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
-	background: -moz-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
-	background: -ms-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
-	background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
-}
-.sp-content {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0px;
-	top: 0px;
-	z-index: 1000;
-}
-.sp-container h2 {
-	position: absolute;
-	top: 50%;
-	line-height: 100px;
-	height: 90px;
-	margin-top: -50px;
-	font-size: 90px;
-	width: 100%;
-	text-align: center;
-	color: transparent;
-	-webkit-animation: blurFadeInOut 3s ease-in backwards;
-	-moz-animation: blurFadeInOut 3s ease-in backwards;
-	-ms-animation: blurFadeInOut 3s ease-in backwards;
-	animation: blurFadeInOut 3s ease-in backwards;
-}
-.sp-content img{
-    position: relative;
-    z-index: 1000;
-}
-.sp-container .frame-1 {
-    position: absolute;
-    top: 35%;
-    left: 22%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: auto;
-    z-index: 1000;
-    opacity: 0;
-    -webkit-animation: shrinkFadeInOut 3s ease-in forwards;
-    -moz-animation: shrinkFadeInOut 3s ease-in forwards;
-    -ms-animation: shrinkFadeInOut 3s ease-in forwards;
-    animation: shrinkFadeInOut 3s ease-in forwards;
-    animation-delay: 0s; 
-}
-@-webkit-keyframes shrinkFadeInOut {
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(2);
-    }
-    50% {
-        opacity: 1;
-        -webkit-transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        -webkit-transform: scale(1);
-    }
-}
-@-moz-keyframes shrinkFadeInOut {
-    0% {
-        opacity: 0;
-        -moz-transform: scale(2);
-    }
-    50% {
-        opacity: 1;
-        -moz-transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        -moz-transform: scale(1);
-    }
-}
-@-ms-keyframes shrinkFadeInOut {
-    0% {
-        opacity: 0;
-        -ms-transform: scale(2);
-    }
-    50% {
-        opacity: 1;
-        -ms-transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        -ms-transform: scale(1);
-    }
-}
-@keyframes shrinkFadeInOut {
-    0% {
-        opacity: 0;
-        transform: scale(2);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-}
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .preloader-video video {
+	width: 50%;
+	height: auto;
+	max-height: 100%;
+	object-fit: cover;
+	pointer-events: none;
+  }
+
+  @media (max-width: 480px){
+	.preloader-video video{
+		width: 80%;
+	}
+  }
 
 
-.sp-container .frame-1 {
-    -webkit-animation-delay: 0s; /* Adjust the delay as needed */
-    -moz-animation-delay: 0s;
-    -ms-animation-delay: 0s;
-    animation-delay: 0s;
-}
-
-.sp-container h2.frame-2 {
-	-webkit-animation-delay: 3s;
-	-moz-animation-delay: 3s;
-	-ms-animation-delay: 3s;
-	animation-delay: 3s;
-}
-.sp-container h2.frame-3 {
-	-webkit-animation-delay: 6s;
-	-moz-animation-delay: 6s;
-	-ms-animation-delay: 6s;
-	animation-delay: 6s;
-}
-.sp-container h2.frame-4 {
-	font-size: 200px;
-	-webkit-animation-delay: 9s;
-	-moz-animation-delay: 9s;
-	-ms-animation-delay: 9s;
-	animation-delay: 9s;
-}
-.sp-container h2.frame-5 {
-	-webkit-animation: none;
-	-moz-animation: none;
-	-ms-animation: none;
-	animation: none;
-	color: transparent;
-	text-shadow: 0px 0px 1px #fff;
-}
-.sp-container h2.frame-5 span {
-	-webkit-animation: blurFadeIn 3s ease-in 12s backwards;
-	-moz-animation: blurFadeIn 1s ease-in 12s backwards;
-	-ms-animation: blurFadeIn 3s ease-in 12s backwards;
-	animation: blurFadeIn 3s ease-in 12s backwards;
-	color: transparent;
-	text-shadow: 0px 0px 1px #fff;
-}
-.sp-container h2.frame-5 span:nth-child(2) {
-	-webkit-animation-delay: 13s;
-	-moz-animation-delay: 13s;
-	-ms-animation-delay: 13s;
-	animation-delay: 13s;
-}
-.sp-container h2.frame-5 span:nth-child(3) {
-	-webkit-animation-delay: 14s;
-	-moz-animation-delay: 14s;
-	-ms-animation-delay: 14s;
-	animation-delay: 14s;
-}
-.sp-globe {
-	position: absolute;
-	width: 282px;
-	height: 273px;
-	left: 50%;
-	top: 50%;
-	margin: -137px 0 0 -141px;
-	background: transparent url(http://web-sonick.zz.mu/images/sl/globe.png) no-repeat top left;
-	-webkit-animation: fadeInBack 3.6s linear 14s backwards;
-	-moz-animation: fadeInBack 3.6s linear 14s backwards;
-	-ms-animation: fadeInBack 3.6s linear 14s backwards;
-	animation: fadeInBack 3.6s linear 14s backwards;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-	filter: alpha(opacity=30);
-	opacity: 0.3;
-	-webkit-transform: scale(5);
-	-moz-transform: scale(5);
-	-o-transform: scale(5);
-	-ms-transform: scale(5);
-	transform: scale(5);
-}
-.sp-circle-link {
-	position: absolute;
-	left: 50%;
-	bottom: 100px;
-	margin-left: -50px;
-	text-align: center;
-	line-height: 100px;
-	width: 100px;
-	height: 100px;
-	background: #fff;
-	color: #3f1616;
-	font-size: 25px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-	-webkit-animation: fadeInRotate 1s linear 16s backwards;
-	-moz-animation: fadeInRotate 1s linear 16s backwards;
-	-ms-animation: fadeInRotate 1s linear 16s backwards;
-	animation: fadeInRotate 1s linear 16s backwards;
-	-webkit-transform: scale(1) rotate(0deg);
-	-moz-transform: scale(1) rotate(0deg);
-	-o-transform: scale(1) rotate(0deg);
-	-ms-transform: scale(1) rotate(0deg);
-	transform: scale(1) rotate(0deg);
-}
-.sp-circle-link:hover {
-	background: #85373b;
-	color: #fff;
-}
-/**/
-
-@-webkit-keyframes blurFadeInOut {
-	0% {
-		opacity: 0;
-		text-shadow: 0px 0px 40px #fff;
-		-webkit-transform: scale(1.3);
+  @keyframes progress1 {
+	 0% {
+		 -webkit-transform: scalex(0);
+		 transform: scalex(0);
+		 opacity: 0.5;
 	}
-	20%, 75% {
-		opacity: 1;
-		text-shadow: 0px 0px 1px #fff;
-		-webkit-transform: scale(1);
+	 90% {
+		 -webkit-transform: scalex(1);
+		 transform: scalex(1);
+		 opacity: 1;
 	}
-	100% {
-		opacity: 0;
-		text-shadow: 0px 0px 50px #fff;
-		-webkit-transform: scale(0);
+	 92% {
+		 -webkit-transform: scalex(1);
+		 transform: scalex(1);
+		 opacity: 1;
+	}
+	 100% {
+		 -webkit-transform: scalex(1);
+		 transform: scalex(1);
+		 opacity: 1;
 	}
 }
-@-webkit-keyframes blurFadeIn {
-	0% {
-		opacity: 0;
-		text-shadow: 0px 0px 40px #fff;
-		-webkit-transform: scale(1.3);
+ @-webkit-keyframes progress2 {
+	 0% {
+		 -webkit-transform: scale(0.3, 0.8) translatez(0);
+		 transform: scale(0.3, 0.8) translatez(0);
+		 opacity: 0;
 	}
-	50% {
-		opacity: 0.5;
-		text-shadow: 0px 0px 10px #fff;
-		-webkit-transform: scale(1.1);
+	 90% {
+		 -webkit-transform: scale(1, 1) translatex(100vw) translatez(0);
+		 transform: scale(1, 1) translatex(100vw) translatez(0);
+		 opacity: 1;
 	}
-	100% {
-		opacity: 1;
-		text-shadow: 0px 0px 1px #fff;
-		-webkit-transform: scale(1);
-	}
-}
-@-webkit-keyframes fadeInBack {
-	0% {
-		opacity: 0;
-		-webkit-transform: scale(0);
-	}
-	50% {
-		opacity: 0.4;
-		-webkit-transform: scale(2);
-	}
-	100% {
-		opacity: 0.2;
-		-webkit-transform: scale(5);
+	 100% {
+		 -webkit-transform: scale(1, 1) translatex(100vw) translatez(0);
+		 transform: scale(1, 1) translatex(100vw) translatez(0);
+		 opacity: 1;
 	}
 }
-@-webkit-keyframes fadeInRotate {
-	0% {
-		opacity: 0;
-		-webkit-transform: scale(0) rotate(360deg);
+ @keyframes progress2 {
+	 0% {
+		 -webkit-transform: scale(0.3, 0.8) translatez(0);
+		 transform: scale(0.3, 0.8) translatez(0);
+		 opacity: 0;
 	}
-	100% {
-		opacity: 1;
-		-webkit-transform: scale(1) rotate(0deg);
+	 90% {
+		 -webkit-transform: scale(1, 1) translatex(100vw) translatez(0);
+		 transform: scale(1, 1) translatex(100vw) translatez(0);
+		 opacity: 1;
 	}
-}
-/**/
-
-@-moz-keyframes blurFadeInOut {
-	0% {
-		opacity: 0;
-		text-shadow: 0px 0px 40px #fff;
-		-moz-transform: scale(1.3);
-	}
-	20%, 75% {
-		opacity: 1;
-		text-shadow: 0px 0px 1px #fff;
-		-moz-transform: scale(1);
-	}
-	100% {
-		opacity: 0;
-		text-shadow: 0px 0px 50px #fff;
-		-moz-transform: scale(0);
+	 100% {
+		 -webkit-transform: scale(1, 1) translatex(100vw) translatez(0);
+		 transform: scale(1, 1) translatex(100vw) translatez(0);
+		 opacity: 1;
 	}
 }
-@-moz-keyframes blurFadeIn {
-	0% {
-		opacity: 0;
-		text-shadow: 0px 0px 40px #fff;
-		-moz-transform: scale(1.3);
-	}
-	100% {
-		opacity: 1;
-		text-shadow: 0px 0px 1px #fff;
-		-moz-transform: scale(1);
-	}
+ .paper-progress-bar {
+	 position: absolute;
+	 top: 85%;
+	 width: 90%;
+	 left: 5%;
+	 height: 8px;
+	 background: rgba(255,255,255, 0.1);
+	 transform: translate(0, -50%);
 }
-@-moz-keyframes fadeInBack {
-	0% {
-		opacity: 0;
-		-moz-transform: scale(0);
-	}
-	50% {
-		opacity: 0.4;
-		-moz-transform: scale(2);
-	}
-	100% {
-		opacity: 0.2;
-		-moz-transform: scale(5);
-	}
+ .paper-progress-bar:before {
+	 -webkit-animation: progress1 3.5s linear forwards;
+	 animation: progress1 5s linear forwards;
+	 -webkit-transform-origin: 0 0;
+	 -ms-transform-origin: 0 0;
+	 transform-origin: 0 0;
+	 content: "";
+	 display: block;
+	 width: 100%;
+	 height: 100%;
+	 background: -webkit-linear-gradient(left, rgba(255,255,255, 0.1) 10%, rgba(255,255,255, 0.4) 80%, white);
+	 background: linear-gradient(to right, rgba(255,255,255, 0.1) 10%, rgba(255,255,255, 0.4) 80%, white);
 }
-@-moz-keyframes fadeInRotate {
-	0% {
-		opacity: 0;
-		-moz-transform: scale(0) rotate(360deg);
-	}
-	100% {
-		opacity: 1;
-		-moz-transform: scale(1) rotate(0deg);
-	}
-}
-/**/
-
-@keyframes blurFadeInOut {
-	0% {
-		opacity: 0;
-		text-shadow: 0px 0px 40px #fff;
-		transform: scale(1.3);
-	}
-	20%, 75% {
-		opacity: 1;
-		text-shadow: 0px 0px 1px #fff;
-		transform: scale(1);
-	}
-	100% {
-		opacity: 0;
-		text-shadow: 0px 0px 50px #fff;
-		transform: scale(0);
-	}
-}
-@keyframes blurFadeIn {
-	0% {
-		opacity: 0;
-		text-shadow: 0px 0px 40px #fff;
-		transform: scale(1.3);
-	}
-	50% {
-		opacity: 0.5;
-		text-shadow: 0px 0px 10px #fff;
-		transform: scale(1.1);
-	}
-	100% {
-		opacity: 1;
-		text-shadow: 0px 0px 1px #fff;
-		transform: scale(1);
-	}
-}
-@keyframes fadeInBack {
-	0% {
-		opacity: 0;
-		transform: scale(0);
-	}
-	50% {
-		opacity: 0.4;
-		transform: scale(2);
-	}
-	100% {
-		opacity: 0.2;
-		transform: scale(5);
-	}
-}
-@keyframes fadeInRotate {
-	0% {
-		opacity: 0;
-		transform: scale(0) rotate(360deg);
-	}
-	100% {
-		opacity: 1;
-		transform: scale(1) rotate(0deg);
-	}
-}
-
-/*-----------------White Flash -----------------*/
-
-@-webkit-keyframes whiteFlash {
-    0% { opacity: 0; background: transparent; }
-    50% { opacity: 1; background: white; }
-    100% { opacity: 0; background: transparent; }
-}
-
-@keyframes whiteFlash {
-    0% { opacity: 0; background: transparent; }
-    50% { opacity: 1; background: white; }
-    100% { opacity: 1; background: white; }
-}
-
-.white-flash {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10000;
-    opacity: 0;
-    pointer-events: none;
-    background: transparent;
-}
-
-
+ 

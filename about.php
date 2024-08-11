@@ -1,9 +1,4 @@
-<?php
-include './admin_php/config.php';
 
-// Fetch video links
-$videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -218,50 +213,8 @@ $videoQuery = mysqli_query($conn, "SELECT * FROM video_links");
         </div>
     </div>
 
-    <!-- <div class="container mt-5 pt-5">
-        <div class="partner-title about-partner-title">
-            <h5 class="comman-sub-heading my-3">[ Our Partner ]</h5>
-            <h3 class="sketch-heading mb-5 py-3">Our Trusted Partner</h3>
-        </div>
-
-        <div class="scroll-container">
-            <div class="scroll-inner">
-                <div class="partner-detail">
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                </div>
-                <div class="partner-detail">
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                </div>
-            </div>
-        </div>
-    </div> -->
-
      
-        <div class="container-fluid-max mt-5">
-            <div class="flex-container">
-                <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
-                    <div class="flex-item  " data-animation="slideInDown" >
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="<?php echo $video['embed_url']; ?>" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
-            </div>
-        </div>
+    
     
 
     <div class="container-fluid mt-5 pt-4">

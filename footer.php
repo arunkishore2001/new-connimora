@@ -8,7 +8,7 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
 <link rel="stylesheet" href="./css/footer.css" />
 <link rel="stylesheet" href="./css/aos.css">
 
-<div class="my-5 py-5 container-fluid-max">
+<div class=" container-fluid-max">
 
     <?php
     if ($current_page !== 'contact') {

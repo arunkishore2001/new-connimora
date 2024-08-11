@@ -91,13 +91,29 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     </div>
 
 
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-5 ">
         <div class="row">
-            <div class="col-md-6 order-1 order-md-0" data-animation="slideInRight">
-                <div class="about-left-img"></div>
+            <div class="col-md-6 order-1 order-md-0 pe-md-5" data-animation="slideInRight">
+                <!-- <div class="about-left-img">
+
+                </div> -->
+                <div class="about-whole-left-img">
+        <div class="about-img about-left-img">
+            <img src="./images/resort.jpeg" alt="Farm Land Image 1">
+        </div>
+        <div class="about-img about-left-img1">
+            <img src="./images/farm-land1.jpeg" alt="Farm Land Image 2">
+        </div>
+        <div class="about-img about-left-img2">
+            <img src="./images/farm-land1.jpeg" alt="Farm Land Image 3">
+        </div>
+        <div class="about-img about-left-img3">
+            <img src="./images/farm-land1.jpeg" alt="Farm Land Image 4">
+        </div>
+    </div>
             </div>
 
-            <div class="col-md-6 order-0 order-md-1 sketch-info">
+            <div class="col-md-6 order-0 order-md-1 mb-4 sketch-info">
                 <div class="sketch-details" data-animation="slideInLeft">
                     <div>
                         <h6 class="comman-sub-heading">[ About Us ]</h6>
@@ -123,6 +139,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             </div>
         </div>
     </div>
+
 
     <div class="container-fluid-max py-3 sketch-image-background-container">
         <div class="container-fluid" data-animation="slideInUp">
@@ -624,7 +641,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </defs>
             </svg>
         </div>
-        <div class="container-fluid mt-5 pt-3">
+        <div class="container-fluid mt-5">
             <div class="professional-heading my-5 partner-title " data-animation="slideInDown">
                 <h5 class="comman-sub-heading">[ Our Professional ]</h5>
                 <h3 class="sketch-heading">meet our skilled team</h3>
@@ -634,32 +651,48 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <div class="scroll-inner-partner">
                     <div class="partner-detail-partner">
                         <div class="skill-team-partner">
-                            <img src="./images/pro1.png" alt="oleve steve" />
+                           
                             <div class="skill-box">
+                                <img src="./images/man.png" alt="">
+                                <div class="skill-box-detail">
                                 <h5>Mr. Goutham Chandra</h5>
                                 <p>Chief Executive Officer</p>
+                                </div>
+                               
                             </div>
                         </div>
                         <div class="skill-team-partner">
-                            <img src="./images/pro1.png" alt="oleve steve" />
+                          
                             <div class="skill-box">
+                                <img src="./images/man.png" alt="">
+                                <div class="skill-box-detail">
                                 <h5>Mr. Siva Chandran</h5>
                                 <p>Project & Marketing Head</p>
+                                </div>
+                               
                             </div>
                         </div>
                         <div class="skill-team-partner">
-                            <img src="./images/pro1.png" alt="oleve steve" />
+                   
                             <div class="skill-box">
+                                <img src="./images/man.png" alt="">
+                                <div class="skill-box-detail">
                                 <h5>Mr. Gopala Krishnan</h5>
                                 <p>Farming Manager</p>
+                                </div>
+                               
                             </div>
                         </div>
 
                         <div class="skill-team-partner">
-                            <img src="./images/pro1.png" alt="oleve steve" />
+                  
                             <div class="skill-box">
+                                <img src="./images/man.png" alt="">
+                                <div class="skill-box-detail">
                                 <h5>Mr. Ravi Teja</h5>
                                 <p>Purchase Manager</p>
+                                </div>
+                               
                             </div>
                         </div>
 
