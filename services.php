@@ -51,7 +51,7 @@
                             <!-- Add your content here -->
                             <h1>Where Dimension Takes Shape</h1>
                         </div>
-                        <img src="./images/about-img.png" alt="" />
+                        <img src="./images/service-right.jpg" alt="" />
                     </div>
                 </div>
 
@@ -75,7 +75,7 @@
                                 <div class="line learn-line"></div>
                             </div>
                         </div>
-                        <img src="./images/contact-landing2.png" alt="" />
+                        <img src="./images/service-left.jpg" alt="" />
                     </div>
                 </div>
             </div>
@@ -88,23 +88,16 @@
                 </div>
                 <ul class="tabs-box">
                     <li class="tab">FARM LAND</li>
-                    <li class="tab">INTERIOR</li>
-                    <li class="tab">HOTELS</li>
-                    <li class="tab">CONSTRUCTIONS</li>
-                    <li class="tab">RENOVATIONS</li>
-                    <li class="tab">Unboxing</li>
-                    <li class="tab">History</li>
-                    <li class="tab">Programming</li>
-                    <li class="tab">Gadgets</li>
-                    <li class="tab">Algorithms</li>
-                    <li class="tab">Comedy</li>
-                    <li class="tab">Gaming</li>
-                    <li class="tab">Share Market</li>
-                    <li class="tab">Smartphones</li>
-                    <li class="tab">Data Structure</li>
+                    <li class="tab">PROPERTY MANAGEMENT</li>
+                    <li class="tab">RETAIL STORE</li>
+                    <li class="tab">STAR MART</li>
+                    <li class="tab">CAFE</li>
+                    <li class="tab">RESORT</li>
+                    <li class="tab">COMMERCIAL PROJECT</li>
+    
                 </ul>
                 <div class="icon">
-                    <i id="right" class="fa-solid fa-angle-right"></i>
+                   
                 </div>
             </div>
         </div>
@@ -128,7 +121,7 @@
                         <div class="service-page">
                             <div class="service-page-img mouse-parallax" data-animation="slideInRight">
                                 <div class="service-page-info">
-                                    <img src="./images/doing-img.png" alt="" />
+                                    <img src="./images/farm-land.jpg" alt="" />
                                 </div>
 
                                 <div class="service-img-box">
@@ -142,7 +135,7 @@
 
                             <div class="service-page-img mouse-parallax" data-animation="slideInRight" data-animation-delay="200ms">
                                 <div class="service-page-info">
-                                    <img src="./images/doing-img.png" alt="" />
+                                    <img src="./images/property.jpg" alt="" />
                                 </div>
 
                                 <div class="service-img-box">
@@ -156,7 +149,7 @@
 
                             <div class="service-page-img mouse-parallax"  data-animation="slideInRight" data-animation-delay="300ms">
                                 <div class="service-page-info">
-                                    <img src="./images/doing-img.png" alt="" />
+                                    <img src="./images/cafea.jpg" alt="" />
                                 </div>
 
                                 <div class="service-img-box">
@@ -193,7 +186,7 @@
 
                                 <div class="service-page-img mouse-parallax"  data-animation="slideInLeft" data-animation-delay="200ms">
                                     <div class="service-page-info">
-                                        <img src="./images/doing-img.png" alt="" />
+                                        <img src="./images/resort-service.jpg" alt="" />
                                     </div>
 
                                     <div class="service-img-box">
@@ -207,7 +200,7 @@
 
                                 <div class="service-page-img mouse-parallax"  data-animation="slideInLeft" data-animation-delay="300ms">
                                     <div class="service-page-info">
-                                        <img src="./images/doing-img.png" alt="" />
+                                        <img src="./images/commercial-service.jpg" alt="" />
                                     </div>
 
                                     <div class="service-img-box">

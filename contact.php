@@ -44,7 +44,7 @@
                         <!-- Add your content here -->
                         <h1>Where Dimension Takes Shape</h1>
                     </div>
-                    <img src="./images/about-img.png" alt="" />
+                    <img src="./images/contact-right.jpg" alt="" />
                 </div>
             </div>
 
@@ -67,32 +67,25 @@
                             <div class="line learn-line"></div>
                         </div>
                     </div>
-                    <img src="./images/contact-landing2.png" alt="" />
+                    <img src="./images/contact-left.jpg" alt="" />
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid-max rolling-text"data-animation="slideInDown" >
         <div class="wrapper">
-            <ul class="tabs-box">
-                <li class="tab">FARM LAND</li>
-                <li class="tab">INTERIOR</li>
-                <li class="tab">HOTELS</li>
-                <li class="tab">CONSTRUCTIONS</li>
-                <li class="tab">RENOVATIONS</li>
-                <li class="tab">Unboxing</li>
-                <li class="tab">History</li>
-                <li class="tab">Programming</li>
-                <li class="tab">Gadgets</li>
-                <li class="tab">Algorithms</li>
-                <li class="tab">Comedy</li>
-                <li class="tab">Gaming</li>
-                <li class="tab">Share Market</li>
-                <li class="tab">Smartphones</li>
-                <li class="tab">Data Structure</li>
-            </ul>
+        <ul class="tabs-box">
+                    <li class="tab">FARM LAND</li>
+                    <li class="tab">PROPERTY MANAGEMENT</li>
+                    <li class="tab">RETAIL STORE</li>
+                    <li class="tab">STAR MART</li>
+                    <li class="tab">CAFE</li>
+                    <li class="tab">RESORT</li>
+                    <li class="tab">COMMERCIAL PROJECT</li>
+    
+                </ul>
             <div class="icon">
-                <i id="right" class="fa-solid fa-angle-right"></i>
+              
             </div>
         </div>
     </div>
