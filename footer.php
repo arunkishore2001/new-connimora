@@ -12,13 +12,13 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
 
     <?php
     if ($current_page !== 'contact') {
-    echo '
+        echo '
     <div data-animation="slideInRight" class="contact-bg">
         <img src="./images/contact.png" alt="Contact Background" />
         <h2 data-animation="slideInDown" data-animation-delay="600ms" >Have a Project in Mind?</h2>
     </div>';
-        }
-        ?>
+    }
+    ?>
 
 
     <div class="container">
@@ -36,26 +36,23 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
                 <div class="contact-form">
                     <form method="post" id="contactForm">
                         <div class="input-container">
-                            <label class="contact-form-label" for="name">Enter Your Name</label>
-                            <input type="text" id="name" name='name' />
+                            <input type="text" placeholder="Enter Your Name" id="name" name='name' />
                         </div>
                         <div class="input-container">
-                            <label class="contact-form-label" for="email">Enter Your Email</label>
-                            <input type="text" id="email" name='email' />
+                            <input type="text" placeholder="Enter Your Email" id="email" name='email' />
                         </div>
                         <div class="input-container">
-                            <label class="contact-form-label" for="phone">Enter Your Phone Number</label>
-                            <input type="text" id="phone" name='phone' />
+                            <input type="text" placeholder="Enter Your Phone Number" id="phone" name='phone' />
                         </div>
                         <div class="input-container">
-                            <label class="contact-form-label" for="message">Message...</label>
-                            <textarea id="message" name='message'></textarea>
+                            <textarea id="message" placeholder="Message..." name='message'></textarea>
                         </div>
                         <button class="custom-button">SEND</button>
                     </form>
                 </div>
             </div>
-            <div class="col-md-6 d-flex justify-content-center  <?php echo 'contact-page-right-contact' ?>" data-animation="slideInLeft">
+            <div class="col-md-6 d-flex justify-content-center  <?php echo 'contact-page-right-contact' ?>"
+                data-animation="slideInLeft">
                 <div class="right-contact">
                     <div class="contact-details">
                         <div class="contact-heading mt-4 mb-5">
@@ -77,7 +74,9 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
                                 </svg>
                                 <div class="address-info">
                                     <h6>OUR ADDRESS</h6>
-                                    <p>411 University St, Seattle, USA</p>
+                                    <p>No.22-23, Beryl Block, XS Real Vibe Apartments,
+                                        Porur Gardens, Phase 2, Vanagaram,
+                                        Chennai-600 095. Tamilnadu, INDIA.</p>
                                 </div>
                             </div>
                             <div class="address-detail">
@@ -88,8 +87,8 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
                                         fill="white" stroke="#1D84C5" />
                                 </svg>
                                 <div class="address-info">
-                                    <h6>OUR ADDRESS</h6>
-                                    <p>411 University St, Seattle, USA</p>
+                                    <h6>EMAIL ADDRESS</h6>
+                                    <p>enquiry@connemaraprojects.com</p>
                                 </div>
                             </div>
                             <div class="address-detail">
@@ -107,8 +106,8 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
                                         fill="#1D84C5" mask="url(#path-1-inside-1_0_441)" />
                                 </svg>
                                 <div class="address-info">
-                                    <h6>OUR ADDRESS</h6>
-                                    <p>411 University St, Seattle, USA</p>
+                                    <h6>PHONE NUMBER</h6>
+                                    <p>+91 98404 66789</p>
                                 </div>
                             </div>
                             <div class="social-media">
@@ -232,69 +231,69 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
 
 
 <script>
-$(document).ready(function() {
-    $("#contactForm").on('submit', function(e) {
-        e.preventDefault();
-        if ($(this).valid()) {
-            $.ajax({
-                url: 'process_form.php',
-                type: 'POST',
-                data: new FormData(this),
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function(data) {
-                    $("#ContactSubmitMessage").html(
-                        '<div class="alert alert-success my-1">' + data + '</div>');
-                    $("#contactForm")[0].reset();
-                },
-                error: function() {
-                    $("#ContactSubmitMessage").html(
-                        '<div class="alert alert-danger">An error occurred.</div>');
-                }
-            });
-        }
-    });
+    $(document).ready(function () {
+        $("#contactForm").on('submit', function (e) {
+            e.preventDefault();
+            if ($(this).valid()) {
+                $.ajax({
+                    url: 'process_form.php',
+                    type: 'POST',
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function (data) {
+                        $("#ContactSubmitMessage").html(
+                            '<div class="alert alert-success my-1">' + data + '</div>');
+                        $("#contactForm")[0].reset();
+                    },
+                    error: function () {
+                        $("#ContactSubmitMessage").html(
+                            '<div class="alert alert-danger">An error occurred.</div>');
+                    }
+                });
+            }
+        });
 
-    $("#contactForm").validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 2
+        $("#contactForm").validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 10,
+                },
+                message: {
+                    required: true,
+                    minlength: 10
+                }
             },
-            email: {
-                required: true,
-                email: true
-            },
-            phone: {
-                required: true,
-                digits: true,
-                minlength: 10,
-                maxlength: 10,
-            },
-            message: {
-                required: true,
-                minlength: 10
+            messages: {
+                name: {
+                    required: "Please enter your name",
+                    minlength: "Your name must consist of at least 2 characters"
+                },
+                email: {
+                    required: "Please enter your email",
+                    email: "Please enter a valid email address"
+                },
+                phone: {
+                    required: "Please enter your phone number",
+                    digits: "Please enter a valid phone number"
+                },
+                message: {
+                    required: "Please write a message",
+                    minlength: "Your message must consist of at least 10 characters"
+                }
             }
-        },
-        messages: {
-            name: {
-                required: "Please enter your name",
-                minlength: "Your name must consist of at least 2 characters"
-            },
-            email: {
-                required: "Please enter your email",
-                email: "Please enter a valid email address"
-            },
-            phone: {
-                required: "Please enter your phone number",
-                digits: "Please enter a valid phone number"
-            },
-            message: {
-                required: "Please write a message",
-                minlength: "Your message must consist of at least 10 characters"
-            }
-        }
+        });
     });
-});
 </script>

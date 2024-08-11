@@ -132,7 +132,9 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <div class="col-md-6 sketch-info">
                     <div class="sketch-icon">
                         <div class="icon-msg" data-animation="slideInDown" data-animation-delay="200ms">
-                            <img src="./images/tree.png" alt="" />
+                            <div class="sketch-icon-wrapper">
+                                <img src="./images/tree.png" alt="" />
+                            </div>
                             <h5>Trees</h5>
                             <p>
                                 Lorem ipsum, dolor sit amet consectetur
@@ -140,7 +142,9 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                         </div>
 
                         <div class="icon-msg" data-animation="slideInDown" data-animation-delay="400ms">
-                            <img src="./images/tree.png" alt="" />
+                            <div class="sketch-icon-wrapper">
+                                <img src="./images/irrigation.png" alt="" />
+                            </div>
                             <h5>Irrigation</h5>
                             <p>
                                 Lorem ipsum, dolor sit amet consectetur
@@ -148,7 +152,9 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                         </div>
 
                         <div class="icon-msg " data-animation="slideInDown" data-animation-delay="600ms">
-                            <img src="./images/tree.png" alt="" />
+                            <div class="sketch-icon-wrapper">
+                                <img src="./images/Resort iconnn.png" alt="" />
+                            </div>
                             <h5>Leisure</h5>
                             <p>
                                 Lorem ipsum, dolor sit amet consectetur
@@ -411,40 +417,6 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             </div>
         </div>
     </div>
-
-    <!--------------------- Partner --------------------------------------->
-
-    <!-- <div class="container-fluid mt-4 mb-5 py-5">
-        <div class="partner-title">
-            <h5 class="comman-sub-heading">[ Our Partner ]</h5>
-            <h3 class="sketch-heading mt-4 mb-5">Our Trusted Partner</h3>
-        </div>
-
-        <div class="scroll-container">
-            <div class="scroll-inner">
-                <div class="partner-detail">
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                </div>
-                <div class="partner-detail">
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                    <img loading="lazy" src="./images/partnership.png" />
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!--------------- Gallery -------------------->
     <div class="mt-4 container-fluid-max whole-gallery">
