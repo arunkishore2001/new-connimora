@@ -61,6 +61,10 @@ p {
 }
 /*------------------Common----------*/
 
+.light-blue-text{
+  color: #9fc6ff !important;
+}
+
 .comman-sub-heading {
   color: #1a55ad;
   font-weight: 700;
@@ -897,7 +901,7 @@ p {
   left: 52%;
   transform: translate(-50%, -50%);
   width: 80%;
-  max-width: 76px;
+  max-width: 90px;
 }
 
 .working-circle svg {

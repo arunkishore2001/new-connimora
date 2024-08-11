@@ -34,6 +34,12 @@
   border: none;
 }
 
+.slick-vertical .slick-slide{
+  font-weight: 600;
+  line-height: 120%;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
 .slideshow .slider .item .text {
   display: none;
 }

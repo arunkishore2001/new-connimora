@@ -30,13 +30,13 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
@@ -66,42 +66,39 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
         </div>
     </div>
 
+    <?php
+        // Fetch all images where landing_show is set to 1
+         $landing_images = mysqli_query($conn, "SELECT * FROM images WHERE landing_show = 1");
+    ?>
 
     <div class="container-fluid-max hero-slider-container">
         <div class="split-slideshow h-100 w-100">
             <div class="slideshow">
                 <div class="slider">
+                    <?php foreach ($landing_images as $image): ?>
                     <div class="item">
-                        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-2.jpg" />
+                        <img src="<?php echo $image['url']; ?>" alt="Slide Image" />
                     </div>
-                    <div class="item">
-                        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-3.jpg" />
-                    </div>
-                    <div class="item">
-                        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-4.jpg" />
-                    </div>
-                    <div class="item">
-                        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-1.jpg" />
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <div class="slideshow-text">
-                <div class="item">Canyon</div>
-                <div class="item">Desert</div>
-                <div class="item">Erosion</div>
-                <div class="item">Shape</div>
+                <?php foreach ($landing_images as $image): ?>
+                <div class="item"><?php echo $image['project_name']; ?></div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
 
+
     <div class="container-fluid mt-5">
         <div class="row">
-            <div class="col-md-6 order-1 order-md-0"  data-animation="slideInRight">
+            <div class="col-md-6 order-1 order-md-0" data-animation="slideInRight">
                 <div class="about-left-img"></div>
             </div>
 
             <div class="col-md-6 order-0 order-md-1 sketch-info">
-                <div class="sketch-details"  data-animation="slideInLeft">
+                <div class="sketch-details" data-animation="slideInLeft">
                     <div>
                         <h6 class="comman-sub-heading">[ About Us ]</h6>
                     </div>
@@ -127,7 +124,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
         </div>
     </div>
 
-    <div class="container-fluid-max py-3 sketch-image-background-container" >
+    <div class="container-fluid-max py-3 sketch-image-background-container">
         <div class="container-fluid" data-animation="slideInUp">
             <div class="row">
                 <div class="col-md-6"></div>
@@ -167,7 +164,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-md-6 left-about">
-                <div class="about-heading"  data-animation="slideInRight">
+                <div class="about-heading" data-animation="slideInRight">
                     <h6 class="comman-sub-heading">[ About Company ]</h6>
                     <h4 class="sketch-heading my-4">
                         We Makes You To Reaches the Best
@@ -195,10 +192,12 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                         from taxation.
                     </p>
                     <br />
-                    <p data-animation="slideInRight" data-animation-delay="300ms">Productive investment with high wealth appreciation</p>
+                    <p data-animation="slideInRight" data-animation-delay="300ms">Productive investment with high wealth
+                        appreciation</p>
                     <br />
 
-                    <p data-animation="slideInRight" data-animation-delay="400ms">Guaranteed and good return on investment.</p>
+                    <p data-animation="slideInRight" data-animation-delay="400ms">Guaranteed and good return on
+                        investment.</p>
                     <br />
                     <p data-animation="slideInRight" data-animation-delay="300ms">Resale value is high</p>
                     <br />
@@ -244,7 +243,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
             <div class="space-contain" data-animation="slideInDown" data-animation-delay="200ms">
                 <img src="./images/resort.jpeg" alt="" />
-                <h5>Resort Image</h5>
+                <h5>Resorts</h5>
                 <h1>02</h1>
                 <span class="space-line-verticle"></span>
                 <span class="space-line-horizontal"></span>
@@ -273,7 +272,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/Farm Land Icon.png" alt="">
-                        <h6>Designing & Planning</h6>
+                        <h6>Farm Lands</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Asperiores, quam?.
@@ -286,7 +285,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/Project management.png" alt="">
-                        <h6>Designing & Planning</h6>
+                        <h6>Property Management</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Asperiores, quam?.
@@ -299,7 +298,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/Commercial iconn.png" alt="">
-                        <h6>Designing & Planning</h6>
+                        <h6>Commercial Projects</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Asperiores, quam?.
@@ -308,11 +307,11 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
             </div>
 
-            <div class="offer-box"  data-animation="slideInRight" data-animation-delay="200ms">
+            <div class="offer-box" data-animation="slideInRight" data-animation-delay="200ms">
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/Retail shop.png" alt="">
-                        <h6>Designing & Planning</h6>
+                        <h6>Retail Stores Star Mart & Cafe</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Asperiores, quam?.
@@ -321,11 +320,11 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
             </div>
 
-            <div class="offer-box"  data-animation="slideInUp" data-animation-delay="300ms">
+            <div class="offer-box" data-animation="slideInUp" data-animation-delay="300ms">
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/HSB Icon.png" alt="">
-                        <h6>Designing & Planning</h6>
+                        <h6>HSB Logo and Name</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Asperiores, quam?.
@@ -338,7 +337,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <div class="service-icon">
                     <div class="serive-detail">
                         <img src="./images/Resort.png" alt="">
-                        <h6>Designing & Planning</h6>
+                        <h6>Resorts</h6>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Asperiores, quam?.
@@ -352,11 +351,11 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <!-- Working Process -->
 
     <div class="container-fluid-max process pt-5 pb-4" data-animation="slideInDown">
-        <div class="container-fluid" >
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
                     <div class="process-heading" data-animation="slideInRight" data-animation-delay="100ms">
-                        <h5 class="comman-sub-heading">[ Steps to reach ]</h5>
+                        <h5 class="comman-sub-heading light-blue-text">[ Steps to reach ]</h5>
                         <h2 class="sketch-heading process-head">Our Process</h2>
                     </div>
                 </div>
@@ -374,8 +373,8 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
             <div class="whole-process mt-5">
                 <div class="procedure" data-animation="slideInRight" data-animation-delay="200ms">
-                    <div class="working-circle" >
-                        <h1 >01</h1>
+                    <div class="working-circle">
+                        <h1>01</h1>
                         <img src="./images/Root Map Icon.png" alt="">
                     </div>
                     <h5>Identifying Strategic</h5>
@@ -383,15 +382,15 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div>
                 <div class="procedure" data-animation="slideInRight" data-animation-delay="300ms">
                     <div class="working-circle">
-                        <h1 >02</h1>
+                        <h1>02</h1>
                         <img src="./images/Land Work JCB Icon.png" alt="">
                     </div>
                     <h5>Land Development</h5>
                     <p></p>
                 </div>
-                <div class="procedure"  data-animation="slideInLeft" data-animation-delay="400ms">
+                <div class="procedure" data-animation="slideInLeft" data-animation-delay="400ms">
                     <div class="working-circle">
-                        <h1 >03</h1>
+                        <h1>03</h1>
                         <svg xmlns="http://www.w3.org/2000/svg" width="56" height="40" viewBox="0 0 56 40" fill="none">
                             <path
                                 d="M1.58604 27.629C2.45307 27.6084 3.07374 27.0644 3.09806 26.3398C3.37086 17.5767 8.922 11.0904 17.3481 8.55237L23.1213 21.4443C23.171 21.5449 23.1466 21.6257 23.0229 21.6661C22.9235 21.7065 22.8495 21.6661 22.7745 21.6059L19.8509 19.0275C17.9423 17.355 15.5136 17.2347 13.6304 18.5239C11.4988 19.9936 11.4734 22.1895 13.5564 24.2651L21.8577 32.4231C28.1279 38.5872 35.4871 40.5004 43.7155 38.0629C53.5542 35.1622 57.7424 27.8301 53.7762 18.9665L51.9184 14.8376C49.9856 10.4664 46.2933 8.67355 41.956 9.90259C40.7908 8.67355 39.006 8.2507 37.0742 8.8145C36.3797 9.03087 35.7284 9.32947 35.1413 9.70061C33.8767 8.37102 31.9196 7.88714 29.8863 8.47158C29.3316 8.64373 28.8069 8.87401 28.3256 9.15657L25.5003 2.87217C24.4356 0.474266 21.7583 -0.532167 19.0081 0.273151C16.2326 1.0991 14.9934 3.25549 16.0581 5.65168L16.2569 6.09516C6.66665 9.01562 0 16.5291 0 26.2994C0 27.024 0.743323 27.6488 1.58604 27.629ZM42.6496 35.4244C36.1575 37.3582 30.0607 36.3706 24.3362 30.7506L16.0338 22.633C15.1424 21.7873 15.1424 20.9613 15.9355 20.3966C16.6788 19.8535 17.6949 20.0348 18.5122 20.7189L24.2368 25.5337C25.2032 26.3398 26.0459 26.4198 26.8643 26.1783C27.8307 25.8964 28.2516 25.0506 27.8551 24.1843L19.0822 4.56445C18.711 3.75828 19.1562 2.99335 20.0983 2.71059C21.0647 2.42869 21.9571 2.81201 22.3293 3.61733L28.5994 17.618C28.8955 18.2824 29.8133 18.584 30.6306 18.3425C31.4237 18.101 31.8445 17.3954 31.5474 16.7508L29.292 11.6954C29.6399 11.4333 30.1104 11.1712 30.582 11.0302C31.7451 10.6881 32.7126 11.111 33.1588 12.0977L35.1413 16.5093C35.4374 17.1943 36.3552 17.4564 37.1482 17.214C37.9169 16.9923 38.4117 16.3288 38.0892 15.6232L36.4789 12.0573C36.8456 11.7589 37.2845 11.5256 37.7678 11.3723C38.933 11.0302 39.8994 11.4531 40.3457 12.4406L41.6589 15.3817C41.9803 16.0864 42.8981 16.3486 43.6911 16.1062C43.882 16.0526 44.0578 15.9688 44.2086 15.8596C44.3593 15.7504 44.482 15.6181 44.5695 15.4702C44.657 15.3223 44.7076 15.1617 44.7183 14.9978C44.7291 14.834 44.6998 14.67 44.6322 14.5153L43.6414 12.3392C45.7223 11.735 47.6805 13.1049 49.0181 16.1268L50.5798 19.5716C53.975 27.1855 50.8769 32.9869 42.6496 35.4244Z"
@@ -402,8 +401,8 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                     <p></p>
                 </div>
                 <div class="procedure" data-animation="slideInLeft" data-animation-delay="500ms">
-                    <div class="working-circle" >
-                        <h1 >04</h1>
+                    <div class="working-circle">
+                        <h1>04</h1>
                         <img src="./images/Happy face icon.png" alt="">
                     </div>
                     <h5>Building Happy Customer</h5>
@@ -526,8 +525,8 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
         <div class="row mt-5">
             <div class="col">
-                <div class="whole-project " >
-                    <div class="project" >
+                <div class="whole-project ">
+                    <div class="project">
                         <ul class="slider" data-animation="slideInRight">
                             <?php
                             while ($projectResult = mysqli_fetch_assoc($projectQuery)) {
@@ -548,9 +547,6 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                                                 <h5>
                                                     <?php echo $projectName; ?>
                                                 </h5>
-                                                <h6>[
-                                                    <?php echo $imageAddress ?> ]
-                                                </h6>
                                             </div>
                                         </figcaption>
                                     </figure>
@@ -707,14 +703,14 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     </div>
 
     <script>
-        // Assuming you have a PHP script to fetch reviews, replace 'fetch_reviews.php' with your actual script
-        $.get('./admin_php/fetch_userReview.php', function (data) {
-            var reviews = JSON.parse(data); // Assuming your data is in JSON format
+    // Assuming you have a PHP script to fetch reviews, replace 'fetch_reviews.php' with your actual script
+    $.get('./admin_php/fetch_userReview.php', function(data) {
+        var reviews = JSON.parse(data); // Assuming your data is in JSON format
 
-            var reviewsWrapper = $('#reviewsWrapper');
+        var reviewsWrapper = $('#reviewsWrapper');
 
-            reviews.forEach(function (review) {
-                var totalReviews = `
+        reviews.forEach(function(review) {
+            var totalReviews = `
                   <div class="swiper-slide">
                     <div class="testimonial">
                         <div class="testimonial-box">
@@ -733,307 +729,307 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                     </div>
                 </div>
           `
-                reviewsWrapper.append(totalReviews);
+            reviewsWrapper.append(totalReviews);
+        });
+        reloadReviews();
+    });
+
+    $("#reviewForm").on('submit', function(e) {
+        e.preventDefault();
+        if ($("#reviewForm").valid()) { // Check if the form is valid
+            $.ajax({
+                url: $(this).attr('action'),
+                type: 'POST',
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data) {
+                    $("#ReviewSubmitMessage").html('<div class="alert alert-success my-4">' + data +
+                        '</div>'); // Display success message
+                    $("#reviewForm")[0].reset(); // Clear the form fields
+                    $('.modal-footer button').click();
+                    $("#myModal").modal('hide'); // Close the modal
+                },
+                error: function() {
+                    $("#ReviewSubmitMessage").html(
+                        '<div class="alert alert-danger">An error occurred.</div>'
+                    ); // Display error message
+                }
             });
-            reloadReviews();
-        });
+        }
+    });
 
-        $("#reviewForm").on('submit', function (e) {
-            e.preventDefault();
-            if ($("#reviewForm").valid()) { // Check if the form is valid
-                $.ajax({
-                    url: $(this).attr('action'),
-                    type: 'POST',
-                    data: new FormData(this),
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    success: function (data) {
-                        $("#ReviewSubmitMessage").html('<div class="alert alert-success my-4">' + data +
-                            '</div>'); // Display success message
-                        $("#reviewForm")[0].reset(); // Clear the form fields
-                        $('.modal-footer button').click();
-                        $("#myModal").modal('hide'); // Close the modal
-                    },
-                    error: function () {
-                        $("#ReviewSubmitMessage").html(
-                            '<div class="alert alert-danger">An error occurred.</div>'
-                        ); // Display error message
-                    }
-                });
+    $.validator.addMethod('filesize', function(value, element, param) {
+        return this.optional(element) || (element.files[0].size <= param * 1024)
+    }, 'File size must be less than {0}KB');
+
+
+    $("#reviewForm").validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 4
+            },
+            designation: {
+                required: true,
+                minlength: 3,
+            },
+            photo: {
+                extension: "jpg|jpeg|png|gif",
+                filesize: 200
+            },
+            title: {
+                required: true,
+                minlength: 5
+            },
+            review: {
+                required: true,
+                minlength: 10
             }
-        });
-
-        $.validator.addMethod('filesize', function (value, element, param) {
-            return this.optional(element) || (element.files[0].size <= param * 1024)
-        }, 'File size must be less than {0}KB');
-
-
-        $("#reviewForm").validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 4
-                },
-                designation: {
-                    required: true,
-                    minlength: 3,
-                },
-                photo: {
-                    extension: "jpg|jpeg|png|gif",
-                    filesize: 200
-                },
-                title: {
-                    required: true,
-                    minlength: 5
-                },
-                review: {
-                    required: true,
-                    minlength: 10
-                }
+        },
+        messages: {
+            name: {
+                required: "Please enter your name",
+                minlength: "Your name must consist of at least 4 characters"
             },
-            messages: {
-                name: {
-                    required: "Please enter your name",
-                    minlength: "Your name must consist of at least 4 characters"
-                },
-                designation: {
-                    required: "Please enter your designation",
-                    minlength: "Your designation must consist of at least 3 characters"
-                },
-                photo: {
-                    extension: "Invalid file type. Only JPG, JPEG, PNG, and GIF files are allowed",
-                    filesize: "File size must be less than 200KB"
-                },
-                title: {
-                    required: "Please enter your review title",
-                    minlength: "Review title must consist of at least 5 characters"
-                },
-                review: {
-                    required: "Please write a review",
-                    minlength: "Your review must consist of at least 10 characters"
-                }
+            designation: {
+                required: "Please enter your designation",
+                minlength: "Your designation must consist of at least 3 characters"
             },
-        });
+            photo: {
+                extension: "Invalid file type. Only JPG, JPEG, PNG, and GIF files are allowed",
+                filesize: "File size must be less than 200KB"
+            },
+            title: {
+                required: "Please enter your review title",
+                minlength: "Review title must consist of at least 5 characters"
+            },
+            review: {
+                required: "Please write a review",
+                minlength: "Your review must consist of at least 10 characters"
+            }
+        },
+    });
     </script>
     <!--  testimonial slider -->
     <script>
-        function reloadReviews() {
-            const swiper = new Swiper(".swiper-container", {
-                loop: true,
-                slidesPerView: 3,
-                spaceBetween: 30,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                    renderBullet: function (index, className) {
-                        return '<span class="' + className + '"></span>';
-                    },
+    function reloadReviews() {
+        const swiper = new Swiper(".swiper-container", {
+            loop: true,
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                renderBullet: function(index, className) {
+                    return '<span class="' + className + '"></span>';
                 },
-                breakpoints: {
-                    0: {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                    },
-                    550: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    },
-                    900: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                    1200: {
-                        slidesPerView: 3,
-                        spaceBetween: 50,
-                    },
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
                 },
-            });
-        };
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            const $scrollInner = $(".scroll-inner-partner");
-            const $partnerDetail = $(".partner-detail-partner");
-            const clonedContent = $partnerDetail.clone();
-            $scrollInner.append(clonedContent);
+                550: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                900: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+            },
         });
+    };
     </script>
 
     <script>
-        var $slider = $(".slideshow .slider"),
-            maxItems = $(".item", $slider).length,
-            dragging = false,
-            tracking,
-            rightTracking;
+    $(document).ready(function() {
+        const $scrollInner = $(".scroll-inner-partner");
+        const $partnerDetail = $(".partner-detail-partner");
+        const clonedContent = $partnerDetail.clone();
+        $scrollInner.append(clonedContent);
+    });
+    </script>
 
-        $sliderRight = $(".slideshow")
-            .clone()
-            .addClass("slideshow-right")
-            .appendTo($(".split-slideshow"));
+    <script>
+    var $slider = $(".slideshow .slider"),
+        maxItems = $(".item", $slider).length,
+        dragging = false,
+        tracking,
+        rightTracking;
 
-        rightItems = $(".item", $sliderRight).toArray();
-        reverseItems = rightItems.reverse();
-        $(".slider", $sliderRight).html("");
-        for (i = 0; i < maxItems; i++) {
-            $(reverseItems[i]).appendTo($(".slider", $sliderRight));
-        }
+    $sliderRight = $(".slideshow")
+        .clone()
+        .addClass("slideshow-right")
+        .appendTo($(".split-slideshow"));
 
-        $slider
-            .addClass("slideshow-left")
-            .slick({
-                vertical: true,
-                swipe: false,
-                verticalSwiping: false,
-                arrows: false,
-                infinite: true,
-                dots: true,
-                speed: 1000,
-                cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
-            })
-            .on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-                if (
-                    currentSlide > nextSlide &&
-                    nextSlide == 0 &&
-                    currentSlide == maxItems - 1
-                ) {
-                    $(".slideshow-right .slider").slick("slickGoTo", -1);
-                    $(".slideshow-text").slick("slickGoTo", maxItems);
-                } else if (
-                    currentSlide < nextSlide &&
-                    currentSlide == 0 &&
-                    nextSlide == maxItems - 1
-                ) {
-                    $(".slideshow-right .slider").slick("slickGoTo", maxItems);
-                    $(".slideshow-text").slick("slickGoTo", -1);
-                } else {
-                    $(".slideshow-right .slider").slick(
-                        "slickGoTo",
-                        maxItems - 1 - nextSlide
-                    );
-                    $(".slideshow-text").slick("slickGoTo", nextSlide);
-                }
-            });
+    rightItems = $(".item", $sliderRight).toArray();
+    reverseItems = rightItems.reverse();
+    $(".slider", $sliderRight).html("");
+    for (i = 0; i < maxItems; i++) {
+        $(reverseItems[i]).appendTo($(".slider", $sliderRight));
+    }
 
-        $(".slideshow-right .slider").slick({
-            swipe: false,
+    $slider
+        .addClass("slideshow-left")
+        .slick({
             vertical: true,
+            swipe: false,
+            verticalSwiping: false,
             arrows: false,
             infinite: true,
-            speed: 950,
+            dots: true,
+            speed: 1000,
             cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
-            initialSlide: maxItems - 1,
-        });
-
-        $(".slideshow-text").slick({
-            swipe: false,
-            vertical: true,
-            arrows: false,
-            infinite: true,
-            speed: 900,
-            cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
-        });
-
-        setInterval(() => {
-            $slider.slick("slickNext");
-        }, 4000);
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.querySelector(".menu-toggle");
-            const smallNav = document.querySelector(".small-nav");
-
-            menuToggle.addEventListener("click", function () {
-                smallNav.classList.toggle("show");
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const counters = document.querySelectorAll(".count");
-
-            counters.forEach((counter) => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute("data-target");
-                    const count = +counter.innerText.replace(/[^\d]/g, "");
-                    const increment = target / 1000; // Adjust this value for speed
-                    const delay = 20; // Adjust this value for speed
-
-                    if (count < target) {
-                        counter.innerText = `[ ${Math.ceil(count + increment)} + ]`;
-                        setTimeout(updateCount, delay);
-                    } else {
-                        counter.innerText = `[ ${target} + ]`;
-                    }
-                };
-
-                updateCount();
-            });
-        });
-
-        var copy = document.querySelector(".skilled").cloneNode(true);
-        document.querySelector(".skill-slide").appendChild(copy);
-
-        // Swapiing Image
-
-        const firstImage = document.getElementById("firstImage");
-        const secondImage = document.getElementById("secondImage");
-
-        const originalSrcFirstImage = firstImage.src;
-        const originalSrcSecondImage = secondImage.src;
-
-        let isSwapped = false;
-
-        function swapImages() {
-            if (isSwapped) {
-                firstImage.src = originalSrcFirstImage;
-                secondImage.src = originalSrcSecondImage;
-                firstImage.style.opacity = "1";
-                secondImage.style.opacity = "1";
+        })
+        .on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+            if (
+                currentSlide > nextSlide &&
+                nextSlide == 0 &&
+                currentSlide == maxItems - 1
+            ) {
+                $(".slideshow-right .slider").slick("slickGoTo", -1);
+                $(".slideshow-text").slick("slickGoTo", maxItems);
+            } else if (
+                currentSlide < nextSlide &&
+                currentSlide == 0 &&
+                nextSlide == maxItems - 1
+            ) {
+                $(".slideshow-right .slider").slick("slickGoTo", maxItems);
+                $(".slideshow-text").slick("slickGoTo", -1);
             } else {
-                firstImage.src = originalSrcSecondImage;
-                secondImage.src = originalSrcFirstImage;
-                firstImage.style.opacity = "1";
-                secondImage.style.opacity = "1";
+                $(".slideshow-right .slider").slick(
+                    "slickGoTo",
+                    maxItems - 1 - nextSlide
+                );
+                $(".slideshow-text").slick("slickGoTo", nextSlide);
             }
-            isSwapped = !isSwapped;
+        });
+
+    $(".slideshow-right .slider").slick({
+        swipe: false,
+        vertical: true,
+        arrows: false,
+        infinite: true,
+        speed: 950,
+        cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
+        initialSlide: maxItems - 1,
+    });
+
+    $(".slideshow-text").slick({
+        swipe: false,
+        vertical: true,
+        arrows: false,
+        infinite: true,
+        speed: 900,
+        cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
+    });
+
+    setInterval(() => {
+        $slider.slick("slickNext");
+    }, 4000);
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const smallNav = document.querySelector(".small-nav");
+
+        menuToggle.addEventListener("click", function() {
+            smallNav.classList.toggle("show");
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".count");
+
+        counters.forEach((counter) => {
+            const updateCount = () => {
+                const target = +counter.getAttribute("data-target");
+                const count = +counter.innerText.replace(/[^\d]/g, "");
+                const increment = target / 1000; // Adjust this value for speed
+                const delay = 20; // Adjust this value for speed
+
+                if (count < target) {
+                    counter.innerText = `[ ${Math.ceil(count + increment)} + ]`;
+                    setTimeout(updateCount, delay);
+                } else {
+                    counter.innerText = `[ ${target} + ]`;
+                }
+            };
+
+            updateCount();
+        });
+    });
+
+    var copy = document.querySelector(".skilled").cloneNode(true);
+    document.querySelector(".skill-slide").appendChild(copy);
+
+    // Swapiing Image
+
+    const firstImage = document.getElementById("firstImage");
+    const secondImage = document.getElementById("secondImage");
+
+    const originalSrcFirstImage = firstImage.src;
+    const originalSrcSecondImage = secondImage.src;
+
+    let isSwapped = false;
+
+    function swapImages() {
+        if (isSwapped) {
+            firstImage.src = originalSrcFirstImage;
+            secondImage.src = originalSrcSecondImage;
+            firstImage.style.opacity = "1";
+            secondImage.style.opacity = "1";
+        } else {
+            firstImage.src = originalSrcSecondImage;
+            secondImage.src = originalSrcFirstImage;
+            firstImage.style.opacity = "1";
+            secondImage.style.opacity = "1";
         }
+        isSwapped = !isSwapped;
+    }
 
-        setInterval(swapImages, 2000);
+    setInterval(swapImages, 2000);
 
-        // Mouse Interaction
+    // Mouse Interaction
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const mouseParallaxElements = document.querySelectorAll(".mouse-parallax");
+    document.addEventListener("DOMContentLoaded", function() {
+        const mouseParallaxElements = document.querySelectorAll(".mouse-parallax");
 
-            mouseParallaxElements.forEach(mouseParallaxElement => {
-                mouseParallaxElement.addEventListener("mousemove", function (e) {
-                    const servicePageInfo = mouseParallaxElement.querySelector(".moving-img");
-                    const img = servicePageInfo.querySelector("img");
+        mouseParallaxElements.forEach(mouseParallaxElement => {
+            mouseParallaxElement.addEventListener("mousemove", function(e) {
+                const servicePageInfo = mouseParallaxElement.querySelector(".moving-img");
+                const img = servicePageInfo.querySelector("img");
 
-                    const rect = servicePageInfo.getBoundingClientRect();
-                    const x = e.clientX - rect.left; // Mouse X relative to the element
-                    const y = e.clientY - rect.top; // Mouse Y relative to the element
+                const rect = servicePageInfo.getBoundingClientRect();
+                const x = e.clientX - rect.left; // Mouse X relative to the element
+                const y = e.clientY - rect.top; // Mouse Y relative to the element
 
-                    const centerX = rect.width / 2; // Center X of the element
-                    const centerY = rect.height / 2; // Center Y of the element
+                const centerX = rect.width / 2; // Center X of the element
+                const centerY = rect.height / 2; // Center Y of the element
 
-                    const moveX = (x - centerX) / centerX * 20; // Adjust movement intensity
-                    const moveY = (y - centerY) / centerY * 20; // Adjust movement intensity
+                const moveX = (x - centerX) / centerX * 20; // Adjust movement intensity
+                const moveY = (y - centerY) / centerY * 20; // Adjust movement intensity
 
-                    const scale = 1.1; // Scale for zoom effect
+                const scale = 1.1; // Scale for zoom effect
 
-                    // Apply translation and scaling
-                    img.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
-                });
+                // Apply translation and scaling
+                img.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
+            });
 
-                mouseParallaxElement.addEventListener("mouseleave", function () {
-                    const img = mouseParallaxElement.querySelector("img");
-                    img.style.transform = `translate(0px, 0px) scale(1)`;
-                });
+            mouseParallaxElement.addEventListener("mouseleave", function() {
+                const img = mouseParallaxElement.querySelector("img");
+                img.style.transform = `translate(0px, 0px) scale(1)`;
             });
         });
+    });
     </script>
 
     <script src="./js/animation.js"></script>

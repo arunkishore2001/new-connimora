@@ -99,8 +99,16 @@ if (isset($_POST['add_video'])) {
     $video_url = mysqli_real_escape_string($conn, $_POST['video_url']);
 
     // Extract video ID from the URL
-    parse_str(parse_url($video_url, PHP_URL_QUERY), $url_params);
-    $video_id = isset($url_params['v']) ? $url_params['v'] : '';
+    if (strpos($video_url, 'youtu.be') !== false) {
+        // Handle shortened YouTube URL
+        $video_id = substr(parse_url($video_url, PHP_URL_PATH), 1);
+    } elseif (strpos($video_url, 'youtube.com') !== false) {
+        // Handle standard YouTube URL
+        parse_str(parse_url($video_url, PHP_URL_QUERY), $url_params);
+        $video_id = isset($url_params['v']) ? $url_params['v'] : '';
+    } else {
+        $video_id = '';
+    }
 
     if (!$video_id) {
         $_SESSION['error'] = 'Invalid YouTube URL';
@@ -120,6 +128,7 @@ if (isset($_POST['add_video'])) {
     exit;
 }
 
+
 // Delete Video Link
 if (isset($_POST['delete_video'])) {
     $videoId = mysqli_real_escape_string($conn, $_POST['video_id']);
@@ -130,6 +139,26 @@ if (isset($_POST['delete_video'])) {
     } else {
         $_SESSION['error'] = 'Failed to delete video link';
     }
+    header('Location: admin_dashboard.php');
+    exit;
+}
+
+// landing show toggle
+if (isset($_POST['toggle_landing_show'])) {
+    $imageId = $_POST['image_id'];
+
+    // Fetch the current landing_show value from the database
+    $result = mysqli_query($conn, "SELECT landing_show FROM images WHERE id = $imageId");
+    $row = mysqli_fetch_assoc($result);
+    $currentLandingShow = $row['landing_show'];
+
+    // Toggle the landing_show value
+    $newLandingShow = $currentLandingShow ? 0 : 1;
+
+    // Update the database
+    $updateQuery = "UPDATE images SET landing_show = $newLandingShow WHERE id = $imageId";
+    mysqli_query($conn, $updateQuery);
+
     header('Location: admin_dashboard.php');
     exit;
 }
@@ -148,12 +177,13 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-        .video-card {
-            margin-bottom: 1.5rem;
-        }
-        .embed-responsive-16by9 {
-            margin-bottom: 0.5rem;
-        }
+    .video-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .embed-responsive-16by9 {
+        margin-bottom: 0.5rem;
+    }
     </style>
 </head>
 
@@ -163,17 +193,17 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
         <div id="message"></div>
 
         <?php if (isset($_SESSION['error'])): ?>
-            <div class="alert alert-danger">
-                <?php echo $_SESSION['error'];
+        <div class="alert alert-danger">
+            <?php echo $_SESSION['error'];
                 unset($_SESSION['error']); ?>
-            </div>
+        </div>
         <?php endif; ?>
 
         <?php if (isset($_SESSION['success'])): ?>
-            <div class="alert alert-success">
-                <?php echo $_SESSION['success'];
+        <div class="alert alert-success">
+            <?php echo $_SESSION['success'];
                 unset($_SESSION['success']); ?>
-            </div>
+        </div>
         <?php endif; ?>
 
 
@@ -188,7 +218,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
             </div>
 
             <div class="form-group">
-                <label for="project">Address</label>
+                <label for="project">Description</label>
                 <input type="text" name="address" class="form-control" required>
             </div>
 
@@ -204,8 +234,8 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
 
 
 
-         <!-- Add Video Link Form -->
-         <form method="post" class="mt-4">
+        <!-- Add Video Link Form -->
+        <form method="post" class="mt-4">
             <div class="form-group">
                 <label for="video_url">Video URL</label>
                 <input type="text" name="video_url" class="form-control" required>
@@ -218,25 +248,26 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
             <h3>Existing Videos</h3>
             <div class="row">
                 <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
-                    <div class="col-md-4 mb-4">
-                        <div class="card video-card">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="<?php echo $video['embed_url']; ?>" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                                <!-- Delete Button Form -->
-                                <form method="post" class="mt-2">
-                                    <input type="hidden" name="video_id" value="<?php echo $video['id']; ?>">
-                                    <button type="submit" name="delete_video" class="btn btn-danger btn-sm">Delete</button>
-                                </form>
-                            </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card video-card">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $video['embed_url']; ?>"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <!-- Delete Button Form -->
+                            <form method="post">
+                                <input type="hidden" name="video_id" value="<?php echo $video['id']; ?>">
+                                <button type="submit" name="delete_video" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
                         </div>
                     </div>
+                </div>
                 <?php endwhile; ?>
             </div>
         </div>
 
-        
+
         <!-- contact info -->
 
         <hr>
@@ -248,31 +279,68 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
         <hr>
 
         <?php
+            // Fetch all images where landing_show is set to 1
+            $imageQuery = mysqli_query($conn, "SELECT * FROM images WHERE landing_show = 1");
+        ?>
+
+        <h4>Images in Landing Slider</h4>
+        <br>
+        <div class='row'>
+            <?php while ($image = mysqli_fetch_assoc($imageQuery)): ?>
+            <div class="col-md-2 col-6 mb-4">
+                <div class="card">
+                    <img src="<?php echo $image['url']; ?>" alt="Image" class="card-img-top">
+                    <div class="card-body p-2">
+                        <form class="m-0" method="post" id="delete-form">
+                            <input type="hidden" name="image_id" value="<?php echo $image['id']; ?>">
+                            <input type="hidden" name="image_url" value="<?php echo $image['url']; ?>">
+
+                            <button type="submit" name="delete" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" name="toggle_landing_show" class="btn btn-primary mt-2 btn-sm">
+                                <?php echo $image['landing_show'] ? 'Landing Not Show' : 'Landing Show'; ?>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <?php endwhile; ?>
+        </div>
+        <br>
+
+        <hr>
+
+        <?php
         while ($projectResult = mysqli_fetch_assoc($projectQuery)) {
             $projectName = $projectResult['project_name'];
             // Fetch images for the current project
             $imageQuery = mysqli_query($conn, "SELECT * FROM images WHERE project_name = '$projectName'");
             ?>
 
-            <h4>Project Title: <?php echo $projectName; ?> </h4>
-            <br>
-            <div class='row'>
-                <?php while ($image = mysqli_fetch_assoc($imageQuery)): ?>
-                    <div class="col-md-2 col-6 mb-4">
-                        <div class="card">
-                            <img src="<?php echo $image['url']; ?>" alt="Image" class="card-img-top">
-                            <div class="card-body p-2">
-                                <form class="m-0" method="post" id="delete-form">
-                                    <input type="hidden" name="image_id" value="<?php echo $image['id']; ?>">
-                                    <input type="hidden" name="image_url" value="<?php echo $image['url']; ?>">
-                                    <button type="submit" name="delete" class="btn btn-danger">Delete</button>
-                                </form>
-                            </div>
-                        </div>
+        <h4>Project Title: <?php echo $projectName; ?> </h4>
+        <br>
+        <div class='row'>
+            <?php while ($image = mysqli_fetch_assoc($imageQuery)): ?>
+            <div class="col-md-2 col-6 mb-4">
+                <div class="card">
+                    <img src="<?php echo $image['url']; ?>" alt="Image" class="card-img-top">
+                    <div class="card-body p-2">
+                        <form class="m-0" method="post" id="delete-form">
+                            <input type="hidden" name="image_id" value="<?php echo $image['id']; ?>">
+                            <input type="hidden" name="image_url" value="<?php echo $image['url']; ?>">
+                            <input type="hidden" name="current_landing_show"
+                                value="<?php echo $image['landing_show']; ?>">
+
+                            <button type="submit" name="delete" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" name="toggle_landing_show" class="btn btn-primary mt-2 btn-sm">
+                                <?php echo $image['landing_show'] ? 'Landing Not Show' : 'Landing Show'; ?>
+                            </button>
+                        </form>
                     </div>
-                <?php endwhile; ?>
+                </div>
             </div>
-            <br>
+            <?php endwhile; ?>
+        </div>
+        <br>
         <?php } ?>
 
     </div>
@@ -308,93 +376,98 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
 </body>
 
 <script>
+$(document).ready(function() {
+    $('#commercialProjectTabs a').on('click', function(e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+});
 
-    $(document).ready(function () {
-        $('#commercialProjectTabs a').on('click', function (e) {
-            e.preventDefault()
-            $(this).tab('show')
-        })
-    });
+document.getElementById('delete-form').onsubmit = function(event) {
+    var confirmation = confirm("Are you sure you want to delete this image?");
+    if (!confirmation) {
+        event.preventDefault();
+    }
+};
 
-    document.getElementById('delete-form').onsubmit = function (event) {
-        var confirmation = confirm("Are you sure you want to delete this image?");
-        if (!confirmation) {
-            event.preventDefault();
-        }
-    };
-
-    $(document).ready(function () {
-        $('input[type="file"]').on('change', function () {
-            $('#preview').empty(); // To remove the previous selected image
-            var files = this.files;
-            if (files && files[0]) {
-                for (var i = 0; i < files.length; i++) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        $('#preview').append('<img src="' + e.target.result + '"class="m-3" height="100">');
-                    }
-                    reader.readAsDataURL(files[i]);
+$(document).ready(function() {
+    $('input[type="file"]').on('change', function() {
+        $('#preview').empty(); // To remove the previous selected image
+        var files = this.files;
+        if (files && files[0]) {
+            for (var i = 0; i < files.length; i++) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#preview').append('<img src="' + e.target.result +
+                        '"class="m-3" height="100">');
                 }
+                reader.readAsDataURL(files[i]);
             }
-        });
+        }
     });
+});
 
-    function confirmAction(message, action) {
-        $('#confirmationText').text(message);
-        $('#confirmBtn').off('click').click(function () {
-            action();
-            $('#confirmationModal').modal('hide');
-        });
-        $('#confirmationModal').modal('show');
-    }
-
-    function deleteReview(id) {
-        if (confirm('Are you sure you want to delete this review?')) {
-            $.post('./admin_php/delete_review.php', { id: id }, function (data) {
-                $("#message").html('<div class="alert alert-success">' + data + '</div>');
-                loadReviews();
-            }).fail(function () {
-                $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
-            });
-        }
-    }
-
-    function deleteContact(id) {
-        if (confirm('Are you sure you want to delete this contact?')) {
-            $.post('./admin_php/delete_contact.php', { id: id }, function (data) {
-                $("#message").html('<div class="alert alert-success">' + data + '</div>');
-                loadContact();
-            }).fail(function () {
-                $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
-            });
-        }
-    }
-
-    function toggleVisibility(id) {
-        if (confirm('Are you sure you want to toggle this review?')) {
-            $.post('admin_php/toggle_visibility.php', { id: id }, function (data) {
-                $("#message").html('<div class="alert alert-success">' + data + '</div>');
-                loadReviews();
-            }).fail(function () {
-                $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
-            });
-        }
-    }
-
-    function loadReviews() {
-        $("#reviewsTable").load('./admin_php/fetch_reviews.php');
-    }
-
-    function loadContact() {
-        $("#contact-table").load('./admin_php/fetch_contact.php');
-    }
-
-    // Load the reviews when the page loads
-    $(document).ready(function () {
-        loadReviews();
-        loadContact();
+function confirmAction(message, action) {
+    $('#confirmationText').text(message);
+    $('#confirmBtn').off('click').click(function() {
+        action();
+        $('#confirmationModal').modal('hide');
     });
+    $('#confirmationModal').modal('show');
+}
 
+function deleteReview(id) {
+    if (confirm('Are you sure you want to delete this review?')) {
+        $.post('./admin_php/delete_review.php', {
+            id: id
+        }, function(data) {
+            $("#message").html('<div class="alert alert-success">' + data + '</div>');
+            loadReviews();
+        }).fail(function() {
+            $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
+        });
+    }
+}
+
+function deleteContact(id) {
+    if (confirm('Are you sure you want to delete this contact?')) {
+        $.post('./admin_php/delete_contact.php', {
+            id: id
+        }, function(data) {
+            $("#message").html('<div class="alert alert-success">' + data + '</div>');
+            loadContact();
+        }).fail(function() {
+            $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
+        });
+    }
+}
+
+function toggleVisibility(id) {
+    if (confirm('Are you sure you want to toggle this review?')) {
+        $.post('admin_php/toggle_visibility.php', {
+            id: id
+        }, function(data) {
+            $("#message").html('<div class="alert alert-success">' + data + '</div>');
+            loadReviews();
+        }).fail(function() {
+            $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
+        });
+    }
+}
+
+function loadReviews() {
+    $("#reviewsTable").load('./admin_php/fetch_reviews.php');
+}
+
+function loadContact() {
+    $("#contact-table").load('./admin_php/fetch_contact.php');
+}
+
+// Load the reviews when the page loads
+$(document).ready(function() {
+    loadReviews();
+    loadContact();
+});
 </script>
 
 
