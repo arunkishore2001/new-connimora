@@ -128,11 +128,12 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
         <div class="container-fluid-max mt-5">
             <div class="flex-container">
                 <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
-                    <div class="flex-item  " data-animation="slideInDown" >
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="<?php echo $video['embed_url']; ?>" allowfullscreen></iframe>
-                        </div>
+                <div class="flex-item  " data-animation="slideInDown">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="<?php echo $video['embed_url']; ?>"
+                            allowfullscreen></iframe>
                     </div>
+                </div>
                 <?php endwhile; ?>
             </div>
         </div>
@@ -142,23 +143,46 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
 
 
 
-        <div class="container-fluid">
+        <?php
+    // Fetch the most recently updated project
+    $recentProjectQuery = mysqli_query($conn, "SELECT * FROM images ORDER BY id DESC LIMIT 1");
+
+    while ($recentProjectResult = mysqli_fetch_assoc($recentProjectQuery)) {
+        $recentProjectName = $recentProjectResult['project_name'];
+
+    // Fetch all images associated with this project
+    $recentImageQuery = mysqli_query($conn, "SELECT * FROM images WHERE project_name = '$recentProjectName' ORDER BY id");
+    $recentImages = mysqli_fetch_all($recentImageQuery, MYSQLI_ASSOC);
+    
+    if (count($recentImages) > 0) {
+        $recentProjectAddress = $recentImages[0]['address']; // Assuming all images share the same address
+        ?>
+
+        <div class="container-fluid mb-5">
             <div class="desk-line"></div>
             <div class="about-page-heading">
-                <h2 data-animation="slideInDown" data-animation-delay="200ms">Our work tell About Us</h2>
-                <p data-animation="slideInDown" data-animation-delay="400ms">
-                    Palar Farms managed farmland allows you to sit back and relax and
-                    watch your investment grow without the hassles of managing it
-                    yourself. Compared to other forms of real estate investments,
-                    managed farmlands are stress-free investment options. In real
-                    estate, your land value may appreciate over time but the plot will
-                    remain ju.
+                <h6 class="comman-sub-heading">[ Recent Project ]</h6>
+                <h2 data-animation="slideInDown" class="m-0" data-animation-delay="200ms"><?php echo $recentProjectName; ?></h2>
+                <p data-animation="slideInDown" class="mb-3" data-animation-delay="400ms">
+                    <?php echo $recentProjectAddress; ?>
                 </p>
+            </div>
+            <div class="images-gallery">
+                <div id="gallery">
+                    <?php foreach ($recentImages as $key => $recentImage) { ?>
+                    <div class="img-responsive">
+                        <img data-animation="zoomIn" loading='lazy'
+                            src="<?php echo $recentImage['url']; ?>" alt="">
+                    </div>
+                    <?php } ?>
+                </div>
             </div>
         </div>
 
-        <div class="container-fluid-max ">
-            <?php
+        <?php 
+    }}?>
+
+        <?php
             $i = 0;
           while ($projectResult = mysqli_fetch_assoc($projectQuery)) {
             $projectName = $projectResult['project_name'];
@@ -169,42 +193,49 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
               $imageAddress = $images[0]['address']; 
               $imageUrl2 = $images[1]['url'];
               $i++;?>
-            <div class="project-background"  data-animation="slideInRight" data-animation-delay="200ms"></div>
+        <div class="container-fluid-max ">
+            <div class="project-background" data-animation="slideInRight" data-animation-delay="200ms"></div>
 
             <div class="container-fluid project-detail ">
                 <div class="row">
-                    <div class="col-md-6"  data-animation="slideInRight" data-animation-delay="400ms">
-                        <div class="project-back-heading"  data-animation="slideInRight" data-animation-delay="500ms">
-                            <h2><?php echo $projectName; ?></h2>
-                            <h1>0<?php echo $i; ?></h1>
-                        </div>
-                        <div class="whole-project-readmore">
-                        <div class="project-back-para"  data-animation="slideInRight" data-animation-delay="600ms">
-                            <p><?php echo $imageAddress ?></p>
-                        </div>
-                        <div class=""  data-animation="slideInRight" data-animation-delay="700ms">
-                            <a class="read-more"
-                                href="project_page.php?project=<?php echo urlencode($projectName); ?>&image=<?php echo urlencode($imageUrl1); ?>">
-                                <div class="project-line"></div>
-                                <h6>Read more &gt;&gt;</h6>
-                            </a>
-                        </div>
+                    <div class="col-md-6" data-animation="slideInRight" data-animation-delay="400ms">
+                        <div class="projeccts-contents-wrapper">
+                            <div class="project-back-heading" data-animation="slideInRight"
+                                data-animation-delay="500ms">
+                                <h2><?php echo $projectName; ?></h2>
+                                <h1>0<?php echo $i; ?></h1>
+                            </div>
+                            <div class="whole-project-readmore">
+                                <div class="project-back-para" data-animation="slideInRight"
+                                    data-animation-delay="600ms">
+                                    <p><?php echo $imageAddress ?></p>
+                                </div>
+                                <div class="" data-animation="slideInRight" data-animation-delay="700ms">
+                                    <a class="read-more"
+                                        href="project_page.php?project=<?php echo urlencode($projectName); ?>&image=<?php echo urlencode($imageUrl1); ?>">
+                                        <div class="project-line"></div>
+                                        <h6>Read more &gt;&gt;</h6>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="project-img">
-                            <img  data-animation="slideInRight" data-animation-delay="200ms" src="<?php echo $imageUrl1; ?>" alt="">
-                            <img  data-animation="slideInRight" data-animation-delay="400ms" src="<?php echo $imageUrl2; ?>" alt="">
+                            <img data-animation="slideInRight" loading='lazy' data-animation-delay="200ms"
+                                src="<?php echo $imageUrl1; ?>" alt="">
+                            <img data-animation="slideInRight" loading='lazy' data-animation-delay="400ms"
+                                src="<?php echo $imageUrl2; ?>" alt="">
                         </div>
                     </div>
                 </div>
             </div>
 
             <div data-animation="slideInUp" data-animation-delay="500ms" class="project-complete-line"></div>
-            <?php }
-          } ?>
         </div>
+        <?php }
+          } ?>
 
         <script src="./aos.js"></script>
 

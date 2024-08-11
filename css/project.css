@@ -44,6 +44,12 @@
   margin-bottom: 0px;
 }
 
+.projeccts-contents-wrapper{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
 @media (min-width: 768px) { /* You can adjust the breakpoint as needed */
   .image-item {
     width: calc(50% - 16px); /* Two images per row, with a margin */
@@ -169,4 +175,57 @@
   width: 100%;
   height: 2px;
   margin-top: 20px;
+}
+
+
+/* gallery part  */
+
+#gallery{
+  -webkit-column-count:4;
+  -moz-column-count:4;
+  column-count:4;
+  
+  -webkit-column-gap:10px;
+  -moz-column-gap:10px;
+  column-gap:10px;
+}
+@media (max-width:1200px){
+  #gallery{
+  -webkit-column-count:3;
+  -moz-column-count:3;
+  column-count:3;
+    
+  -webkit-column-gap:10px;
+  -moz-column-gap:10px;
+  column-gap:10px;
+}
+}
+@media (max-width:800px){
+  #gallery{
+  -webkit-column-count:2;
+  -moz-column-count:2;
+  column-count:2;
+    
+  -webkit-column-gap:10px;
+  -moz-column-gap:10px;
+  column-gap:10px;
+}
+}
+@media (max-width:600px){
+  #gallery{
+  -webkit-column-count:1;
+  -moz-column-count:1;
+  column-count:1;
+}  
+.img-main-service::after{
+  border: 10px solid white !important;
+}
+}
+#gallery img,#gallery video {
+  width:100%;
+  height:auto;
+  margin-bottom:10px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }

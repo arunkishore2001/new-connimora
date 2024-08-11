@@ -109,7 +109,7 @@
             </div>
         </div>
 
-        <div class="container-fluid">
+        <div class="container-fluid mb-5">
             <div class="about-page-heading">
                 <h2 data-animation="slideInDown">Our work tell About Us</h2>
                 <p data-animation="slideInDown" data-animation-delay="200ms">
@@ -132,7 +132,7 @@
                                 </div>
 
                                 <div class="service-img-box">
-                                    <h3>Casagrand House</h3>
+                                    <h3>Farm Lands</h3>
                                     <p>
                                         lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
                                         FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
@@ -146,7 +146,7 @@
                                 </div>
 
                                 <div class="service-img-box">
-                                    <h3>Casagrand House</h3>
+                                    <h3>Property Management</h3>
                                     <p>
                                         lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
                                         FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
@@ -160,7 +160,7 @@
                                 </div>
 
                                 <div class="service-img-box">
-                                    <h3>Casagrand House</h3>
+                                    <h3>Retail Stores Star Mart & Cafe</h3>
                                     <p>
                                         lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
                                         FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
@@ -183,7 +183,7 @@
                                     </div>
 
                                     <div class="service-img-box">
-                                        <h3>Casagrand House</h3>
+                                        <h3>HSB Logo and Name</h3>
                                         <p>
                                             lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
                                             FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
@@ -197,7 +197,7 @@
                                     </div>
 
                                     <div class="service-img-box">
-                                        <h3>Casagrand House</h3>
+                                        <h3>Resorts</h3>
                                         <p>
                                             lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
                                             FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
@@ -211,7 +211,7 @@
                                     </div>
 
                                     <div class="service-img-box">
-                                        <h3>Casagrand House</h3>
+                                        <h3>Commercial Projects</h3>
                                         <p>
                                             lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
                                             FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
