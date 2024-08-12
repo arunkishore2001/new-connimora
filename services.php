@@ -51,7 +51,7 @@
                             <!-- Add your content here -->
                             <h1>Where Dimension Takes Shape</h1>
                         </div>
-                        <img src="./images/service-right.jpg" alt="" />
+                        <img src="./images/service-right.jpeg" alt="" />
                     </div>
                 </div>
 
@@ -176,7 +176,7 @@
                                     </div>
 
                                     <div class="service-img-box">
-                                        <h3>HSB Logo and Name</h3>
+                                        <h3>Hotel Sampoorna Bhavan</h3>
                                         <p>
                                             lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
                                             FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ

@@ -118,31 +118,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
         </div>
 
 
-        <div class="container-fluid-max mt-5">
-        <div>
-            <div class="yt-heading">
-            <h6 class="comman-sub-heading">[ Project Videos ]</h6>
-                    </div>
-                    
-
-            </div>
-                       
-    <div class="flex-container">
-        <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
-            <div class="flex-item" data-animation="slideInDown">
-                <?php
-                // Extract video ID from the embed URL
-                preg_match("/embed\/([^\?]+)/", $video['embed_url'], $matches);
-                $video_id = $matches[1];
-                ?>
-                <a href="https://www.youtube.com/watch?v=<?php echo $video_id; ?>" target="_blank">
-                    <img src="https://img.youtube.com/vi/<?php echo $video_id; ?>/hqdefault.jpg" class="img-fluid" alt="YouTube Video Thumbnail">
-                </a>
-            </div>
-        <?php endwhile; ?>
-    </div>
-</div>
-
+     
 
 
         <!----------------- New Added Project File----------------- -->
@@ -187,6 +163,32 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
 
         <?php 
     }}?>
+
+
+<div class="container-fluid-max mt-5">
+        <div>
+            <div class="yt-heading">
+            <h6 class="comman-sub-heading">[ Project Videos ]</h6>
+                    </div>
+                    
+
+            </div>
+                       
+    <div class="flex-container">
+        <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
+            <div class="flex-item" data-animation="slideInDown">
+                <?php
+                // Extract video ID from the embed URL
+                preg_match("/embed\/([^\?]+)/", $video['embed_url'], $matches);
+                $video_id = $matches[1];
+                ?>
+                <a href="https://www.youtube.com/watch?v=<?php echo $video_id; ?>" target="_blank">
+                    <img src="https://img.youtube.com/vi/<?php echo $video_id; ?>/hqdefault.jpg" class="img-fluid" alt="YouTube Video Thumbnail">
+                </a>
+            </div>
+        <?php endwhile; ?>
+    </div>
+</div>
 
         <?php
             $i = 0;
