@@ -172,7 +172,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                             <div class="sketch-icon-wrapper">
                                 <img src="./images/Resort iconnn.png" alt="" />
                             </div>
-                            <h5>Leisure</h5>
+                            <h5>Resort</h5>
                             <p>
                                 Lorem ipsum, dolor sit amet consectetur
                             </p>
