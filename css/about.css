@@ -27,7 +27,7 @@
   z-index: -50;
 }
 
-/* Overlay container */
+
 .left-landing-image::before,
 .right-landing-image::before {
   content: "";
@@ -40,7 +40,7 @@
   z-index: -1;
 }
 
-/* Ensure images appear below the overlay */
+
 .left-landing-image img,
 .right-landing-image img {
   position: relative;
