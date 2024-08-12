@@ -1836,7 +1836,7 @@ p {
 
 .contact-bg h2 {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 10%;
   transform: translateY(-50%);
   color: #fff;

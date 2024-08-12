@@ -154,7 +154,7 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
 </div>
 
 
-<section class="footer" data-animation="slideInLeft">
+<section class="footer" data-animation="slideInUp">
     <div class="container-fluid-max m-0 p-0">
         <div class="full-width-scree-footer" style="background-color: #0F2F60">
             <div id="particles-js">

@@ -72,7 +72,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid-max rolling-text"data-animation="slideInDown" >
+    <div class="container-fluid-max rolling-text mb-5"data-animation="slideInDown" >
         <div class="wrapper">
         <ul class="tabs-box">
                     <li class="tab">FARM LAND</li>
