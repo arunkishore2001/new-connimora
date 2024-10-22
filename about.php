@@ -137,7 +137,7 @@
             </div>
 
             <div class="col-md-8">
-                <div class="benefit-heading" data-animation="slideInLeft">
+                <div class="benefit-heading" data-animation="slideInDown">
                     <h6 class="comman-sub-heading">[ Benefits ]</h6>
                     <h3 class="sketch-heading">
                         ADVANTAGES OF INVESTING IN AGRICULTURAL LANDS

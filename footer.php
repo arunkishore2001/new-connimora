@@ -13,9 +13,9 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
     <?php
     if ($current_page !== 'contact') {
         echo '
-    <div data-animation="slideInRight" class="contact-bg">
+    <div class="contact-bg">
         <img src="./images/contact.png" alt="Contact Background" />
-        <h2 data-animation="slideInDown" data-animation-delay="600ms" >Have a Project in Mind?</h2>
+        <h2 data-animation="slideInDown" >Have a Project in Mind?</h2>
     </div>';
     }
     ?>
@@ -107,7 +107,7 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
                                 </svg>
                                 <div class="address-info">
                                     <h6>PHONE NUMBER</h6>
-                                    <p>+91 98404 66789</p>
+                                    <p>+91 72000 07676 </p>
                                 </div>
                             </div>
                             <div class="social-media">
@@ -145,7 +145,7 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
 </div>
 
 <div class="container-fluid-max">
-    <div class="google-map-container" data-animation="slideInRight">
+    <div class="google-map-container" >
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15544.127155918764!2d80.1244362405913!3d13.097171895328328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526237656b9a93%3A0x37587770c442f4d5!2sAyappakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1721850667848!5m2!1sen!2sin"
             width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
@@ -154,7 +154,7 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
 </div>
 
 
-<section class="footer" data-animation="slideInUp">
+<section class="footer" >
     <div class="container-fluid-max m-0 p-0">
         <div class="full-width-scree-footer" style="background-color: #0F2F60">
             <div id="particles-js">

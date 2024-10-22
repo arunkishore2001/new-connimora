@@ -119,7 +119,7 @@
                 <div class="row">
                     <div class="col-md-6" >
                         <div class="service-page">
-                            <div class="service-page-img mouse-parallax" data-animation="slideInRight">
+                            <div class="service-page-img mouse-parallax" data-animation="slideInDown">
                                 <div class="service-page-info">
                                     <img src="./images/farm-land.jpg" alt="" />
                                 </div>
@@ -133,7 +133,7 @@
                                 </div>
                             </div>
 
-                            <div class="service-page-img mouse-parallax" data-animation="slideInRight" data-animation-delay="200ms">
+                            <div class="service-page-img mouse-parallax" data-animation="slideInDown" data-animation-delay="200ms">
                                 <div class="service-page-info">
                                     <img src="./images/property.jpg" alt="" />
                                 </div>
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
 
-                            <div class="service-page-img mouse-parallax"  data-animation="slideInRight" data-animation-delay="300ms">
+                            <div class="service-page-img mouse-parallax"  data-animation="slideInDown" data-animation-delay="300ms">
                                 <div class="service-page-info">
                                     <img src="./images/cafea.jpg" alt="" />
                                 </div>
