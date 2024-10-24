@@ -153,9 +153,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                                 <img src="./images/tree.png" alt="" />
                             </div>
                             <h5>Trees</h5>
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur
-                            </p>
+                            
                         </div>
 
                         <div class="icon-msg" data-animation="slideInDown" data-animation-delay="400ms">
@@ -163,9 +161,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                                 <img src="./images/irrigation.png" alt="" />
                             </div>
                             <h5>Irrigation</h5>
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur
-                            </p>
+                           
                         </div>
 
                         <div class="icon-msg " data-animation="slideInDown" data-animation-delay="600ms">
@@ -173,9 +169,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                                 <img src="./images/Resort iconnn.png" alt="" />
                             </div>
                             <h5>Resort</h5>
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur
-                            </p>
+                            
                         </div>
                     </div>
                 </div>
