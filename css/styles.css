@@ -61,7 +61,7 @@ p {
 }
 /*------------------Common----------*/
 
-.light-blue-text{
+.light-blue-text {
   color: #9fc6ff !important;
 }
 
@@ -122,8 +122,8 @@ p {
 
 .about-img {
   display: flex;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
 }
 
 .about-img img {
@@ -137,7 +137,7 @@ p {
 .about-left-img {
   grid-column: 1 / 3;
   grid-row: 1 / 2;
-  height: 250px; 
+  height: 250px;
   width: 85%;
   margin: 0 60px;
 }
@@ -146,25 +146,23 @@ p {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
   height: 150px;
-  margin-top: 100px; 
+  margin-top: 100px;
 }
 
 .about-left-img2 {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
- 
 }
 
 .about-left-img3 {
   grid-column: 2 / 4;
   grid-row: 2 / 3;
-  height: 200px; 
+  height: 200px;
 }
-
 
 @media (max-width: 1024px) {
   .about-whole-left-img {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto;
   }
 
@@ -174,35 +172,35 @@ p {
   }
 
   .about-left-img1 {
-    margin-top: 100px; 
+    margin-top: 100px;
   }
 
   .about-left-img2,
   .about-left-img3 {
-    height: 200px; 
+    height: 200px;
   }
 }
 
 @media (max-width: 768px) {
   .about-whole-left-img {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
   }
 
   .about-left-img {
     width: 100%;
-    height: 200px; 
-    margin: 0; 
+    height: 200px;
+    margin: 0;
   }
 
   .about-left-img1 {
-    height: 100px; 
-    margin-top: 100px; 
+    height: 100px;
+    margin-top: 100px;
   }
 
   .about-left-img2,
   .about-left-img3 {
-    height: 150px; 
+    height: 150px;
   }
 }
 
@@ -213,16 +211,15 @@ p {
   }
 
   .about-left-img1 {
-    height: 80px; 
+    height: 80px;
     margin-top: 70px;
   }
 
   .about-left-img2,
   .about-left-img3 {
-    height: 120px; 
+    height: 120px;
   }
 }
-
 
 /*------------------Button----------*/
 
@@ -243,8 +240,8 @@ p {
   text-align: center;
 }
 
-.custom-button::after{
-  content: '';
+.custom-button::after {
+  content: "";
   position: absolute;
   height: 100%;
   width: 1px;
@@ -253,8 +250,8 @@ p {
   background-color: #000;
 }
 
-.custom-button::before{
-  content: '';
+.custom-button::before {
+  content: "";
   position: absolute;
   height: 1px;
   width: 100%;
@@ -435,7 +432,7 @@ p {
   opacity: 1;
 }
 
-.sketch-icon-wrapper{
+.sketch-icon-wrapper {
   width: 100%;
   display: flex;
   align-items: center;
@@ -444,7 +441,7 @@ p {
   justify-content: center;
 }
 
-.sketch-icon-wrapper img{
+.sketch-icon-wrapper img {
   width: 70%;
   height: 70%;
   object-fit: contain;
@@ -597,8 +594,6 @@ p {
   width: 100%; /* Ensure it covers the area as needed */
   height: 100%; /* Adjust as needed */
 }
-
-
 
 .moving-img img {
   transition: transform 0.2s ease-out; /* Smooth transition for better visual effect */
@@ -834,7 +829,7 @@ p {
   margin-bottom: 15px;
 }
 
-.serive-detail img{
+.serive-detail img {
   width: 34%;
   max-height: 100px;
 }
@@ -977,9 +972,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
-
 
 .working-circle svg path {
   transition: fill 0.3s ease;
@@ -1209,11 +1202,10 @@ p {
   display: flex;
 }
 
-
 .skill-team-partner {
   position: relative;
   display: inline-block;
-  min-width: 300px; 
+  min-width: 300px;
 
   height: 100%;
 }
@@ -1309,7 +1301,7 @@ p {
 
 /*-
 --------------------Gallery----------------------*/
-.whole-gallery{
+.whole-gallery {
   padding: 0 0;
 }
 .gallery {
@@ -1321,7 +1313,7 @@ p {
 .gallery img {
   display: block;
   width: 100%;
-  height: 420px;
+  height: 320px;
   object-fit: cover;
 }
 
@@ -1340,7 +1332,8 @@ p {
   bottom: 0;
 }
 
-.gallery-box h5, .gallery-box h6 {
+.gallery-box h5,
+.gallery-box h6 {
   margin: 0;
   font-family: Montserrat;
 }
@@ -1359,27 +1352,57 @@ p {
   letter-spacing: 0.48px;
 }
 
-.first-half-gallery, .secound-half-gallery {
+.first-half-gallery,
+.secound-half-gallery {
   display: grid;
-
 }
 
 .first-half-gallery {
-  grid-template-columns: 2fr 1fr 1fr;
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "item1 item1 item2 item3"
+    "item4 item5 item6 item6";
 }
 
-.secound-half-gallery {
-  grid-template-columns: 1fr 1fr 2fr;
+.first-half-gallery > div:nth-child(1) {
+  grid-area: item1;
+}
+
+.first-half-gallery > div:nth-child(2) {
+  grid-area: item2;
+}
+
+.first-half-gallery > div:nth-child(3) {
+  grid-area: item3;
+}
+
+.first-half-gallery > div:nth-child(4) {
+  grid-area: item4;
+}
+
+.first-half-gallery > div:nth-child(5) {
+  grid-area: item5;
+}
+
+.first-half-gallery > div:nth-child(6) {
+  grid-area: item6;
 }
 
 @media (max-width: 768px) {
-  .first-half-gallery, .secound-half-gallery {
+  .first-half-gallery,
+  .secound-half-gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .gallery {
-    width: 90%;
+    width: 95%;
+  }
+
+  .first-half-gallery > div:nth-child(n + 4) {
+    /* Hide 4th, 5th, and 6th images */
+    display: none;
   }
 }
 
@@ -1399,8 +1422,6 @@ p {
     font-size: 12px;
   }
 }
-
-
 
 /*-----------------COunceling --------------------*/
 .consulting {
@@ -1468,8 +1489,6 @@ p {
   text-align: center;
   margin: 0;
 }
-
-
 
 @media (min-width: 768px) {
   .consulting-left {
@@ -1744,13 +1763,13 @@ p {
   max-width: 260px;
   top: 90%;
   left: 5%;
- 
+
   border: 1px solid #1d60c5;
 }
 
-.skill-box img{
+.skill-box img {
   width: 30%;
- 
+
   padding-right: 20px;
 }
 .skill-box:hover {
@@ -1894,7 +1913,7 @@ p {
   margin-left: -20px;
 }
 
-.contact-form .error{
+.contact-form .error {
   font-size: 13px;
   color: red;
 }
@@ -1974,7 +1993,7 @@ textarea {
   margin-bottom: 20px;
 }
 
-.address-detail svg{
+.address-detail svg {
   min-width: 16px;
 }
 
@@ -2285,24 +2304,21 @@ textarea {
   overflow: hidden;
 }
 
-
-.professional-svg{
+.professional-svg {
   position: absolute;
   right: 0;
   margin-top: -200px;
 }
 
-.professional-svg svg{
+.professional-svg svg {
   width: 100%;
   overflow: hidden;
 }
 
-@media (max-width: 480px){
-  .professional-svg svg{
+@media (max-width: 480px) {
+  .professional-svg svg {
     width: 50%;
     float: right;
     overflow: hidden;
   }
 }
-
-

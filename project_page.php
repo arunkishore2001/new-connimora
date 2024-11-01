@@ -20,7 +20,11 @@ if (isset($_GET['project']) && isset($_GET['image'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Connemara Realty - Invest in Managed Farmlands for High Returns & Family Getaways</title>
+  <link rel="icon" href="./images/logo.ico" type="image/x-icon">
+  <meta name="description"
+    content="Discover the advantages of investing in managed farmlands with Connemara Realty. Founded in Chennai, our farmlands offer stress-free returns, wealth appreciation, and family-friendly escapes. Enjoy tax-free profits, high resale value, and growth potential in eco-friendly developments. Invest today and watch your land grow!">
+
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/contact.css" />
   <link rel="stylesheet" href="./css/navBar.css" />
@@ -76,7 +80,7 @@ if (isset($_GET['project']) && isset($_GET['image'])) {
             <h1><?php echo $projectName; ?></h1>
           </div>
 
-          <img src="./images/contact-landing2.png" alt="" />
+          <img src="./images/contact-landing2.png" alt="Connemara Reality" />
         </div>
       </div>
     </div>
@@ -112,14 +116,14 @@ if (isset($_GET['project']) && isset($_GET['image'])) {
     <div class="row">
       <div class="col-md-4 about-main-pic mb-4">
         <div class="about-pic-image">
-          <img onclick="openModal(this.src)" loading="lazy" src="<?php echo $firstImageUrl; ?>" alt="Image">
+          <img onclick="openModal(this.src)" loading="lazy" src="<?php echo $firstImageUrl; ?>" alt="Connemara Reality">
         </div>
       </div>
 
       <?php while ($imageResult = mysqli_fetch_assoc($imageQuery)): ?>
         <div class="col-md-4 about-main-pic mb-4">
           <div class="about-pic-image">
-            <img onclick="openModal(this.src)" loading="lazy" src="<?php echo $imageResult['url']; ?>" alt="Image">
+            <img onclick="openModal(this.src)" loading="lazy" src="<?php echo $imageResult['url']; ?>" alt="Connemara Reality">
           </div>
         </div>
       <?php endwhile; ?>

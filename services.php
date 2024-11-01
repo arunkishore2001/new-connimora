@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Our Services - Expert Farm Land Development & Management</title>
+    <link rel="icon" href="./images/logo.ico" type="image/x-icon">
+    <meta name="description"
+        content="Explore the comprehensive services offered by Connemara Realty. We provide expert guidance in farmland investment, sustainable development, and management to maximize your returns and ensure hassle-free ownership.">
+
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/contact.css" />
     <link rel="stylesheet" href="./css/navBar.css" />
@@ -21,13 +25,13 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 </head>
 
 <body>
@@ -51,7 +55,7 @@
                             <!-- Add your content here -->
                             <h1>Where Dimension Takes Shape</h1>
                         </div>
-                        <img src="./images/service-right.jpeg" alt="" />
+                        <img src="./images/service-right.jpeg" alt="Connemara Reality" />
                     </div>
                 </div>
 
@@ -75,7 +79,7 @@
                                 <div class="line learn-line"></div>
                             </div>
                         </div>
-                        <img src="./images/service-left.jpg" alt="" />
+                        <img src="./images/service-left.jpg" alt="Connemara Reality" />
                     </div>
                 </div>
             </div>
@@ -94,10 +98,10 @@
                     <li class="tab">CAFE</li>
                     <li class="tab">RESORT</li>
                     <li class="tab">COMMERCIAL PROJECT</li>
-    
+
                 </ul>
                 <div class="icon">
-                   
+
                 </div>
             </div>
         </div>
@@ -117,46 +121,42 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6" >
+                    <div class="col-md-6">
                         <div class="service-page">
                             <div class="service-page-img mouse-parallax" data-animation="slideInDown">
                                 <div class="service-page-info">
-                                    <img src="./images/farm-land.jpg" alt="" />
+                                    <img src="./images/farm-land.jpg" alt="Connemara Reality" />
                                 </div>
 
                                 <div class="service-img-box">
                                     <h3>Farm Lands</h3>
-                                    <p>
-                                        lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
-                                        FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
+                                    <p  class="text-capitalize">Invest in prime farm lands for sustainable growth and excellent returns
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="service-page-img mouse-parallax" data-animation="slideInDown" data-animation-delay="200ms">
+                            <div class="service-page-img mouse-parallax" data-animation="slideInDown"
+                                data-animation-delay="200ms">
                                 <div class="service-page-info">
-                                    <img src="./images/property.jpg" alt="" />
+                                    <img src="./images/property.jpg" alt="Connemara Reality" />
                                 </div>
 
                                 <div class="service-img-box">
                                     <h3>Property Management</h3>
-                                    <p>
-                                        lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
-                                        FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
+                                    <p  class="text-capitalize"> Maximize property value with our expert management services
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="service-page-img mouse-parallax"  data-animation="slideInDown" data-animation-delay="300ms">
+                            <div class="service-page-img mouse-parallax" data-animation="slideInDown"
+                                data-animation-delay="300ms">
                                 <div class="service-page-info">
-                                    <img src="./images/cafea.jpg" alt="" />
+                                    <img src="./images/cafea.jpg" alt="Connemara Reality" />
                                 </div>
 
                                 <div class="service-img-box">
                                     <h3>Retail Stores Star Mart & Cafe</h3>
-                                    <p>
-                                        lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
-                                        FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
+                                    <p  class="text-capitalize"> Discover premium products and gourmet coffee at our modern retail outlets.
                                     </p>
                                 </div>
                             </div>
@@ -172,42 +172,38 @@
                             <div class="service-page">
                                 <div class="service-page-img mouse-parallax" data-animation="slideInLeft">
                                     <div class="service-page-info">
-                                        <img src="./images/doing-img.png" alt="" />
+                                        <img src="./images/doing-img.png" alt="Connemara Reality" />
                                     </div>
 
                                     <div class="service-img-box">
                                         <h3>Hotel Sampoorna Bhavan</h3>
-                                        <p>
-                                            lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
-                                            FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
+                                        <p  class="text-capitalize">HSB—your trusted name in delivering quality real estate solutions.
                                         </p>
                                     </div>
                                 </div>
 
-                                <div class="service-page-img mouse-parallax"  data-animation="slideInLeft" data-animation-delay="200ms">
+                                <div class="service-page-img mouse-parallax" data-animation="slideInLeft"
+                                    data-animation-delay="200ms">
                                     <div class="service-page-info">
-                                        <img src="./images/resort-service.jpg" alt="" />
+                                        <img src="./images/resort-service.jpg" alt="Connemara Reality" />
                                     </div>
 
                                     <div class="service-img-box">
                                         <h3>Resorts</h3>
-                                        <p>
-                                            lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
-                                            FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
+                                        <p  class="text-capitalize">Unwind at our luxury resorts with top-class amenities and serene views.
                                         </p>
                                     </div>
                                 </div>
 
-                                <div class="service-page-img mouse-parallax"  data-animation="slideInLeft" data-animation-delay="300ms">
+                                <div class="service-page-img mouse-parallax" data-animation="slideInLeft"
+                                    data-animation-delay="300ms">
                                     <div class="service-page-info">
-                                        <img src="./images/commercial-service.jpg" alt="" />
+                                        <img src="./images/commercial-service.jpg" alt="Connemara Reality" />
                                     </div>
 
                                     <div class="service-img-box">
                                         <h3>Commercial Projects</h3>
-                                        <p>
-                                            lOREM IPSDNOAOSANS AS ADEDWIEDHDOSAISD ASDA SDAOIDAS DA
-                                            FDFB DSFVIUBIB UHIUOAS DAUSHDASBDKJ
+                                        <p  class="text-capitalize"> Build dynamic commercial spaces for lasting business success
                                         </p>
                                     </div>
                                 </div>
@@ -222,69 +218,69 @@
         <?php include 'footer.php'; ?>
 
         <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const tabsBox = document.querySelector(".tabs-box");
+            document.addEventListener("DOMContentLoaded", () => {
+                const tabsBox = document.querySelector(".tabs-box");
 
-            const items = tabsBox.innerHTML;
-            tabsBox.innerHTML += items;
+                const items = tabsBox.innerHTML;
+                tabsBox.innerHTML += items;
 
-            const updateWidth = () => {
-                const tabWidth = document.querySelector(".tab").offsetWidth;
-                const totalTabs = document.querySelectorAll(".tab").length;
-                tabsBox.style.width = `${tabWidth * totalTabs * 2}px`; // Double the total width
-            };
+                const updateWidth = () => {
+                    const tabWidth = document.querySelector(".tab").offsetWidth;
+                    const totalTabs = document.querySelectorAll(".tab").length;
+                    tabsBox.style.width = `${tabWidth * totalTabs * 2}px`; // Double the total width
+                };
 
-            updateWidth();
+                updateWidth();
 
-            window.addEventListener("resize", updateWidth);
-        });
+                window.addEventListener("resize", updateWidth);
+            });
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const mouseParallaxElements =
-                document.querySelectorAll(".mouse-parallax");
+            document.addEventListener("DOMContentLoaded", function () {
+                const mouseParallaxElements =
+                    document.querySelectorAll(".mouse-parallax");
 
-            mouseParallaxElements.forEach((mouseParallaxElement) => {
-                mouseParallaxElement.addEventListener("mousemove", function(e) {
-                    const servicePageInfo =
-                        mouseParallaxElement.querySelector(".service-page-info");
-                    const img = servicePageInfo.querySelector("img");
+                mouseParallaxElements.forEach((mouseParallaxElement) => {
+                    mouseParallaxElement.addEventListener("mousemove", function (e) {
+                        const servicePageInfo =
+                            mouseParallaxElement.querySelector(".service-page-info");
+                        const img = servicePageInfo.querySelector("img");
 
-                    const rect = servicePageInfo.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
+                        const rect = servicePageInfo.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
 
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
 
-                    const moveX = ((x - centerX) / centerX) * 40;
-                    const moveY = ((y - centerY) / centerY) * 40;
+                        const moveX = ((x - centerX) / centerX) * 40;
+                        const moveY = ((y - centerY) / centerY) * 40;
 
-                    const scale = 1.2;
+                        const scale = 1.2;
 
-                    const maxMoveX = (img.width * scale - rect.width) / 2;
-                    const maxMoveY = (img.height * scale - rect.height) / 2;
+                        const maxMoveX = (img.width * scale - rect.width) / 2;
+                        const maxMoveY = (img.height * scale - rect.height) / 2;
 
-                    const constrainedMoveX = Math.max(
-                        -maxMoveX,
-                        Math.min(maxMoveX, moveX)
-                    );
-                    const constrainedMoveY = Math.max(
-                        -maxMoveY,
-                        Math.min(maxMoveY, moveY)
-                    );
+                        const constrainedMoveX = Math.max(
+                            -maxMoveX,
+                            Math.min(maxMoveX, moveX)
+                        );
+                        const constrainedMoveY = Math.max(
+                            -maxMoveY,
+                            Math.min(maxMoveY, moveY)
+                        );
 
-                    img.style.transform =
-                        `translate(${constrainedMoveX}px, ${constrainedMoveY}px) scale(${scale})`;
-                });
+                        img.style.transform =
+                            `translate(${constrainedMoveX}px, ${constrainedMoveY}px) scale(${scale})`;
+                    });
 
-                mouseParallaxElement.addEventListener("mouseleave", function() {
-                    const img = mouseParallaxElement.querySelector("img");
-                    img.style.transform = `translate(0px, 0px) scale(1)`;
+                    mouseParallaxElement.addEventListener("mouseleave", function () {
+                        const img = mouseParallaxElement.querySelector("img");
+                        img.style.transform = `translate(0px, 0px) scale(1)`;
+                    });
                 });
             });
-        });
         </script>
-         <script src="./aos.js"></script>
+        <script src="./aos.js"></script>
     </div>
 </body>
 

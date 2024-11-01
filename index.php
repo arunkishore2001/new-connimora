@@ -16,7 +16,10 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Document</title>
+    <title>Connemara Realty - Invest in Managed Farmlands for High Returns & Family Getaways</title>
+    <meta name="description"
+        content="Discover the advantages of investing in managed farmlands with Connemara Realty. Founded in Chennai, our farmlands offer stress-free returns, wealth appreciation, and family-friendly escapes. Enjoy tax-free profits, high resale value, and growth potential in eco-friendly developments. Invest today and watch your land grow!">
+    <link rel="icon" href="./images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/styles.css" />
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -30,13 +33,13 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
@@ -58,7 +61,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
     <div class="inside">
         <div class="float">
-            <a href="./contact.html">
+            <a href="./contact.php">
                 <div class="trigger">
                     <i class="fa fa-send" aria-hidden="true"></i>
                 </div>
@@ -67,8 +70,8 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     </div>
 
     <?php
-        // Fetch all images where landing_show is set to 1
-         $landing_images = mysqli_query($conn, "SELECT * FROM images WHERE landing_show = 1");
+    // Fetch all images where landing_show is set to 1
+    $landing_images = mysqli_query($conn, "SELECT * FROM landing_page ORDER BY created_at DESC");
     ?>
 
     <div class="container-fluid-max hero-slider-container">
@@ -76,15 +79,18 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             <div class="slideshow">
                 <div class="slider">
                     <?php foreach ($landing_images as $image): ?>
-                    <div class="item">
-                        <img src="<?php echo $image['url']; ?>" alt="Slide Image" />
-                    </div>
+                        <div class="item">
+                            <img src="<?php echo $image['imageUrl']; ?>" alt="Connemara Reality" />
+                        </div>
                     <?php endforeach; ?>
                 </div>
             </div>
             <div class="slideshow-text">
                 <?php foreach ($landing_images as $image): ?>
-                <div class="item"><?php echo $image['project_name']; ?></div>
+                    <div class="">
+                        <div class="slideshow-header"><?php echo $image['title']; ?></div>
+                        <div class="slideshow-para"><?php echo $image['description']; ?></div>
+                    </div>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -99,16 +105,16 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 </div> -->
                 <div class="about-whole-left-img">
                     <div class="about-img about-left-img">
-                        <img src="./images/farm-land1.jpeg" alt="Farm Land Image 1">
+                        <img src="./images/farm-land1.jpeg" alt="Connemara Reality">
                     </div>
                     <div class="about-img about-left-img1">
-                        <img src="./images/fruit.jpeg" alt="Farm Land Image 2">
+                        <img src="./images/fruit.jpeg" alt="Connemara Reality">
                     </div>
                     <div class="about-img about-left-img2">
-                        <img src="./images/farm-land2.jpeg" alt="Farm Land Image 3">
+                        <img src="./images/farm-land2.jpeg" alt="Connemara Reality">
                     </div>
                     <div class="about-img about-left-img3">
-                        <img src="./images/orange.jpeg" alt="Farm Land Image 4">
+                        <img src="./images/orange.jpeg" alt="Connemara Reality">
                     </div>
                 </div>
             </div>
@@ -148,28 +154,28 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
                 <div class="col-md-6 sketch-info">
                     <div class="sketch-icon">
-                        <div class="icon-msg" data-animation="slideInDown" data-animation-delay="200ms">
+                        <div class="icon-msg" data-animation="slideInDown" data-animation-delay="20ms">
                             <div class="sketch-icon-wrapper">
-                                <img src="./images/tree.png" alt="" />
+                                <img src="./images/tree.png" alt="Connemara Reality" />
                             </div>
                             <h5>Trees</h5>
-                            
+
                         </div>
 
-                        <div class="icon-msg" data-animation="slideInDown" data-animation-delay="400ms">
+                        <div class="icon-msg" data-animation="slideInDown" data-animation-delay="40ms">
                             <div class="sketch-icon-wrapper">
-                                <img src="./images/irrigation.png" alt="" />
+                                <img src="./images/drip-irrigation.png" alt="Connemara Reality" />
                             </div>
                             <h5>Irrigation</h5>
-                           
+
                         </div>
 
-                        <div class="icon-msg " data-animation="slideInDown" data-animation-delay="600ms">
+                        <div class="icon-msg " data-animation="slideInDown" data-animation-delay="60ms">
                             <div class="sketch-icon-wrapper">
-                                <img src="./images/Resort iconnn.png" alt="" />
+                                <img src="./images/Resort iconnn.png" alt="Connemara Reality" />
                             </div>
                             <h5>Resort</h5>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -204,26 +210,26 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                     <h6 class="award-bold mb-4" data-animation="slideInRight">
                         ADVANTAGES OF INVESTING IN AGRICULTURAL LANDS
                     </h6>
-                    <p data-animation="slideInRight" data-animation-delay="200ms">
+                    <p data-animation="slideInRight" data-animation-delay="20ms">
                         Income earned and profit made from selling the farmland are free
                         from taxation.
                     </p>
                     <br />
-                    <p data-animation="slideInRight" data-animation-delay="300ms">Productive investment with high wealth
+                    <p data-animation="slideInRight" data-animation-delay="30ms">Productive investment with high wealth
                         appreciation</p>
                     <br />
 
-                    <p data-animation="slideInRight" data-animation-delay="400ms">Guaranteed and good return on
+                    <p data-animation="slideInRight" data-animation-delay="40ms">Guaranteed and good return on
                         investment.</p>
                     <br />
-                    <p data-animation="slideInRight" data-animation-delay="300ms">Resale value is high</p>
+                    <p data-animation="slideInRight" data-animation-delay="50ms">Resale value is high</p>
                     <br />
                 </div>
             </div>
 
             <div class="col-md-6 sliding-area mouse-parallax moving-area">
                 <div class="about-image  moving-img mt-2" data-animation="slideInLeft">
-                    <img src="./images/about-company.png" alt="" />
+                    <img src="./images/about-company.png" alt="Connemara Reality" />
                 </div>
             </div>
         </div>
@@ -231,15 +237,15 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
 
     <!------------- count Action------------- -->
     <div class="container-fluid whole-counting my-4">
-        <div class="counting" data-animation="slideInRight" data-animation-delay="100ms">
+        <div class="counting" data-animation="slideInRight" data-animation-delay="10ms">
             <h1 class="count" data-target="100">[ 0 + ]</h1>
             <h5>Current Client</h5>
         </div>
-        <div class="counting" data-animation="slideInDown" data-animation-delay="200ms">
+        <div class="counting" data-animation="slideInDown" data-animation-delay="20ms">
             <h1 class="count" data-target="5">[ 0 + ]</h1>
             <h5>Year Of Experience</h5>
         </div>
-        <div class="counting" data-animation="slideInLeft" data-animation-delay="300ms">
+        <div class="counting" data-animation="slideInLeft" data-animation-delay="30ms">
             <h1 class="count" data-target="3">[ 0 + ]</h1>
             <h5>Ongoing Projects</h5>
         </div>
@@ -251,23 +257,23 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     <div class="container-fluid-max make-space">
         <div class="space">
             <div class="space-contain" data-animation="slideInDown">
-                <img src="./images/Farm-land-img.jpeg" alt="" />
+                <img src="./images/Farm-land-img.jpeg" alt="Connemara Reality" />
                 <h5 class="po-space">Farm Land</h5>
                 <h1>01</h1>
                 <span class="space-line-verticle"></span>
                 <span class="space-line-horizontal"></span>
             </div>
 
-            <div class="space-contain" data-animation="slideInDown" data-animation-delay="200ms">
-                <img src="./images/resort.jpeg" alt="" />
+            <div class="space-contain" data-animation="slideInDown" data-animation-delay="20ms">
+                <img src="./images/resort.jpeg" alt="Connemara Reality" />
                 <h5>Resorts</h5>
                 <h1>02</h1>
                 <span class="space-line-verticle"></span>
                 <span class="space-line-horizontal"></span>
             </div>
 
-            <div class="space-contain" data-animation="slideInDown" data-animation-delay="400ms">
-                <img src="./images/commercial.jpeg" alt="" />
+            <div class="space-contain" data-animation="slideInDown" data-animation-delay="40ms">
+                <img src="./images/commercial.jpeg" alt="Connemara Reality" />
                 <h5 class="po-space">Commercial Office Interior</h5>
                 <h1>03</h1>
                 <span class="space-line-verticle"></span>
@@ -285,80 +291,63 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
         </div>
 
         <div class="offer">
-            <div class="offer-box" data-animation="slideInDown"  data-animation-delay="200ms">
+            <div class="offer-box" data-animation="slideInDown" data-animation-delay="20ms">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <img src="./images/Farm Land Icon.png" alt="">
+                        <img src="./images/Farm Land Icon.png" alt="Connemara Reality">
                         <h6>Farm Lands</h6>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Asperiores, quam?.
+                        <p> Invest in prime farm lands for sustainable growth and excellent returns
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="offer-box" data-animation="slideInDown"  data-animation-delay="300ms">
+            <div class="offer-box" data-animation="slideInDown" data-animation-delay="30ms">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <img src="./images/Project management.png" alt="">
+                        <img src="./images/Project management.png" alt="Connemara Reality">
                         <h6>Property Management</h6>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Asperiores, quam?.
-                        </p>
+                        <p> Maximize property value with our expert management services</p>
                     </div>
                 </div>
             </div>
 
-            <div class="offer-box" data-animation="slideInDown"  data-animation-delay="400ms">
+            <div class="offer-box" data-animation="slideInDown" data-animation-delay="40ms">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <img src="./images/Commercial iconn.png" alt="">
+                        <img src="./images/Commercial iconn.png" alt="Connemara Reality">
                         <h6>Commercial Projects</h6>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Asperiores, quam?.
-                        </p>
+                        <p> Build dynamic commercial spaces for lasting business success</p>
                     </div>
                 </div>
             </div>
 
-            <div class="offer-box" data-animation="slideInDown"  data-animation-delay="200ms">
+            <div class="offer-box" data-animation="slideInDown" data-animation-delay="60ms">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <img src="./images/Retail shop.png" alt="">
+                        <img src="./images/Retail shop.png" alt="Connemara Reality">
                         <h6>Retail Stores Star Mart & Cafe</h6>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Asperiores, quam?.
-                        </p>
+                        <p>Discover premium products and gourmet coffee at our modern retail outlets.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="offer-box" data-animation="slideInDown"  data-animation-delay="300ms">
+            <div class="offer-box" data-animation="slideInDown" data-animation-delay="70ms">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <img src="./images/HSB Icon.png" alt="">
+                        <img src="./images/HSB Icon.png" alt="Connemara Reality">
                         <h6>HSB Logo and Name</h6>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Asperiores, quam?.
-                        </p>
+                        <p>HSB—your trusted name in delivering quality real estate solutions.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="offer-box" data-animation="slideInDown" data-animation-delay="400ms">
+            <div class="offer-box" data-animation="slideInDown" data-animation-delay="80ms">
                 <div class="service-icon">
                     <div class="serive-detail">
-                        <img src="./images/Resort.png" alt="">
+                        <img src="./images/Resort.png" alt="Connemara Reality">
                         <h6>Resorts</h6>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Asperiores, quam?.
-                        </p>
+                        <p> Unwind at our luxury resorts with top-class amenities and serene views.</p>
                     </div>
                 </div>
             </div>
@@ -371,13 +360,13 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="process-heading" data-animation="slideInRight" data-animation-delay="100ms">
+                    <div class="process-heading" data-animation="slideInRight" data-animation-delay="10ms">
                         <h5 class="comman-sub-heading light-blue-text">[ Steps to reach ]</h5>
                         <h2 class="sketch-heading process-head">Our Process</h2>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="process-para" data-animation="slideInLeft" data-animation-delay="200ms">
+                    <div class="process-para" data-animation="slideInLeft" data-animation-delay="20ms">
                         <p>
                             Original design project of high quality raises profit – this
                             is proved in practice by many of our customers. A professional
@@ -389,34 +378,34 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
             </div>
 
             <div class="whole-process mt-5">
-                <div class="procedure" data-animation="slideInRight" data-animation-delay="200ms">
+                <div class="procedure" data-animation="zoomIn" data-animation-delay="20ms">
                     <div class="working-circle">
                         <h1>01</h1>
-                        <img src="./images/01.png" alt="">
+                        <img src="./images/01.png" alt="Connemara Reality">
                     </div>
                     <h5>Identifying Strategic</h5>
                     <p></p>
                 </div>
-                <div class="procedure" data-animation="slideInRight" data-animation-delay="300ms">
+                <div class="procedure" data-animation="zoomIn" data-animation-delay="30ms">
                     <div class="working-circle">
                         <h1>02</h1>
-                        <img src="./images/Land Work JCB.png" alt="">
+                        <img src="./images/Land Work JCB.png" alt="Connemara Reality">
                     </div>
                     <h5>Land Development</h5>
                     <p></p>
                 </div>
-                <div class="procedure" data-animation="slideInLeft" data-animation-delay="400ms">
+                <div class="procedure" data-animation="zoomIn" data-animation-delay="40ms">
                     <div class="working-circle">
                         <h1>03</h1>
-                        <img src="./images/share.png" alt="">
+                        <img src="./images/share.png" alt="Connemara Reality">
                     </div>
                     <h5>Creating Value for Money</h5>
                     <p></p>
                 </div>
-                <div class="procedure" data-animation="slideInLeft" data-animation-delay="500ms">
+                <div class="procedure" data-animation="zoomIn" data-animation-delay="50ms">
                     <div class="working-circle">
                         <h1>04</h1>
-                        <img src="./images/Happy face icon.png" alt="">
+                        <img src="./images/Happy face icon.png" alt="Connemara Reality">
                     </div>
                     <h5>Building Happy Customer</h5>
                     <p></p>
@@ -426,56 +415,22 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     </div>
 
     <!--------------- Gallery -------------------->
-    <div class="mt-4 container-fluid-max whole-gallery">
+    <div class="my-3 container-fluid-max whole-gallery">
         <div class="first-half-gallery">
-            <div class="gallery" data-animation="slideInDown">
-                <img src="./images/gallery1.jpeg" alt="" />
+            <?php 
+            $galleryImages = mysqli_query($conn, "SELECT * FROM images ORDER BY RAND() LIMIT 6");
+            while ($image = mysqli_fetch_assoc($galleryImages)) :
+            ?>
+            <div class="gallery" data-animation="zoomIn">
+                <img src="<?php echo htmlspecialchars($image['url']); ?>" alt="Connemara Reality" />
                 <div class="gallery-box">
-                    <h5>Stylish family appartment</h5>
-                    <h6>[ Interior ]</h6>
+                    <h5><?php echo $image['project_name'] ?></h5>
+                    <h6>[ Project ]</h6>
                 </div>
             </div>
-            <div class="gallery" data-animation="slideInDown">
-                <img src="./images/gallery2.jpeg" alt="" />
-                <div class="gallery-box">
-                    <h5>Stylish family appartment</h5>
-                    <h6>[ Interior ]</h6>
-                </div>
-            </div>
-            <div class="gallery" data-animation="slideInDown">
-                <img src="./images/gallery3.jpeg" alt="" />
-                <div class="gallery-box">
-                    <h5>Stylish family appartment</h5>
-                    <h6>[ Interior ]</h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="secound-half-gallery">
-            <div class="gallery" data-animation="slideInDown">
-                <img src="./images/gallery4.jpeg" alt="" />
-                <div class="gallery-box">
-                    <h5>Stylish family appartment</h5>
-                    <h6>[ Interior ]</h6>
-                </div>
-            </div>
-            <div class="gallery" data-animation="slideInDown">
-                <img src="./images/gallery5.jpeg" alt="" />
-                <div class="gallery-box">
-                    <h5>Stylish family appartment</h5>
-                    <h6>[ Interior ]</h6>
-                </div>
-            </div>
-            <div class="gallery" data-animation="slideInDown">
-                <img src="./images/gallery6.jpeg" alt="" />
-                <div class="gallery-box">
-                    <h5>Stylish family appartment</h5>
-                    <h6>[ Interior ]</h6>
-                </div>
-            </div>
+            <?php endwhile; ?>
         </div>
     </div>
-    <!-- </div> -->
 
     <div class="container-fluid-max consulting py-5">
         <div class="container-fluid">
@@ -483,7 +438,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                 <div class="counsel-heading" data-animation="slideInRight">
                     <h3>Get Incredible Interior</h3>
                 </div>
-                <h3 class="right-now" data-animation="slideInRight" data-animation-delay="200ms">Right Now!</h3>
+                <h3 class="right-now" data-animation="slideInRight" data-animation-delay="20ms">Right Now!</h3>
                 <div class="consulting-btn consulting-para" data-animation="slideInLeft" data-animation-delay="200ms">
                     <p>
                         At every stage, we could supervise your project – controlling
@@ -519,8 +474,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                             <li>
                                 <a href="">
                                     <figure class="slider-hover">
-                                        <img src="<?php echo $imageUrl; ?>"
-                                            alt="Volcano and lava field against a stormy sky" />
+                                        <img src="<?php echo $imageUrl; ?>" alt="Connemara Reality" />
                                         <figcaption>
                                             <div class="project-box">
                                                 <h5>
@@ -643,7 +597,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                         <div class="skill-team-partner">
 
                             <div class="skill-box">
-                                <img src="./images/man.png" alt="">
+                                <img src="./images/man.png" alt="Connemara Reality">
                                 <div class="skill-box-detail">
                                     <h5>Mr. Goutham Chandra</h5>
                                     <p>Chief Executive Officer</p>
@@ -654,7 +608,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                         <div class="skill-team-partner">
 
                             <div class="skill-box">
-                                <img src="./images/man.png" alt="">
+                                <img src="./images/man.png" alt="Connemara Reality">
                                 <div class="skill-box-detail">
                                     <h5>Mr. Siva Chandran</h5>
                                     <p>Project & Marketing Head</p>
@@ -665,7 +619,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                         <div class="skill-team-partner">
 
                             <div class="skill-box">
-                                <img src="./images/man.png" alt="">
+                                <img src="./images/man.png" alt="Connemara Reality">
                                 <div class="skill-box-detail">
                                     <h5>Mr. Gopala Krishnan</h5>
                                     <p>Farming Manager</p>
@@ -677,7 +631,7 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                         <div class="skill-team-partner">
 
                             <div class="skill-box">
-                                <img src="./images/man.png" alt="">
+                                <img src="./images/man.png" alt="Connemara Reality">
                                 <div class="skill-box-detail">
                                     <h5>Mr. Ravi Teja</h5>
                                     <p>Purchase Manager</p>
@@ -698,24 +652,24 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
     </div>
 
     <script>
-    // Assuming you have a PHP script to fetch reviews, replace 'fetch_reviews.php' with your actual script
-    $.get('./admin_php/fetch_userReview.php', function(data) {
-        var reviews = JSON.parse(data); // Assuming your data is in JSON format
+        // Assuming you have a PHP script to fetch reviews, replace 'fetch_reviews.php' with your actual script
+        $.get('./admin_php/fetch_userReview.php', function (data) {
+            var reviews = JSON.parse(data); // Assuming your data is in JSON format
 
-        var reviewsWrapper = $('#reviewsWrapper');
+            var reviewsWrapper = $('#reviewsWrapper');
 
-        reviews.forEach(function(review) {
-            var totalReviews = `
+            reviews.forEach(function (review) {
+                var totalReviews = `
                   <div class="swiper-slide">
                     <div class="testimonial">
                         <div class="testimonial-box">
                             <div class="test-img">
-                                <img src="./images/camaa.png" alt="" />
+                                <img src="./images/camaa.png" alt="Connemara Reality" />
                             </div>
                             <p>${review.review}</p>
                         </div>
                         <div class="test-details">
-                            ${review.photo ? ` <img src="${review.photo}" alt="" />` : ``}
+                            ${review.photo ? ` <img src="${review.photo}" alt="Connemara Reality" />` : ``}
                             <div class="test-proof">
                                 <h6>${review.name}</h6>
                                 <p>${review.designation}</p>
@@ -724,307 +678,307 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images LI
                     </div>
                 </div>
           `
-            reviewsWrapper.append(totalReviews);
-        });
-        reloadReviews();
-    });
-
-    $("#reviewForm").on('submit', function(e) {
-        e.preventDefault();
-        if ($("#reviewForm").valid()) { // Check if the form is valid
-            $.ajax({
-                url: $(this).attr('action'),
-                type: 'POST',
-                data: new FormData(this),
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function(data) {
-                    $("#ReviewSubmitMessage").html('<div class="alert alert-success my-4">' + data +
-                        '</div>'); // Display success message
-                    $("#reviewForm")[0].reset(); // Clear the form fields
-                    $('.modal-footer button').click();
-                    $("#myModal").modal('hide'); // Close the modal
-                },
-                error: function() {
-                    $("#ReviewSubmitMessage").html(
-                        '<div class="alert alert-danger">An error occurred.</div>'
-                    ); // Display error message
-                }
+                reviewsWrapper.append(totalReviews);
             });
-        }
-    });
+            reloadReviews();
+        });
 
-    $.validator.addMethod('filesize', function(value, element, param) {
-        return this.optional(element) || (element.files[0].size <= param * 1024)
-    }, 'File size must be less than {0}KB');
-
-
-    $("#reviewForm").validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 4
-            },
-            designation: {
-                required: true,
-                minlength: 3,
-            },
-            photo: {
-                extension: "jpg|jpeg|png|gif",
-                filesize: 200
-            },
-            title: {
-                required: true,
-                minlength: 5
-            },
-            review: {
-                required: true,
-                minlength: 10
+        $("#reviewForm").on('submit', function (e) {
+            e.preventDefault();
+            if ($("#reviewForm").valid()) { // Check if the form is valid
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function (data) {
+                        $("#ReviewSubmitMessage").html('<div class="alert alert-success my-4">' + data +
+                            '</div>'); // Display success message
+                        $("#reviewForm")[0].reset(); // Clear the form fields
+                        $('.modal-footer button').click();
+                        $("#myModal").modal('hide'); // Close the modal
+                    },
+                    error: function () {
+                        $("#ReviewSubmitMessage").html(
+                            '<div class="alert alert-danger">An error occurred.</div>'
+                        ); // Display error message
+                    }
+                });
             }
-        },
-        messages: {
-            name: {
-                required: "Please enter your name",
-                minlength: "Your name must consist of at least 4 characters"
+        });
+
+        $.validator.addMethod('filesize', function (value, element, param) {
+            return this.optional(element) || (element.files[0].size <= param * 1024)
+        }, 'File size must be less than {0}KB');
+
+
+        $("#reviewForm").validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 4
+                },
+                designation: {
+                    required: true,
+                    minlength: 3,
+                },
+                photo: {
+                    extension: "jpg|jpeg|png|gif",
+                    filesize: 200
+                },
+                title: {
+                    required: true,
+                    minlength: 5
+                },
+                review: {
+                    required: true,
+                    minlength: 10
+                }
             },
-            designation: {
-                required: "Please enter your designation",
-                minlength: "Your designation must consist of at least 3 characters"
+            messages: {
+                name: {
+                    required: "Please enter your name",
+                    minlength: "Your name must consist of at least 4 characters"
+                },
+                designation: {
+                    required: "Please enter your designation",
+                    minlength: "Your designation must consist of at least 3 characters"
+                },
+                photo: {
+                    extension: "Invalid file type. Only JPG, JPEG, PNG, and GIF files are allowed",
+                    filesize: "File size must be less than 200KB"
+                },
+                title: {
+                    required: "Please enter your review title",
+                    minlength: "Review title must consist of at least 5 characters"
+                },
+                review: {
+                    required: "Please write a review",
+                    minlength: "Your review must consist of at least 10 characters"
+                }
             },
-            photo: {
-                extension: "Invalid file type. Only JPG, JPEG, PNG, and GIF files are allowed",
-                filesize: "File size must be less than 200KB"
-            },
-            title: {
-                required: "Please enter your review title",
-                minlength: "Review title must consist of at least 5 characters"
-            },
-            review: {
-                required: "Please write a review",
-                minlength: "Your review must consist of at least 10 characters"
-            }
-        },
-    });
+        });
     </script>
     <!--  testimonial slider -->
     <script>
-    function reloadReviews() {
-        const swiper = new Swiper(".swiper-container", {
-            loop: true,
-            slidesPerView: 3,
-            spaceBetween: 30,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                renderBullet: function(index, className) {
-                    return '<span class="' + className + '"></span>';
+        function reloadReviews() {
+            const swiper = new Swiper(".swiper-container", {
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 30,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '"></span>';
+                    },
                 },
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    550: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    900: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 50,
+                    },
                 },
-                550: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                900: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-                1200: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-            },
+            });
+        };
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            const $scrollInner = $(".scroll-inner-partner");
+            const $partnerDetail = $(".partner-detail-partner");
+            const clonedContent = $partnerDetail.clone();
+            $scrollInner.append(clonedContent);
         });
-    };
     </script>
 
     <script>
-    $(document).ready(function() {
-        const $scrollInner = $(".scroll-inner-partner");
-        const $partnerDetail = $(".partner-detail-partner");
-        const clonedContent = $partnerDetail.clone();
-        $scrollInner.append(clonedContent);
-    });
-    </script>
+        var $slider = $(".slideshow .slider"),
+            maxItems = $(".item", $slider).length,
+            dragging = false,
+            tracking,
+            rightTracking;
 
-    <script>
-    var $slider = $(".slideshow .slider"),
-        maxItems = $(".item", $slider).length,
-        dragging = false,
-        tracking,
-        rightTracking;
+        $sliderRight = $(".slideshow")
+            .clone()
+            .addClass("slideshow-right")
+            .appendTo($(".split-slideshow"));
 
-    $sliderRight = $(".slideshow")
-        .clone()
-        .addClass("slideshow-right")
-        .appendTo($(".split-slideshow"));
+        rightItems = $(".item", $sliderRight).toArray();
+        reverseItems = rightItems.reverse();
+        $(".slider", $sliderRight).html("");
+        for (i = 0; i < maxItems; i++) {
+            $(reverseItems[i]).appendTo($(".slider", $sliderRight));
+        }
 
-    rightItems = $(".item", $sliderRight).toArray();
-    reverseItems = rightItems.reverse();
-    $(".slider", $sliderRight).html("");
-    for (i = 0; i < maxItems; i++) {
-        $(reverseItems[i]).appendTo($(".slider", $sliderRight));
-    }
+        $slider
+            .addClass("slideshow-left")
+            .slick({
+                vertical: true,
+                swipe: false,
+                verticalSwiping: false,
+                arrows: false,
+                infinite: true,
+                dots: true,
+                speed: 1000,
+                cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
+            })
+            .on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+                if (
+                    currentSlide > nextSlide &&
+                    nextSlide == 0 &&
+                    currentSlide == maxItems - 1
+                ) {
+                    $(".slideshow-right .slider").slick("slickGoTo", -1);
+                    $(".slideshow-text").slick("slickGoTo", maxItems);
+                } else if (
+                    currentSlide < nextSlide &&
+                    currentSlide == 0 &&
+                    nextSlide == maxItems - 1
+                ) {
+                    $(".slideshow-right .slider").slick("slickGoTo", maxItems);
+                    $(".slideshow-text").slick("slickGoTo", -1);
+                } else {
+                    $(".slideshow-right .slider").slick(
+                        "slickGoTo",
+                        maxItems - 1 - nextSlide
+                    );
+                    $(".slideshow-text").slick("slickGoTo", nextSlide);
+                }
+            });
 
-    $slider
-        .addClass("slideshow-left")
-        .slick({
-            vertical: true,
+        $(".slideshow-right .slider").slick({
             swipe: false,
-            verticalSwiping: false,
+            vertical: true,
             arrows: false,
             infinite: true,
-            dots: true,
-            speed: 1000,
+            speed: 950,
             cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
-        })
-        .on("beforeChange", function(event, slick, currentSlide, nextSlide) {
-            if (
-                currentSlide > nextSlide &&
-                nextSlide == 0 &&
-                currentSlide == maxItems - 1
-            ) {
-                $(".slideshow-right .slider").slick("slickGoTo", -1);
-                $(".slideshow-text").slick("slickGoTo", maxItems);
-            } else if (
-                currentSlide < nextSlide &&
-                currentSlide == 0 &&
-                nextSlide == maxItems - 1
-            ) {
-                $(".slideshow-right .slider").slick("slickGoTo", maxItems);
-                $(".slideshow-text").slick("slickGoTo", -1);
-            } else {
-                $(".slideshow-right .slider").slick(
-                    "slickGoTo",
-                    maxItems - 1 - nextSlide
-                );
-                $(".slideshow-text").slick("slickGoTo", nextSlide);
-            }
+            initialSlide: maxItems - 1,
         });
 
-    $(".slideshow-right .slider").slick({
-        swipe: false,
-        vertical: true,
-        arrows: false,
-        infinite: true,
-        speed: 950,
-        cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
-        initialSlide: maxItems - 1,
-    });
+        $(".slideshow-text").slick({
+            swipe: false,
+            vertical: true,
+            arrows: false,
+            infinite: true,
+            speed: 900,
+            cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
+        });
 
-    $(".slideshow-text").slick({
-        swipe: false,
-        vertical: true,
-        arrows: false,
-        infinite: true,
-        speed: 900,
-        cssEase: "cubic-bezier(0.7, 0, 0.3, 1)",
-    });
-
-    setInterval(() => {
-        $slider.slick("slickNext");
-    }, 4000);
+        setInterval(() => {
+            $slider.slick("slickNext");
+        }, 4000);
     </script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const menuToggle = document.querySelector(".menu-toggle");
-        const smallNav = document.querySelector(".small-nav");
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const smallNav = document.querySelector(".small-nav");
 
-        menuToggle.addEventListener("click", function() {
-            smallNav.classList.toggle("show");
+            menuToggle.addEventListener("click", function () {
+                smallNav.classList.toggle("show");
+            });
         });
-    });
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const counters = document.querySelectorAll(".count");
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".count");
 
-        counters.forEach((counter) => {
-            const updateCount = () => {
-                const target = +counter.getAttribute("data-target");
-                const count = +counter.innerText.replace(/[^\d]/g, "");
-                const increment = target / 1000; // Adjust this value for speed
-                const delay = 20; // Adjust this value for speed
+            counters.forEach((counter) => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute("data-target");
+                    const count = +counter.innerText.replace(/[^\d]/g, "");
+                    const increment = target / 1000; // Adjust this value for speed
+                    const delay = 20; // Adjust this value for speed
 
-                if (count < target) {
-                    counter.innerText = `[ ${Math.ceil(count + increment)} + ]`;
-                    setTimeout(updateCount, delay);
-                } else {
-                    counter.innerText = `[ ${target} + ]`;
-                }
-            };
+                    if (count < target) {
+                        counter.innerText = `[ ${Math.ceil(count + increment)} + ]`;
+                        setTimeout(updateCount, delay);
+                    } else {
+                        counter.innerText = `[ ${target} + ]`;
+                    }
+                };
 
-            updateCount();
+                updateCount();
+            });
         });
-    });
 
-    var copy = document.querySelector(".skilled").cloneNode(true);
-    document.querySelector(".skill-slide").appendChild(copy);
+        var copy = document.querySelector(".skilled").cloneNode(true);
+        document.querySelector(".skill-slide").appendChild(copy);
 
-    // Swapiing Image
+        // Swapiing Image
 
-    const firstImage = document.getElementById("firstImage");
-    const secondImage = document.getElementById("secondImage");
+        const firstImage = document.getElementById("firstImage");
+        const secondImage = document.getElementById("secondImage");
 
-    const originalSrcFirstImage = firstImage.src;
-    const originalSrcSecondImage = secondImage.src;
+        const originalSrcFirstImage = firstImage.src;
+        const originalSrcSecondImage = secondImage.src;
 
-    let isSwapped = false;
+        let isSwapped = false;
 
-    function swapImages() {
-        if (isSwapped) {
-            firstImage.src = originalSrcFirstImage;
-            secondImage.src = originalSrcSecondImage;
-            firstImage.style.opacity = "1";
-            secondImage.style.opacity = "1";
-        } else {
-            firstImage.src = originalSrcSecondImage;
-            secondImage.src = originalSrcFirstImage;
-            firstImage.style.opacity = "1";
-            secondImage.style.opacity = "1";
+        function swapImages() {
+            if (isSwapped) {
+                firstImage.src = originalSrcFirstImage;
+                secondImage.src = originalSrcSecondImage;
+                firstImage.style.opacity = "1";
+                secondImage.style.opacity = "1";
+            } else {
+                firstImage.src = originalSrcSecondImage;
+                secondImage.src = originalSrcFirstImage;
+                firstImage.style.opacity = "1";
+                secondImage.style.opacity = "1";
+            }
+            isSwapped = !isSwapped;
         }
-        isSwapped = !isSwapped;
-    }
 
-    setInterval(swapImages, 2000);
+        setInterval(swapImages, 2000);
 
-    // Mouse Interaction
+        // Mouse Interaction
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const mouseParallaxElements = document.querySelectorAll(".mouse-parallax");
+        document.addEventListener("DOMContentLoaded", function () {
+            const mouseParallaxElements = document.querySelectorAll(".mouse-parallax");
 
-        mouseParallaxElements.forEach(mouseParallaxElement => {
-            mouseParallaxElement.addEventListener("mousemove", function(e) {
-                const servicePageInfo = mouseParallaxElement.querySelector(".moving-img");
-                const img = servicePageInfo.querySelector("img");
+            mouseParallaxElements.forEach(mouseParallaxElement => {
+                mouseParallaxElement.addEventListener("mousemove", function (e) {
+                    const servicePageInfo = mouseParallaxElement.querySelector(".moving-img");
+                    const img = servicePageInfo.querySelector("img");
 
-                const rect = servicePageInfo.getBoundingClientRect();
-                const x = e.clientX - rect.left; // Mouse X relative to the element
-                const y = e.clientY - rect.top; // Mouse Y relative to the element
+                    const rect = servicePageInfo.getBoundingClientRect();
+                    const x = e.clientX - rect.left; // Mouse X relative to the element
+                    const y = e.clientY - rect.top; // Mouse Y relative to the element
 
-                const centerX = rect.width / 2; // Center X of the element
-                const centerY = rect.height / 2; // Center Y of the element
+                    const centerX = rect.width / 2; // Center X of the element
+                    const centerY = rect.height / 2; // Center Y of the element
 
-                const moveX = (x - centerX) / centerX * 20; // Adjust movement intensity
-                const moveY = (y - centerY) / centerY * 20; // Adjust movement intensity
+                    const moveX = (x - centerX) / centerX * 20; // Adjust movement intensity
+                    const moveY = (y - centerY) / centerY * 20; // Adjust movement intensity
 
-                const scale = 1.1; // Scale for zoom effect
+                    const scale = 1.1; // Scale for zoom effect
 
-                // Apply translation and scaling
-                img.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
-            });
+                    // Apply translation and scaling
+                    img.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
+                });
 
-            mouseParallaxElement.addEventListener("mouseleave", function() {
-                const img = mouseParallaxElement.querySelector("img");
-                img.style.transform = `translate(0px, 0px) scale(1)`;
+                mouseParallaxElement.addEventListener("mouseleave", function () {
+                    const img = mouseParallaxElement.querySelector("img");
+                    img.style.transform = `translate(0px, 0px) scale(1)`;
+                });
             });
         });
-    });
     </script>
 
     <script src="./js/animation.js"></script>

@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contact Connemara Realty - Get in Touch for Farm Land Investments</title>
+    <link rel="icon" href="./images/logo.ico" type="image/x-icon">
+    <meta name="description"
+        content="Reach out to Connemara Realty for expert advice on farmland investments. Our team is here to assist you with inquiries about our services, projects, and investment opportunities. Contact us today!">
+
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/contact.css" />
     <link rel="stylesheet" href="./css/navBar.css" />
@@ -23,13 +27,13 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 </head>
 
 <body>
@@ -72,20 +76,20 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid-max rolling-text mb-5"data-animation="slideInDown" >
+    <div class="container-fluid-max rolling-text mb-5" data-animation="slideInDown">
         <div class="wrapper">
-        <ul class="tabs-box">
-                    <li class="tab">FARM LAND</li>
-                    <li class="tab">PROPERTY MANAGEMENT</li>
-                    <li class="tab">RETAIL STORE</li>
-                    <li class="tab">STAR MART</li>
-                    <li class="tab">CAFE</li>
-                    <li class="tab">RESORT</li>
-                    <li class="tab">COMMERCIAL PROJECT</li>
-    
-                </ul>
+            <ul class="tabs-box">
+                <li class="tab">FARM LAND</li>
+                <li class="tab">PROPERTY MANAGEMENT</li>
+                <li class="tab">RETAIL STORE</li>
+                <li class="tab">STAR MART</li>
+                <li class="tab">CAFE</li>
+                <li class="tab">RESORT</li>
+                <li class="tab">COMMERCIAL PROJECT</li>
+
+            </ul>
             <div class="icon">
-              
+
             </div>
         </div>
     </div>
@@ -96,26 +100,26 @@
     <?php include 'footer.php'; ?>
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const tabsBox = document.querySelector(".tabs-box");
+        document.addEventListener("DOMContentLoaded", () => {
+            const tabsBox = document.querySelector(".tabs-box");
 
-        // Clone the list items and append to create a continuous effect
-        const items = tabsBox.innerHTML;
-        tabsBox.innerHTML += items;
+            // Clone the list items and append to create a continuous effect
+            const items = tabsBox.innerHTML;
+            tabsBox.innerHTML += items;
 
-        // Adjust the width of the container dynamically
-        const updateWidth = () => {
-            const tabWidth = document.querySelector(".tab").offsetWidth;
-            const totalTabs = document.querySelectorAll(".tab").length;
-            tabsBox.style.width = `${tabWidth * totalTabs * 2}px`; // Double the total width
-        };
+            // Adjust the width of the container dynamically
+            const updateWidth = () => {
+                const tabWidth = document.querySelector(".tab").offsetWidth;
+                const totalTabs = document.querySelectorAll(".tab").length;
+                tabsBox.style.width = `${tabWidth * totalTabs * 2}px`; // Double the total width
+            };
 
-        // Initial width adjustment
-        updateWidth();
+            // Initial width adjustment
+            updateWidth();
 
-        // Adjust on window resize
-        window.addEventListener("resize", updateWidth);
-    });
+            // Adjust on window resize
+            window.addEventListener("resize", updateWidth);
+        });
     </script>
 </body>
 

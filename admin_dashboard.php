@@ -5,6 +5,64 @@ include './admin_php/functions.php';
 session_start();
 requireLogin();
 
+
+
+// Handle landing image upload
+if (isset($_POST['upload_landing_image'])) {
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $image = $_FILES['image'];
+
+    if ($image['size'] <= 500 * 1024) {  // 500 KB limit
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($image["name"]);
+
+        if (move_uploaded_file($image["tmp_name"], $target_file)) {
+            $imageUrl = $target_file;
+
+            // Insert image details into the database
+            $query = "INSERT INTO landing_page (imageUrl, title, description) VALUES ('$imageUrl', '$title', '$description')";
+            if (mysqli_query($conn, $query)) {
+                echo "<p class='alert alert-success'>Image uploaded successfully.</p>";
+            } else {
+                echo "<p class='alert alert-danger'>Database error: " . mysqli_error($conn) . "</p>";
+            }
+        } else {
+            echo "<p class='alert alert-danger'>File upload error.</p>";
+        }
+    } else {
+        echo "<p class='alert alert-danger'>Image size must be less than 500 KB.</p>";
+    }
+
+    // Set success message and redirect
+    $_SESSION['success'] = 'Images uploaded successfully';
+    header('Location: admin_dashboard.php');
+    exit;
+}
+
+if (isset($_POST['delete_landing_image'])) {
+    $image_id = $_POST['image_id'];
+
+    // Get image URL to delete from filesystem
+    $result = mysqli_query($conn, "SELECT imageUrl FROM landing_page WHERE id = $image_id");
+    $image = mysqli_fetch_assoc($result);
+
+    if ($image) {
+        // Delete the file from the filesystem
+        if (unlink($image['imageUrl'])) {
+            // Remove the image record from the database
+            $deleteQuery = "DELETE FROM landing_page WHERE id = $image_id";
+            if (mysqli_query($conn, $deleteQuery)) {
+                echo "<p class='alert alert-success'>Image deleted successfully.</p>";
+            } else {
+                echo "<p class='alert alert-danger'>Database error: " . mysqli_error($conn) . "</p>";
+            }
+        } else {
+            echo "<p class='alert alert-danger'>Failed to delete image file.</p>";
+        }
+    }
+}
+
 // Upload Image
 if (isset($_POST['upload'])) {
     $category = 'commercial';
@@ -128,7 +186,6 @@ if (isset($_POST['add_video'])) {
     exit;
 }
 
-
 // Delete Video Link
 if (isset($_POST['delete_video'])) {
     $videoId = mysqli_real_escape_string($conn, $_POST['video_id']);
@@ -171,203 +228,273 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
 <html lang="en">
 
 <head>
-    <title>Admin Dashboard</title>
     <!-- Include Bootstrap CSS -->
     <meta charset="utf-8">
+    <title>Connemara Admin</title>
+    <link rel="icon" href="./images/logo.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-    .video-card {
-        margin-bottom: 1.5rem;
-    }
+    <!-- jQuery first -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    .embed-responsive-16by9 {
-        margin-bottom: 0.5rem;
-    }
+    <style>
+        .video-card {
+            margin-bottom: 1.5rem;
+        }
+
+        .embed-responsive-16by9 {
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <h2>Welcome, Admin!</h2>
         <div id="message"></div>
 
         <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger">
-            <?php echo $_SESSION['error'];
+            <div class="alert alert-danger">
+                <?php echo $_SESSION['error'];
                 unset($_SESSION['error']); ?>
-        </div>
+            </div>
         <?php endif; ?>
 
         <?php if (isset($_SESSION['success'])): ?>
-        <div class="alert alert-success">
-            <?php echo $_SESSION['success'];
+            <div class="alert alert-success">
+                <?php echo $_SESSION['success'];
                 unset($_SESSION['success']); ?>
-        </div>
+            </div>
         <?php endif; ?>
 
-
-
-
-        <!-- Upload Image Form -->
-        <form method="post" enctype="multipart/form-data" class="mt-4">
-
-            <div class="form-group">
-                <label for="project">Project Name</label>
-                <input type="text" name="project" class="form-control" required>
-            </div>
-
-            <div class="form-group">
-                <label for="project">Description</label>
-                <input type="text" name="address" class="form-control" required>
-            </div>
-
-            <div class="form-group">
-                <label for="images">Select Images:</label>
-                <input type="file" name="images[]" multiple class="form-control-file" required>
-            </div>
-
-            <div id="preview"></div>
-
-            <button type="submit" name="upload" class="btn btn-primary">Upload Images</button>
-        </form>
-
-
-
-        <!-- Add Video Link Form -->
-        <form method="post" class="mt-4">
-            <div class="form-group">
-                <label for="video_url">Video URL</label>
-                <input type="text" name="video_url" class="form-control" required>
-            </div>
-            <button type="submit" name="add_video" class="btn btn-primary">Add Video Link</button>
-        </form>
-
-        <!-- Display Existing Videos -->
-        <div class="mt-5">
-            <h3>Existing Videos</h3>
-            <div class="row">
-                <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
-                <div class="col-md-4 mb-4">
-                    <div class="card video-card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="<?php echo $video['embed_url']; ?>"
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="card-body">
-                            <!-- Delete Button Form -->
-                            <form method="post">
-                                <input type="hidden" name="video_id" value="<?php echo $video['id']; ?>">
-                                <button type="submit" name="delete_video" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <?php endwhile; ?>
-            </div>
-        </div>
-
-
-        <!-- contact info -->
-
         <hr>
-
-        <h2 class="my-4">Contact Form Submissions</h2>
-        <div class="table-responsive" id="contact-table">
-        </div>
-
-        <hr>
-
-        <?php
-            // Fetch all images where landing_show is set to 1
-            $imageQuery = mysqli_query($conn, "SELECT * FROM images WHERE landing_show = 1");
-        ?>
-
-        <h4>Images in Landing Slider</h4>
-        <br>
-        <div class='row'>
-            <?php while ($image = mysqli_fetch_assoc($imageQuery)): ?>
-            <div class="col-md-2 col-6 mb-4">
-                <div class="card">
-                    <img src="<?php echo $image['url']; ?>" alt="Image" class="card-img-top">
-                    <div class="card-body p-2">
-                        <form class="m-0" method="post" id="delete-form">
-                            <input type="hidden" name="image_id" value="<?php echo $image['id']; ?>">
-                            <input type="hidden" name="image_url" value="<?php echo $image['url']; ?>">
-
-                            <button type="submit" name="delete" class="btn btn-danger btn-sm">Delete</button>
-                            <button type="submit" name="toggle_landing_show" class="btn btn-primary mt-2 btn-sm">
-                                <?php echo $image['landing_show'] ? 'Landing Not Show' : 'Landing Show'; ?>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <?php endwhile; ?>
-        </div>
-        <br>
-
-        <hr>
-
-        <?php
-        while ($projectResult = mysqli_fetch_assoc($projectQuery)) {
-            $projectName = $projectResult['project_name'];
-            // Fetch images for the current project
-            $imageQuery = mysqli_query($conn, "SELECT * FROM images WHERE project_name = '$projectName'");
-            ?>
-
-        <h4>Project Title: <?php echo $projectName; ?> </h4>
-        <br>
-        <div class='row'>
-            <?php while ($image = mysqli_fetch_assoc($imageQuery)): ?>
-            <div class="col-md-2 col-6 mb-4">
-                <div class="card">
-                    <img src="<?php echo $image['url']; ?>" alt="Image" class="card-img-top">
-                    <div class="card-body p-2">
-                        <form class="m-0" method="post" id="delete-form">
-                            <input type="hidden" name="image_id" value="<?php echo $image['id']; ?>">
-                            <input type="hidden" name="image_url" value="<?php echo $image['url']; ?>">
-                            <input type="hidden" name="current_landing_show"
-                                value="<?php echo $image['landing_show']; ?>">
-
-                            <button type="submit" name="delete" class="btn btn-danger btn-sm">Delete</button>
-                            <button type="submit" name="toggle_landing_show" class="btn btn-primary mt-2 btn-sm">
-                                <?php echo $image['landing_show'] ? 'Landing Not Show' : 'Landing Show'; ?>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <?php endwhile; ?>
-        </div>
-        <br>
-        <?php } ?>
-
     </div>
 
-    <!-- Reviews table -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="sidebar-sticky bg-light">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-primary active" href="#uploadLanding" data-toggle="tab">Landing
+                                Images</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="#uploadSection" data-toggle="tab">Upload
+                                Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="#projectsSection" data-toggle="tab">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="#videoSection" data-toggle="tab">Video Links</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="#contactSection" data-toggle="tab">Contact
+                                Forms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="#reviewsSection" data-toggle="tab">Reviews</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
-    <?php
+            <!-- Main Content Area -->
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 mt-3 mt-0">
+                <div class="tab-content">
 
-    $result = mysqli_query($conn, "SELECT * FROM reviews");
+                    <div class="tab-pane fade" id="uploadLanding">
+                        <!-- Upload Image Form -->
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="title">Image Title</label>
+                                <input type="text" name="title" class="form-control" required>
+                            </div>
 
-    if (mysqli_num_rows($result) > 0) {
-        // Fetch and display the reviews
-    } else {
-        echo "No reviews found.";
-    }
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea name="description" class="form-control" rows="3"></textarea>
+                            </div>
 
-    ?>
+                            <div class="form-group">
+                                <label for="image">Select Image</label>
+                                <input type="file" name="image" class="form-control-file" required>
+                            </div>
 
-    <div class="container">
-        <h2>Reviews</h2>
-        <br>
-        <div id="ReviewMessage"></div>
-        <div id="reviewsTable" class="table-responsive">
-            <!-- The reviews will be loaded here -->
+                            <button type="submit" name="upload_landing_image" class="btn btn-primary">Upload
+                                Image</button>
+                        </form>
+
+                        <div class="row">
+                            <?php
+                            // Fetch all images from the landing_page table
+                            $landingImageQuery = mysqli_query($conn, "SELECT * FROM landing_page ORDER BY created_at DESC");
+
+                            while ($landingImage = mysqli_fetch_assoc($landingImageQuery)) {
+                                echo '
+                                <div class="col-md-3 mb-4 mt-3">
+                                    <div class="card">
+                                        <img src="' . $landingImage['imageUrl'] . '" class="card-img-top" alt="Image">
+                                        <div class="card-body">
+                                            <h5 class="card-title">' . htmlspecialchars($landingImage['title']) . '</h5>
+                                            <p class="card-text">' . htmlspecialchars($landingImage['description']) . '</p>
+                                            <form method="post">
+                                                <input type="hidden" name="image_id" value="' . $landingImage['id'] . '">
+                                                <button type="submit" name="delete_landing_image" class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade show active" id="uploadSection">
+                        <!-- Upload Image Form -->
+                        <form method="post" enctype="multipart/form-data" class="mt-4">
+                            <div class="form-group">
+                                <label for="project">Project Name</label>
+                                <input type="text" name="project" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project">Description</label>
+                                <input type="text" name="address" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="images">Select Images:</label>
+                                <input type="file" name="images[]" multiple class="form-control-file" required>
+                            </div>
+                            <div id="preview"></div>
+                            <button type="submit" name="upload" class="btn btn-primary">Upload Images</button>
+                        </form>
+                    </div>
+
+                    <!-- Video Section -->
+                    <div class="tab-pane fade" id="videoSection">
+                        <!-- Add Video Link Form -->
+                        <form method="post" class="mt-4">
+                            <div class="form-group">
+                                <label for="video_url">Video URL</label>
+                                <input type="text" name="video_url" class="form-control" required>
+                            </div>
+                            <button type="submit" name="add_video" class="btn btn-primary">Add Video Link</button>
+                        </form>
+
+                        <!-- Display Existing Videos -->
+                        <div class="mt-5">
+                            <h3>Existing Videos</h3>
+                            <div class="row">
+                                <?php while ($video = mysqli_fetch_assoc($videoQuery)): ?>
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card video-card">
+                                            <div class="flex-item" data-animation="slideInDown">
+                                                <?php
+                                                // Extract video ID from the embed URL
+                                                preg_match("/embed\/([^\?]+)/", $video['embed_url'], $matches);
+                                                $video_id = $matches[1];
+                                                ?>
+                                                <a href="https://www.youtube.com/watch?v=<?php echo $video_id; ?>"
+                                                    target="_blank">
+                                                    <img src="https://img.youtube.com/vi/<?php echo $video_id; ?>/hqdefault.jpg"
+                                                        class="img-fluid" alt="YouTube Video Thumbnail">
+                                                </a>
+                                            </div>
+                                            <div class="card-body">
+                                                <!-- Delete Button Form -->
+                                                <form method="post">
+                                                    <input type="hidden" name="video_id"
+                                                        value="<?php echo $video['id']; ?>">
+                                                    <button type="submit" name="delete_video"
+                                                        class="btn btn-danger btn-sm">Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Submissions Section -->
+                    <div class="tab-pane fade" id="contactSection">
+                        <h2>Contact Form Submissions</h2>
+                        <div class="table-responsive" id="contact-table">
+                            <!-- Contact table will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Projects Section -->
+                    <div class="tab-pane fade" id="projectsSection">
+                        <?php
+                        while ($projectResult = mysqli_fetch_assoc($projectQuery)) {
+                            $projectName = $projectResult['project_name'];
+                            // Fetch images for the current project
+                            $imageQuery = mysqli_query($conn, "SELECT * FROM images WHERE project_name = '$projectName'");
+                            ?>
+
+                            <h4>Project Title: <?php echo $projectName; ?> </h4>
+                            <br>
+                            <div class='row'>
+                                <?php while ($image = mysqli_fetch_assoc($imageQuery)): ?>
+                                    <div class="col-md-2 col-6 mb-4">
+                                        <div class="card">
+                                            <img src="<?php echo $image['url']; ?>" alt="Image" class="card-img-top">
+                                            <div class="card-body p-2">
+                                                <form class="m-0" method="post" id="delete-form">
+                                                    <input type="hidden" name="image_id" value="<?php echo $image['id']; ?>">
+                                                    <input type="hidden" name="image_url" value="<?php echo $image['url']; ?>">
+                                                    <input type="hidden" name="current_landing_show"
+                                                        value="<?php echo $image['landing_show']; ?>">
+
+                                                    <button type="submit" name="delete"
+                                                        class="btn btn-danger btn-sm">Delete</button>
+                                                    <button type="submit" name="toggle_landing_show"
+                                                        class="btn btn-primary mt-2 btn-sm">
+                                                        <?php echo $image['landing_show'] ? 'Landing Not Show' : 'Landing Show'; ?>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endwhile; ?>
+                            </div>
+                            <br>
+                        <?php } ?>
+                    </div>
+
+                    <!-- Reviews Section -->
+                    <div class="tab-pane fade" id="reviewsSection">
+                        <!-- Reviews table -->
+                        <?php
+                        $result = mysqli_query($conn, "SELECT * FROM reviews");
+                        if (mysqli_num_rows($result) > 0) {
+                            // Fetch and display the reviews
+                        } else {
+                            echo "No reviews found.";
+                        } ?>
+
+                        <div class="container">
+                            <h2>Reviews</h2>
+                            <br>
+                            <div id="ReviewMessage"></div>
+                            <div id="reviewsTable" class="table-responsive">
+                                <!-- The reviews will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
-
 
     <!-- Include Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -376,98 +503,112 @@ $projectQuery = mysqli_query($conn, "SELECT DISTINCT project_name FROM images");
 </body>
 
 <script>
-$(document).ready(function() {
-    $('#commercialProjectTabs a').on('click', function(e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-});
 
-document.getElementById('delete-form').onsubmit = function(event) {
-    var confirmation = confirm("Are you sure you want to delete this image?");
-    if (!confirmation) {
-        event.preventDefault();
-    }
-};
+    $(document).ready(function () {
+        // Initialize tabs
+        $('.nav-link').on('click', function (e) {
+            e.preventDefault();
+            $('.nav-link').removeClass('text-primary').addClass('text-secondary');
+            $(this).removeClass('text-secondary').addClass('text-primary');
 
-$(document).ready(function() {
-    $('input[type="file"]').on('change', function() {
-        $('#preview').empty(); // To remove the previous selected image
-        var files = this.files;
-        if (files && files[0]) {
-            for (var i = 0; i < files.length; i++) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#preview').append('<img src="' + e.target.result +
-                        '"class="m-3" height="100">');
-                }
-                reader.readAsDataURL(files[i]);
-            }
+            $("#contact-table").load('./admin_php/fetch_contact.php');
+            $("#reviewsTable").load('./admin_php/fetch_reviews.php');
+            $(this).tab('show');
+        });
+    });
+
+    $(document).ready(function () {
+        $('#commercialProjectTabs a').on('click', function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+    });
+
+    document.getElementById('delete-form').onsubmit = function (event) {
+        var confirmation = confirm("Are you sure you want to delete this image?");
+        if (!confirmation) {
+            event.preventDefault();
         }
+    };
+
+    $(document).ready(function () {
+        $('input[type="file"]').on('change', function () {
+            $('#preview').empty(); // To remove the previous selected image
+            var files = this.files;
+            if (files && files[0]) {
+                for (var i = 0; i < files.length; i++) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#preview').append('<img src="' + e.target.result +
+                            '"class="m-3" height="100">');
+                    }
+                    reader.readAsDataURL(files[i]);
+                }
+            }
+        });
     });
-});
 
-function confirmAction(message, action) {
-    $('#confirmationText').text(message);
-    $('#confirmBtn').off('click').click(function() {
-        action();
-        $('#confirmationModal').modal('hide');
+    function confirmAction(message, action) {
+        $('#confirmationText').text(message);
+        $('#confirmBtn').off('click').click(function () {
+            action();
+            $('#confirmationModal').modal('hide');
+        });
+        $('#confirmationModal').modal('show');
+    }
+
+    function deleteReview(id) {
+        if (confirm('Are you sure you want to delete this review?')) {
+            $.post('./admin_php/delete_review.php', {
+                id: id
+            }, function (data) {
+                $("#message").html('<div class="alert alert-success">' + data + '</div>');
+                loadReviews();
+            }).fail(function () {
+                $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
+            });
+        }
+    }
+
+    function deleteContact(id) {
+        if (confirm('Are you sure you want to delete this contact?')) {
+            $.post('./admin_php/delete_contact.php', {
+                id: id
+            }, function (data) {
+                $("#message").html('<div class="alert alert-success">' + data + '</div>');
+                loadContact();
+            }).fail(function () {
+                $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
+            });
+        }
+    }
+
+    function toggleVisibility(id) {
+        if (confirm('Are you sure you want to toggle this review?')) {
+            $.post('admin_php/toggle_visibility.php', {
+                id: id
+            }, function (data) {
+                $("#message").html('<div class="alert alert-success">' + data + '</div>');
+                loadReviews();
+            }).fail(function () {
+                $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
+            });
+        }
+    }
+
+    function loadReviews() {
+        $("#reviewsTable").load('./admin_php/fetch_reviews.php');
+    }
+
+    function loadContact() {
+        $("#contact-table").load('./admin_php/fetch_contact.php');
+    }
+
+    // Load the reviews when the page loads
+    $(document).ready(function () {
+        loadReviews();
+        loadContact();
     });
-    $('#confirmationModal').modal('show');
-}
-
-function deleteReview(id) {
-    if (confirm('Are you sure you want to delete this review?')) {
-        $.post('./admin_php/delete_review.php', {
-            id: id
-        }, function(data) {
-            $("#message").html('<div class="alert alert-success">' + data + '</div>');
-            loadReviews();
-        }).fail(function() {
-            $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
-        });
-    }
-}
-
-function deleteContact(id) {
-    if (confirm('Are you sure you want to delete this contact?')) {
-        $.post('./admin_php/delete_contact.php', {
-            id: id
-        }, function(data) {
-            $("#message").html('<div class="alert alert-success">' + data + '</div>');
-            loadContact();
-        }).fail(function() {
-            $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
-        });
-    }
-}
-
-function toggleVisibility(id) {
-    if (confirm('Are you sure you want to toggle this review?')) {
-        $.post('admin_php/toggle_visibility.php', {
-            id: id
-        }, function(data) {
-            $("#message").html('<div class="alert alert-success">' + data + '</div>');
-            loadReviews();
-        }).fail(function() {
-            $("#message").html('<div class="alert alert-danger">An error occurred.</div>');
-        });
-    }
-}
-
-function loadReviews() {
-    $("#reviewsTable").load('./admin_php/fetch_reviews.php');
-}
-
-function loadContact() {
-    $("#contact-table").load('./admin_php/fetch_contact.php');
-}
-
-// Load the reviews when the page loads
-$(document).ready(function() {
-    loadReviews();
-    loadContact();
-});
 </script>
 
 

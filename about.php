@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>About Connemara Realty - Your Trusted Partner in Farm Land Investment</title>
+    <link rel="icon" href="./images/logo.ico" type="image/x-icon">
+    <meta name="description"
+        content="Learn about Connemara Realty LLP, a leader in sustainable farmland development and management. Founded in 2019, we specialize in eco-friendly housing and farmland investments that ensure growth and appreciation.">
+
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/contact.css" />
     <link rel="stylesheet" href="./css/navBar.css" />
@@ -26,13 +30,13 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 </head>
 
 <body>
@@ -56,7 +60,7 @@
                     <div class="box">
                         <h1>Where Dimension Takes Shape</h1>
                     </div>
-                    <img src="./images/about-us-left.jpg" alt="" />
+                    <img src="./images/about-us-left.jpg" alt="Connemara Reality" />
                 </div>
             </div>
 
@@ -81,7 +85,7 @@
                         </div>
                     </div>
 
-                    <img src="./images/about-right.jpeg" alt="" />
+                    <img src="./images/about-right.jpeg" alt="Connemara Reality" />
                 </div>
             </div>
         </div>
@@ -89,18 +93,18 @@
 
     <div class="container-fluid-max rolling-text" data-animation="slideInDown">
         <div class="wrapper">
-        <ul class="tabs-box">
-                    <li class="tab">FARM LAND</li>
-                    <li class="tab">PROPERTY MANAGEMENT</li>
-                    <li class="tab">RETAIL STORE</li>
-                    <li class="tab">STAR MART</li>
-                    <li class="tab">CAFE</li>
-                    <li class="tab">RESORT</li>
-                    <li class="tab">COMMERCIAL PROJECT</li>
-    
-                </ul>
+            <ul class="tabs-box">
+                <li class="tab">FARM LAND</li>
+                <li class="tab">PROPERTY MANAGEMENT</li>
+                <li class="tab">RETAIL STORE</li>
+                <li class="tab">STAR MART</li>
+                <li class="tab">CAFE</li>
+                <li class="tab">RESORT</li>
+                <li class="tab">COMMERCIAL PROJECT</li>
+
+            </ul>
             <div class="icon">
-               
+
             </div>
         </div>
     </div>
@@ -121,7 +125,7 @@
                 </div>
                 <div class="col-md-6" data-animation="slideInLeft">
                     <div class="about-image">
-                        <img src="./images/about-company.png" alt="About Company" />
+                        <img src="./images/about-company.png" alt="Connemara Reality" />
                     </div>
                 </div>
             </div>
@@ -132,7 +136,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="benefit-img" data-animation="slideInRight">
-                    <img src="./images/benefit.png" alt="" />
+                    <img src="./images/benefit.png" alt="Connemara Reality" />
                 </div>
             </div>
 
@@ -186,7 +190,7 @@
             </div>
             <div class="col-md-3" data-animation="slideInDown">
                 <div class="mission-img">
-                    <img src="./images/left-logo.png" alt="">
+                    <img src="./images/left-logo.png" alt="Connemara Reality">
                 </div>
             </div>
             <div class="col-md-4" data-animation="slideInLeft">
@@ -216,7 +220,7 @@
 
             <div class="col-md-3 order-1 order-md-1" data-animation="slideInDown">
                 <div class="mission-img">
-                    <img src="./images/right-logo.png" alt="">
+                    <img src="./images/right-logo.png" alt="Connemara Reality">
                 </div>
             </div>
 
@@ -244,7 +248,7 @@
                     <div class="skill-team-partner">
 
                         <div class="skill-box">
-                            <img src="./images/man.png" alt="">
+                            <img src="./images/man.png" alt="Connemara Reality">
                             <div class="skill-box-detail">
                                 <h5>Mr. Goutham Chandra</h5>
                                 <p>Chief Executive Officer</p>
@@ -255,7 +259,7 @@
                     <div class="skill-team-partner">
 
                         <div class="skill-box">
-                            <img src="./images/man.png" alt="">
+                            <img src="./images/man.png" alt="Connemara Reality">
                             <div class="skill-box-detail">
                                 <h5>Mr. Siva Chandran</h5>
                                 <p>Project & Marketing Head</p>
@@ -266,7 +270,7 @@
                     <div class="skill-team-partner">
 
                         <div class="skill-box">
-                            <img src="./images/man.png" alt="">
+                            <img src="./images/man.png" alt="Connemara Reality">
                             <div class="skill-box-detail">
                                 <h5>Mr. Gopala Krishnan</h5>
                                 <p>Farming Manager</p>
@@ -278,7 +282,7 @@
                     <div class="skill-team-partner">
 
                         <div class="skill-box">
-                            <img src="./images/man.png" alt="">
+                            <img src="./images/man.png" alt="Connemara Reality">
                             <div class="skill-box-detail">
                                 <h5>Mr. Ravi Teja</h5>
                                 <p>Purchase Manager</p>
@@ -300,38 +304,38 @@
 
 
     <script>
-    $(document).ready(function() {
-        const $scrollInner = $(".scroll-inner-partner");
-        const $partnerDetail = $(".partner-detail-partner");
-        const clonedContent = $partnerDetail.clone();
-        $scrollInner.append(clonedContent);
-    });
+        $(document).ready(function () {
+            const $scrollInner = $(".scroll-inner-partner");
+            const $partnerDetail = $(".partner-detail-partner");
+            const clonedContent = $partnerDetail.clone();
+            $scrollInner.append(clonedContent);
+        });
     </script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const tabsBox = document.querySelector(".tabs-box");
+        document.addEventListener("DOMContentLoaded", () => {
+            const tabsBox = document.querySelector(".tabs-box");
 
-        // Clone the list items and append to create a continuous effect
-        const items = tabsBox.innerHTML;
-        tabsBox.innerHTML += items;
+            // Clone the list items and append to create a continuous effect
+            const items = tabsBox.innerHTML;
+            tabsBox.innerHTML += items;
 
-        // Adjust the width of the container dynamically
-        const updateWidth = () => {
-            const tabWidth = document.querySelector(".tab").offsetWidth;
-            const totalTabs = document.querySelectorAll(".tab").length;
-            tabsBox.style.width = `${tabWidth * totalTabs * 2}px`; // Double the total width
-        };
+            // Adjust the width of the container dynamically
+            const updateWidth = () => {
+                const tabWidth = document.querySelector(".tab").offsetWidth;
+                const totalTabs = document.querySelectorAll(".tab").length;
+                tabsBox.style.width = `${tabWidth * totalTabs * 2}px`; // Double the total width
+            };
 
-        // Initial width adjustment
-        updateWidth();
+            // Initial width adjustment
+            updateWidth();
 
-        // Adjust on window resize
-        window.addEventListener("resize", updateWidth);
-    });
+            // Adjust on window resize
+            window.addEventListener("resize", updateWidth);
+        });
 
-    var copy = document.querySelector(".skilled").cloneNode(true);
-    document.querySelector(".skill-slide").appendChild(copy);
+        var copy = document.querySelector(".skilled").cloneNode(true);
+        document.querySelector(".skill-slide").appendChild(copy);
     </script>
 </body>
 

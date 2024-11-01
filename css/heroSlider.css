@@ -119,15 +119,28 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
-  font-size: 80px;
+  font-size: 50px;
   width: 100vw;
   text-align: center;
   color: #fff;
   font-weight: 400;
   pointer-events: none;
   text-transform: uppercase;
-  letter-spacing: 20px;
+  letter-spacing: 14px;
   line-height: 0.8;
+  height: 100px;
+}
+
+.slideshow-header{
+  font-size: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+.slideshow-para{
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 767px) {
@@ -140,5 +153,8 @@
     left: 50%;
     bottom: 20px;
     transform: translateX(-50%) rotate(90deg);
+  }
+  .slideshow-para{
+    display: none;
   }
 }
